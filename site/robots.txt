@@ -1,0 +1,4 @@
+# DÉVELOPPEMENT : tout est interdit aux robots.
+# À REMPLACER au palier 9 par : User-agent: * / Allow: / / Sitemap: https://<domaine>/sitemap.xml
+User-agent: *
+Disallow: /

@@ -1,0 +1,131 @@
+/*
+  Banc d'essai (page temporaire test.html, à supprimer au palier 9).
+  Montre les jetons en situation : palette, typographie, boutons, champ de formulaire.
+  Les messages d'état sont un composant à part : notice.css.
+*/
+
+.test-section {
+  padding-block: var(--space-6);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.test-section + .test-section {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sw-grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.sw-grid li {
+  max-width: none;
+}
+
+.sw {
+  display: flex;
+  align-items: flex-end;
+  min-height: 5rem;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--border-control);
+  border-radius: var(--radius-s);
+  font-size: var(--step-small);
+  line-height: var(--leading-small);
+}
+
+.sw--bg { background: var(--bg); color: var(--text); }
+.sw--text { background: var(--text); color: var(--bg); }
+.sw--muted { background: var(--bg); color: var(--text-muted); }
+.sw--surface { background: var(--surface); color: var(--text); }
+.sw--link { background: var(--link); color: var(--bg); }
+.sw--link-hover { background: var(--link-hover); color: var(--bg); }
+.sw--action { background: var(--action-bg); color: var(--action-text); }
+.sw--action-hover { background: var(--action-bg-hover); color: var(--action-text); }
+.sw--action-pressed { background: var(--action-bg-pressed); color: var(--action-text); }
+.sw--error { background: var(--error); color: var(--bg); }
+.sw--success { background: var(--success); color: var(--bg); }
+.sw--warning { background: var(--warning); color: var(--bg); }
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.test-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--step-small);
+  line-height: var(--leading-small);
+}
+
+.test-table th,
+.test-table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: left;
+  vertical-align: top;
+}
+
+.test-table caption {
+  padding-bottom: var(--space-2);
+  text-align: left;
+  font-weight: var(--weight-strong);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+/* Champ de formulaire (modèle pour la page Commencer) */
+.field {
+  max-width: 28rem;
+  margin-bottom: var(--space-5);
+}
+
+.field label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-weight: var(--weight-strong);
+}
+
+.field input {
+  width: 100%;
+  min-height: var(--target);
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--border-control);
+  border-radius: var(--radius-s);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+.field--error input {
+  border-color: var(--error);
+  border-width: 3px;
+}
+
+.field-error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+  color: var(--error);
+  font-size: var(--step-body);
+  font-weight: var(--weight-strong);
+}
+
+.field-error svg {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.15rem;
+  fill: none;
+  stroke: var(--bg);   /* le signe en creux, voir notice.css */
+}

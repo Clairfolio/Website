@@ -1,0 +1,102 @@
+/*
+  Boutons et liens d'action (guide Voix, UX et microtexte, section « Boutons et liens »).
+  Un bouton principal par zone ; le secondaire a la même taille.
+  Principal : fond bleu (clair) ou vert (sombre). Secondaire : contour 2 px, le fond se remplit au survol.
+  Le survol change toujours le fond, jamais seulement la couleur du texte.
+*/
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--target);
+  min-width: var(--target);
+  padding: var(--space-3) var(--space-5);
+  border: 2px solid transparent;
+  border-radius: var(--radius-m);
+  font-family: var(--font-body);
+  font-weight: var(--weight-strong);
+  font-size: var(--step-body);
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--duration-fast), border-color var(--duration-fast);
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--action-bg);
+  border-color: var(--action-bg);
+  color: var(--action-text);
+}
+
+.btn--primary:hover {
+  background: var(--action-bg-hover);
+  border-color: var(--action-bg-hover);
+  color: var(--action-text);
+}
+
+.btn--primary:active {
+  background: var(--action-bg-pressed);
+  border-color: var(--action-bg-pressed);
+}
+
+.btn--secondary {
+  background: transparent;
+  border-color: var(--link);
+  color: var(--link);
+}
+
+.btn--secondary:hover {
+  background: var(--action-bg-hover);
+  border-color: var(--action-bg-hover);
+  color: var(--action-text);
+}
+
+.btn--secondary:active {
+  background: var(--action-bg-pressed);
+  border-color: var(--action-bg-pressed);
+  color: var(--action-text);
+}
+
+/* Version compacte : bouton « Commencer » de l'en-tête (même zone cliquable de 44 px) */
+.btn--compact {
+  padding: var(--space-2) var(--space-4);
+}
+
+@media (max-width: 30em) {
+  .btn--compact {
+    padding-inline: 0.625rem;
+    font-size: 0.9375rem;
+  }
+}
+
+/* Pleine largeur sur téléphone */
+@media (max-width: 36em) {
+  .btn--block-mobile {
+    width: 100%;
+  }
+}
+
+/* Lien d'action : texte avec un verbe, souligné, sans apparence de bouton */
+.link-action {
+  font-weight: var(--weight-strong);
+}
+
+/* Petite flèche des liens externes (icône décorative, aria-hidden dans le HTML) */
+.ext-icon {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  vertical-align: -0.05em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

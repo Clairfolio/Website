@@ -1,0 +1,51 @@
+/*
+  Blocs propres à l'accueil : les trois forfaits et les questions fréquentes.
+  Le reste (sections, preuve, mesures) est dans sections.css.
+*/
+
+/* Bloc 8 : les trois forfaits */
+.plans {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.plan {
+  padding: var(--space-5);
+  background: var(--bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-m);
+}
+
+.plan > :last-child {
+  margin-bottom: 0;
+}
+
+.plan__name {
+  margin-bottom: var(--space-2);
+}
+
+.plan__price {
+  margin-bottom: var(--space-3);
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  font-size: var(--step-h2);
+  line-height: var(--leading-h2);
+}
+
+@media (min-width: 48em) {
+  .plans {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Bloc 12 : questions fréquentes */
+.faq h3 {
+  margin-bottom: var(--space-2);
+  font-size: var(--step-lead);
+  line-height: var(--leading-h3);
+}
+
+.faq h3 + p {
+  margin-bottom: var(--space-5);
+}

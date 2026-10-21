@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clairfolio · Sortez votre travail de l’ombre</title>
+  <meta name="description" content="Je crée ou je refais votre portfolio pour qu’il soit clair, professionnel et valorisant. Création dès 89 €, refonte dès 119 €. Votre site vous appartient.">
+  <meta name="theme-color" content="#080f22">
+  <!-- Domaine PROVISOIRE (nom du site Netlify à confirmer). Un seul remplacement global le moment venu : voir PROGRESSION.md. -->
+  <link rel="canonical" href="https://clairfolio.netlify.app/">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Ordre des feuilles : tokens (jetons) avant tout le reste ; fonts avant base ; les composants en dernier. -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/button.css">
+  <link rel="stylesheet" href="styles/site-header.css">
+  <link rel="stylesheet" href="styles/hero.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/site-footer.css">
+  <noscript><link rel="stylesheet" href="styles/no-js.css"></noscript>
+  <script src="js/nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+        <span class="brand-name">Clairfolio</span>
+      </a>
+      <div class="site-header__actions">
+        <a class="btn btn--primary btn--compact" href="commencer">Commencer</a>
+        <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span class="menu-toggle__label">Menu</span></button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Principale">
+        <ul>
+          <li><a href="cas-clara">Le cas Clara</a></li>
+          <li><a href="tarifs">Tarifs</a></li>
+          <li><a href="a-propos">À propos</a></li>
+          <li class="site-nav__cta"><a class="btn btn--primary btn--compact" href="commencer">Commencer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Bloc 1 : en-tête -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <h1>Sortez votre travail de l’ombre.</h1>
+          <p class="hero__lead">Clairfolio crée ou refond votre portfolio, pour que votre travail soit enfin clair, professionnel et valorisant.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--block-mobile" href="commencer?site=non">Créer mon portfolio</a>
+            <a class="btn btn--secondary btn--block-mobile" href="commencer?site=oui">Refondre mon portfolio</a>
+          </div>
+          <p class="hero__price">Création dès 89&nbsp;€, refonte dès 119&nbsp;€. Votre site vous appartient.</p>
+        </div>
+        <figure class="hero__visual">
+          <div class="phones">
+            <img src="images/cas-clara/avant-600.webp" srcset="images/cas-clara/avant-600.webp 600w, images/cas-clara/avant.webp 1175w" sizes="(min-width: 60em) 12rem, 38vw" width="1175" height="2478" alt="Ancien portfolio de Clara sur téléphone : sous son nom, un message demande de le consulter sur ordinateur et de zoomer avec Ctrl + molette.">
+            <img src="images/cas-clara/apres-600.webp" srcset="images/cas-clara/apres-600.webp 600w, images/cas-clara/apres.webp 1175w" sizes="(min-width: 60em) 12rem, 38vw" width="1175" height="2478" fetchpriority="high" alt="Nouveau portfolio de Clara sur téléphone : sa photo, son nom, son métier de game designer, et la période de stage recherchée, du 20 juin au 31 août 2027.">
+          </div>
+          <figcaption>Le même portfolio, avant et après.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Bloc 2 : le problème -->
+    <section class="section" aria-labelledby="probleme">
+      <div class="container">
+        <h2 id="probleme">Votre travail est bon. Sa présentation l’est moins.</h2>
+        <p>Un portfolio se parcourt vite. S’il est long, confus ou difficile à lire sur téléphone, on passe à autre chose.</p>
+        <ul>
+          <li>Une seule page interminable.</li>
+          <li>Un message qui demande de passer sur ordinateur.</li>
+          <li>Des projets noyés dans des centaines d’images.</li>
+        </ul>
+        <p>Ces défauts sont ceux d’un vrai portfolio&nbsp;: celui de Clara.</p>
+        <p><a class="link-action" href="cas-clara">Lire le cas de Clara</a></p>
+      </div>
+    </section>
+
+    <!-- Bloc 3 : la preuve responsive -->
+    <section class="section section--tint" aria-labelledby="preuve">
+      <div class="container proof">
+        <div class="proof__text">
+          <h2 id="preuve">Même téléphone. Même contenu. Deux résultats.</h2>
+          <p><strong>Avant</strong>&nbsp;: le site demande lui-même d’être consulté sur ordinateur.</p>
+          <p><strong>Après</strong>&nbsp;: on comprend en un regard qui elle est, ce qu’elle cherche, et où trouver son CV et ses projets.</p>
+          <p class="small muted">Captures sur un téléphone Android, le 16 octobre 2026. Environ une visite sur deux se fait sur mobile (Statcounter, 2026).</p>
+          <p><a class="link-action" href="cas-clara">Lire le cas de Clara</a></p>
+        </div>
+        <div class="phones phones--proof">
+          <figure>
+            <img src="images/cas-clara/avant-600.webp" srcset="images/cas-clara/avant-600.webp 600w, images/cas-clara/avant.webp 1175w" sizes="(min-width: 48em) 17.5rem, 42vw" width="1175" height="2478" loading="lazy" alt="Ancien portfolio de Clara sur téléphone : sous son nom, un message demande de le consulter sur ordinateur et de zoomer avec Ctrl + molette.">
+            <figcaption>Avant. Capture sur téléphone Android (Honor), le 16 octobre 2026.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/cas-clara/apres-600.webp" srcset="images/cas-clara/apres-600.webp 600w, images/cas-clara/apres.webp 1175w" sizes="(min-width: 48em) 17.5rem, 42vw" width="1175" height="2478" loading="lazy" alt="Nouveau portfolio de Clara sur téléphone : sa photo, son nom, son métier de game designer, et la période de stage recherchée, du 20 juin au 31 août 2027.">
+            <figcaption>Après. Capture sur téléphone Android (Honor), le 16 octobre 2026.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloc 4 : les choix -->
+    <section class="section" aria-labelledby="choix">
+      <div class="container">
+        <h2 id="choix">Un site se construit avec des choix.</h2>
+        <p>Pour Clara, j’ai fait cinq choix. Voici lesquels, et pourquoi.</p>
+        <ol class="list-spaced">
+          <li><strong>Le CV, le contact et LinkedIn dans le site</strong>&nbsp;: un recruteur qui arrive par un e-mail trouve tout sans quitter la page.</li>
+          <li><strong>Les projets en jaquettes, dès l’accueil</strong>&nbsp;: c’est l’univers d’une game designer, et on peut les ouvrir tout de suite.</li>
+          <li><strong>Des cartes ni trop pleines, ni trop vides</strong>&nbsp;: le type de projet, son rôle, des chiffres&nbsp;; le détail est sur la page du projet.</li>
+          <li><strong>Les autres travaux rangés à part</strong>&nbsp;: pour qu’ils ne fassent pas concurrence aux projets.</li>
+          <li><strong>Plus de 180&nbsp;images triées et adaptées à chaque écran</strong>&nbsp;: un téléphone ne charge pas l’image d’un ordinateur.</li>
+        </ol>
+        <p><a class="link-action" href="cas-clara#decisions">Lire les cinq décisions</a></p>
+      </div>
+    </section>
+
+    <!-- Bloc 5 : le tri (publié sans visuel ni nombre exact : « plus de 180 ») -->
+    <section class="section section--flush-top" aria-labelledby="tri">
+      <div class="container">
+        <h2 id="tri">Plus de 180&nbsp;images en vrac.</h2>
+        <p>Des doublons de moins bonne qualité, des noms de fichiers illisibles, aucun ordre. Ce tri se fait à l’œil, image par image.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 6 : les mesures -->
+    <section class="section section--tint" aria-labelledby="mesures">
+      <div class="container">
+        <h2 id="mesures">Ce que ça change, mesuré.</h2>
+        <table class="measures">
+          <caption class="visually-hidden">Mesures du portfolio de Clara, avant et après</caption>
+          <thead>
+            <tr><th scope="col"><span class="visually-hidden">Mesure</span></th><th scope="col">Avant</th><th scope="col">Après</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Affichage du contenu principal, sur mobile</th><td>9,3&nbsp;s</td><td>1,7&nbsp;s</td></tr>
+            <tr><th scope="row">Performance sur mobile (score)</th><td>53&nbsp;*</td><td>98</td></tr>
+            <tr><th scope="row">Accessibilité (score)</th><td>96</td><td>100</td></tr>
+            <tr><th scope="row">Bonnes pratiques (score)</th><td>100</td><td>100</td></tr>
+            <tr><th scope="row">Référencement (score)</th><td>92</td><td>100</td></tr>
+            <tr><th scope="row">Trouver le CV (un test, sur tablette)</th><td>Introuvable après 3&nbsp;minutes</td><td>4&nbsp;secondes</td></tr>
+          </tbody>
+        </table>
+        <p class="small muted">* 53 sur le rapport joint&nbsp;; de 53 à 66 selon les passages. Rapports PageSpeed Insights du 16 octobre 2026, sur la page d’accueil de chaque site. En mobile, l’outil simule un téléphone Moto G Power sur une connexion 4G lente. Tous les scores sont affichés, y compris ceux qui changent peu&nbsp;: l’ancien site était déjà correct sur l’accessibilité. Le test du CV n’a été fait qu’avec une personne&nbsp;: une observation, pas une statistique.</p>
+        <ul class="link-list">
+          <li><a class="link-action" href="cas-clara#mesures">Lire toutes les mesures</a></li>
+          <li><a class="link-action" href="cas-clara#rapports">Télécharger les rapports PageSpeed (4&nbsp;images, 930&nbsp;Ko)</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Bloc 7 : l'IA, honnêtement -->
+    <section class="section" aria-labelledby="ia">
+      <div class="container">
+        <h2 id="ia">Oui, j’utilise l’IA. Voici qui décide.</h2>
+        <p><strong>L’IA exécute</strong>&nbsp;: une partie de la mise en forme et du code, les tâches répétitives, la traduction (en anglais ou dans une autre langue).</p>
+        <p><strong>Je décide</strong>&nbsp;: la structure, l’ordre des projets, le tri des images, les textes d’interface, le design, et chaque vérification avant la livraison.</p>
+        <p>Un site généré en quelques minutes ne sait pas ce que vous cherchez. C’est ce que je commence par comprendre.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 8 : l'offre -->
+    <section class="section section--tint" aria-labelledby="offre">
+      <div class="container">
+        <h2 id="offre">Trois forfaits, à partir de 89&nbsp;€.</h2>
+        <div class="plans">
+          <article class="plan">
+            <h3 class="plan__name">Essentiel</h3>
+            <p class="plan__price">89&nbsp;€</p>
+            <p>Un site complet, prêt à publier.</p>
+            <p><a class="link-action" href="forfait-essentiel">En savoir plus sur l’Essentiel</a></p>
+          </article>
+          <article class="plan">
+            <h3 class="plan__name">Recommandé</h3>
+            <p class="plan__price">129&nbsp;€</p>
+            <p>Le site, avec 30&nbsp;jours de suivi.</p>
+            <p><a class="link-action" href="forfait-recommande">En savoir plus sur le Recommandé</a></p>
+          </article>
+          <article class="plan">
+            <h3 class="plan__name">Complet</h3>
+            <p class="plan__price">169&nbsp;€</p>
+            <p>Le site, avec 3&nbsp;mois de suivi.</p>
+            <p><a class="link-action" href="forfait-complet">En savoir plus sur le Complet</a></p>
+          </article>
+        </div>
+        <p>Vous avez déjà un site&nbsp;? Je récupère et je trie vos images&nbsp;: supplément à partir de 30&nbsp;€.</p>
+        <p><a class="link-action" href="tarifs">Voir les tarifs</a></p>
+      </div>
+    </section>
+
+    <!-- Bloc 9 : comment ça se passe -->
+    <section class="section" aria-labelledby="etapes">
+      <div class="container">
+        <h2 id="etapes">Cinq étapes, de la demande à la remise du code.</h2>
+        <ol class="list-spaced">
+          <li><strong>Vous me contactez, je vous réponds sous 2&nbsp;jours ouvrés.</strong> Nous nous mettons d’accord sur le forfait, le prix, l’acompte et le délai. Vous confirmez par écrit.</li>
+          <li><strong>Vous versez l’acompte et vous m’envoyez vos contenus</strong>&nbsp;: images, textes, liens.</li>
+          <li><strong>Je construis votre site</strong> en 10&nbsp;jours ouvrés (15 pour une refonte), à partir du dossier complet et de l’acompte.</li>
+          <li><strong>Vous voyez une vidéo de votre site.</strong> Vous validez, ou vous demandez une correction.</li>
+          <li><strong>Vous payez le solde</strong>&nbsp;: je vous remets le code et tous les accès.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Bloc 10 : mes engagements -->
+    <section class="section section--flush-top" aria-labelledby="engagements">
+      <div class="container">
+        <h2 id="engagements">Mes engagements.</h2>
+        <p>Je m’engage sur ce que je livre&nbsp;: un site qui vous appartient, une vidéo de votre site avant le solde, un acompte remboursé si je n’ai pas commencé. Je m’engage sur votre portfolio, pas sur la décision de celui qui le regarde.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 11 : qui est derrière -->
+    <section class="section section--tint" aria-labelledby="personne">
+      <div class="container">
+        <h2 id="personne">Une personne, pas une plateforme.</h2>
+        <p>Je suis FGAMER768 et je fais des portfolios pour des créatifs. Clairfolio est né du portfolio de Clara&nbsp;: ses projets étaient très intéressants, mais son site ne la servait pas. Je l’ai refait avec elle, et j’ai voulu le faire pour d’autres.</p>
+        <p>Vous m’écrivez, je vous réponds&nbsp;: pro.fgamer768@gmail.com, ou sur Instagram&nbsp;: @clairfolioweb.</p>
+        <div class="actions">
+          <a class="btn btn--secondary btn--block-mobile" href="mailto:pro.fgamer768@gmail.com">M’écrire par e-mail</a>
+          <a class="btn btn--secondary btn--block-mobile" href="https://www.instagram.com/clairfolioweb/" target="_blank" rel="noopener">M’écrire sur Instagram
+            <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+            <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a>
+        </div>
+        <p><a class="link-action" href="a-propos">Lire comment je travaille</a></p>
+      </div>
+    </section>
+
+    <!-- Bloc 12 : questions fréquentes -->
+    <section class="section" aria-labelledby="faq">
+      <div class="container faq">
+        <h2 id="faq">Questions fréquentes</h2>
+        <h3>Combien ça coûte vraiment&nbsp;?</h3>
+        <p>À partir de 89&nbsp;€. Le détail, y compris le supplément de tri pour une refonte, est sur la page Tarifs.</p>
+        <h3>Le site m’appartient-il&nbsp;?</h3>
+        <p>Oui. Code, hébergement et nom de domaine sont à votre nom.</p>
+        <h3>Puis-je annuler&nbsp;?</h3>
+        <p>Si je n’ai pas commencé, je rembourse l’acompte. Sinon, vous payez la part déjà faite. Tout est dans les conditions de vente.</p>
+        <h3>Utilisez-vous l’IA&nbsp;?</h3>
+        <p>Oui, comme outil d’exécution, y compris pour traduire en anglais ou dans une autre langue. Les choix et les vérifications, c’est moi qui les fais.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 13 : appel final (section sombre) -->
+    <section class="section section--dark on-dark" aria-labelledby="final">
+      <div class="container">
+        <h2 id="final">Sortez votre travail de l’ombre.</h2>
+        <div class="actions">
+          <a class="btn btn--primary btn--block-mobile" href="commencer?site=non">Créer mon portfolio</a>
+          <a class="btn btn--secondary btn--block-mobile" href="commencer?site=oui">Refondre mon portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="./">
+            <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+            <span class="brand-name">Clairfolio</span>
+          </a>
+          <p class="site-footer__tagline">Votre travail mérite d’être vu.</p>
+        </div>
+        <nav aria-labelledby="footer-service">
+          <h2 class="site-footer__title" id="footer-service">Le service</h2>
+          <ul class="site-footer__list">
+            <li><a href="tarifs">Tarifs</a></li>
+            <li><a href="cas-clara">Le cas Clara</a></li>
+            <li><a href="commencer">Commencer</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-confiance">
+          <h2 class="site-footer__title" id="footer-confiance">Confiance</h2>
+          <ul class="site-footer__list">
+            <li><a href="a-propos">À propos</a></li>
+            <li><a href="conditions-de-vente">Conditions de vente</a></li>
+            <li><a href="mentions-legales">Mentions légales</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-contact">
+          <h2 class="site-footer__title" id="footer-contact">Me contacter</h2>
+          <ul class="site-footer__list">
+            <li><a href="mailto:pro.fgamer768@gmail.com">pro.fgamer768@gmail.com</a></li>
+            <li>
+              <a href="https://www.instagram.com/clairfolioweb/" target="_blank" rel="noopener">Instagram&nbsp;: @clairfolioweb
+                <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+                <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <p class="site-footer__legal">© 2026 Clairfolio. Site édité par FGAMER768.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+# PROGRESSION - Journal de bord du site Clairfolio
+
+> Mémoire du projet. Mise à jour à la fin de chaque palier, le jour même.
+> Une nouvelle conversation reprend ici : elle ne doit rien supposer d'autre.
+> Palier 0 validé le 20 octobre 2026 (les valeurs « proposées » sont retenues). Palier 1 construit le même jour, déploiement Netlify en attente.
+
+## Le projet
+
+- **Personne** : FGAMER768, qui exerce sous le nom Clairfolio (aucun nom, prénom, adresse, téléphone ni photo sur le site : voir « Points ouverts »)
+- **Public visé** : les créatifs dont le portfolio est une collection de projets (game designers, développeurs, designers), souvent étudiants ou jeunes diplômés ; en second, celui qui regarde (recruteur, client)
+- **Ce que le site fait, en une phrase** : « Clairfolio refond ou crée votre portfolio, pour que votre travail soit enfin clair, professionnel et valorisant. »
+- **Signature** : « Sortez votre travail de l'ombre. »
+- **Adresse en ligne** : https://clairfolio.netlify.app, PROVISOIRE (disponibilité non vérifiée, à confirmer à la création du site Netlify)
+- **Dépôt** : à créer (GitHub). Structure : `branding/` (documents, non publié), `site/` (seul dossier publié, voir `netlify.toml`), `tools/` (audit)
+- **Pile** : site statique HTML / CSS / JS sans build, hébergé sur **Netlify** (décision du 17 octobre 2026, pas Vercel). Le formulaire passe par Netlify Forms.
+
+## Sources de vérité
+
+Le workspace `branding/` est la source du contenu. Le skill `portfolio-par-paliers` fournit la méthode (paliers, portes, audit), pas le contenu : le site n'est pas réécrit, il est construit à partir des textes existants.
+
+| Pour décider de... | Document qui fait foi |
+|---|---|
+| La formulation (boutons, erreurs, titres de page, vocabulaire, typographie) | `Clairfolio Voix, UX et microtexte.md` (v1.1, 20 octobre 2026) |
+| Les faits (prix, acomptes, délais, inclusions, annulation) | `plateforme-de-marque`, `page-forfaits`, `conditions-de-vente` |
+| Le visuel (couleurs, symbole, typographie, accessibilité) | `direction-artistique` |
+| L'ordre et le contenu des pages | `site-clairfolio-structure-preuves-textes`, puis `cas-clara`, `a-propos`, `commencer`, `mentions-legales` qui le remplacent par endroits (voir `README.md`) |
+
+**Règle en cas de conflit** : le guide Voix, UX et microtexte l'emporte sur la formulation (il a déjà arbitré : « accord » et non « devis », 5 étapes partout, boutons radio pour les images, un seul bouton principal par zone). Les autres documents l'emportent sur les faits.
+
+## Décisions verrouillées (palier 0)
+
+| Décision | Valeur | Statut |
+|----------|--------|--------|
+| Hébergeur | Netlify (Forms inclus) | Décidée le 17 octobre 2026 |
+| Structure d'URL | Toutes les pages à la racine, noms en tirets, sans extension, sans dossier : `/`, `/cas-clara`, `/tarifs`, `/forfait-essentiel`, `/forfait-recommande`, `/forfait-complet`, `/a-propos`, `/commencer`, `/merci`, `/conditions-de-vente`, `/mentions-legales` (`/accessibilite` quand elle existe) | **Proposée.** Le workspace écrit `/cas/clara`, `/tarifs/essentiel`, `/commencer/merci` : des adresses imbriquées cassent les chemins relatifs du skill, et en changer plus tard coûte deux migrations (leçon 1) |
+| Domaine canonique | `https://clairfolio.netlify.app` (provisoire), sans `www` | À confirmer. Un domaine propre viendra avec les premiers revenus : la liste des fichiers à changer ira dans le README (palier 12) |
+| Nom du site Netlify | `clairfolio` si disponible (définitif : il donne l'adresse publique). S'il est pris, remplacer `clairfolio.netlify.app` dans `site/` en un seul passage (index.html, test.html) | À confirmer à la création |
+| Langues | Français seul au lancement, `lang="fr"`. Palier 7 barré. Si une version anglaise est voulue un jour : une URL par langue (`/en/...`) | **Proposée** |
+| Clés de traduction | Sans objet (monolingue) | Liée à la ligne précédente |
+| Couleurs | Jetons de la direction artistique §2.4. Le vert n'est jamais du texte sur fond clair, le bleu n'est jamais du texte sur fond marine. Pied de page et appel final sont des sections sombres : jeu de jetons sombre appliqué par classe, pas seulement par `prefers-color-scheme`. Le thème suit le navigateur, sans bouton de bascule | Décidée, sauf la palette étendue |
+| Palette étendue | Neutres, survol, appui, erreur, succès, avertissement, chacun vérifié AA (contrastes calculés, tableau dans `site/test.html`). **Messages d'état : aucun fond teinté** (retiré le 20 octobre 2026 : rendu « généré par IA »). Fond neutre `--surface`, texte en `--text`, couleur portée par une icône pleine dont la silhouette change (cercle, octogone, triangle) ; l'erreur a en plus un contour plein. Composant : `site/styles/notice.css`. Avertissement clair passé du brun `#8a4b00` à l'ambre `#b45309` | Écrite dans `tokens.css` au palier 1, **à valider à l'œil sur `/test`** (messages revus le 20 octobre) |
+| Polices | Manrope 800 (titres, nom), Inter 400 (texte) et Inter 600 (gras, boutons), auto-hébergées en WOFF2 variable, aucun domaine externe | Décidée. La direction artistique ne parle que de 400 et 800 : à aligner au palier 12 |
+| Images | Un dossier par page (`images/cas-clara/`), variantes `responsive/nom-600w.webp`, partage `images/og/<page>.jpg` en 1200 × 630. Les captures Honor existent déjà en WebP (1175 et 600 px) | **Proposée** |
+| Formulaire | Netlify Forms, champ-piège, pas de captcha, redirection vers `/merci` (noindex), pré-remplissage par paramètre d'adresse | Décidée le 17 octobre 2026 |
+| Mesure d'audience | Aucune au lancement : le site promet « aucun cookie » et « aucune dépendance externe ». À rouvrir au palier 10 | **Proposée** |
+| Titres et descriptions de page | Table du guide Voix, UX et microtexte | Décidée |
+| Typographie française | Espaces insécables, guillemets « », apostrophe courbe, aucun tiret long | Décidée (guide Voix) |
+
+## Paliers (adaptés à Clairfolio)
+
+| # | Palier | Adaptation | État | Date | Valeurs mesurées / remarques |
+|---|--------|------------|------|------|------------------------------|
+| 0 | Cadrage | Ce document | ☑ | 2026-10-20 | Valeurs proposées retenues |
+| 1 | Fondations + 1er déploiement | Jetons, polices, squelette, palette étendue, déploiement Netlify d'une page vide | ◐ | 2026-10-20 | Construit et vérifié en local. Reste : déploiement par la personne, `curl` de `/test`. Le test d'envoi du formulaire a lieu avec la page Commencer |
+| 2 | Accueil | Les 13 blocs du document du site. Test des 5 secondes : qui (Clairfolio, FGAMER768), quoi (la signature et une phrase), preuve (les deux téléphones), et après (les deux boutons) | ☑ | 2026-10-20 | Construit et vérifié en local. Test des 5 secondes mesuré : promesse, phrase, deux boutons, prix et deux téléphones visibles sans défiler à 1366 × 768, 1440 × 900 et 1280 × 720 (bas du bloc à 533 px). **Porte des liens fermée** : l'audit donne 14 FAIL, tous des liens vers des pages pas encore créées (commencer, cas-clara et ses trois ancres `#decisions`, `#mesures`, `#rapports`, tarifs, a-propos, forfait-essentiel, forfait-recommande, forfait-complet, conditions-de-vente, mentions-legales). Aucune page vide n'a été créée pour les faire taire. Reste : validation à l'œil, test des 5 secondes avec de vraies personnes **Validé à l'œil par la personne le 20 octobre 2026** ; le test des 5 secondes avec de vraies personnes est différé (à faire plus tard). La porte des liens se ferme au fil des pages construites |
+| 3 | Pages modèles | Pas de fiches projet : le modèle est la page « Le cas Clara », puis les trois pages forfait clonées une fois le gabarit validé | ◐ | 2026-10-20 | **Modèle : « Le cas Clara »** construit (`cas-clara.html`, `styles/case.css`) ; reste la validation du gabarit par la personne, puis le clonage vers les trois pages forfait. Vérifié en local : un seul h1, aucun saut de titre, ancres `#decisions`, `#mesures`, `#rapports` atteintes à 24 px du haut, tableaux alignés, aucun débordement de 320 à 1440 px, parcours clavier dans l'ordre visuel, images chargées. 17 FAIL à l'audit : tous des liens vers des pages pas encore construites |
+| 4 | Responsive | 360 px et 1440 × 900, forfaits empilés avec le Recommandé en premier | ☐ | | |
+| 5 | Accessibilité | Vérification réelle du site de Clairfolio : elle permet la page Accessibilité (la formule reste « Vérifié selon WCAG 2.2 AA ») | ☐ | | Lighthouse accessibilité : |
+| 6 | Images et performances | Captures de téléphone, image de partage. Objectif : les scores publiés pour le site de Clairfolio | ☐ | | Lighthouse mobile : ; LCP : |
+| 7 | Langues | Barré (français seul) | n/a | | |
+| 8 | Référencement et partage | JSON-LD de type organisation (pas de Person), aucune adresse e-mail dans les données structurées, `/merci` hors sitemap | ☐ | | |
+| 9 | Mise en production | Netlify : `netlify.toml` ou `_redirects`, comportement des adresses sans extension à vérifier par `curl`, 404 | ☐ | | |
+| 10 | Mesure et rétention | Décision d'audience, test des cookies du site publié (les mentions légales l'attendent) | ☐ | | Date de revue : |
+| 11 | Finitions | Proposé : sauté. Le principe « le travail du client passe avant la marque » exclut les effets ludiques | n/a | | |
+| 12 | Documentation | README fidèle, alignement des documents du workspace (voir ci-dessous) | ☐ | | |
+
+## Reste hors ligne tant que ce n'est pas vrai
+
+Règle du guide Voix : aucun texte entre crochets en ligne, aucune section annoncée sans contenu, aucune mesure absente écrite.
+
+- Le retour de Clara (section « Ce que Clara en dit », et la citation dans le bloc 7 de l'accueil)
+- Le visuel du tri des images et le nombre exact d'images retenues (bloc 5 publié sans visuel, avec « plus de 180 »)
+- Le poids de la page et les quatre tests du CV supplémentaires (la mention « un seul test » reste)
+- La vidéo de démonstration (le bloc « Voyez d'abord » des tarifs est publié avec l'avant/après seul)
+- La page Accessibilité et la mention « Vérifié selon WCAG 2.2 AA » (après le palier 5)
+- Le cas de Sofia (en réserve)
+- Le mot « vérifié » dans les cartes des forfaits Recommandé et Complet de l'accueil (retiré : le guide l'interdit avant la vérification réelle, palier 5). Texte actuel : « Le site, avec 30 jours de suivi. » et « Le site, avec 3 mois de suivi. »
+- Le nombre exact d'images retenues : le titre du bloc 5 est « Plus de 180 images en vrac. » (le document ajoute « [N] images choisies. », qui ne peut pas partir en ligne)
+
+## Ce qu'on attend de la personne
+
+- [x] Palier 0 : valider les lignes « proposée »
+- [ ] Palier 1 : créer le dépôt GitHub et le site Netlify (compte à ton nom, dossier publié : `site`), confirmer le nom du site ; valider la palette étendue sur `/test`
+- [ ] Palier 2 : valider l'accueil à l'œil ; faire le test des 5 secondes avec 3 personnes (voir le journal pour les 4 questions et pour le point « qui »)
+- [ ] Palier 3 : valider les trois pages forfait (leurs textes sont assemblés à partir de phrases déjà écrites, car le document du site ne les couvre que partiellement)
+- [ ] Plus tard : le retour de Clara, ses images pour le tri, les quatre autres tests du CV
+
+## Limites connues et points ouverts
+
+- **Pseudo et mentions légales.** Le site se présente sous le seul pseudo FGAMER768. Un guide grand public (LegalPlace) liste, pour un entrepreneur individuel, le nom et prénom, l'adresse, le téléphone et le SIREN, et il ne dit rien du pseudonyme. À faire vérifier avant le premier client payant (je ne suis pas juriste). Cela ne bloque pas la construction, mais touche le pied de page, À propos et les mentions légales.
+- **Juridique** : médiateur, licence des contenus, stockage hors Union européenne, relecture des conditions de vente. Décidé : après le site.
+- **Nom de marque** : `clairfolio.com` est pris par un autre produit ; aucune vérification juridique n'a été faite.
+- **Audit** : `tools/audit_site.py` est adapté à Netlify (option `--platform netlify`, ajoutée le 20 octobre 2026). Commande : `python3 tools/audit_site.py --root site --platform netlify`.
+- **Développement** : le site est en `noindex` (fichiers `site/_headers` et `site/robots.txt`) et `site/test.html` est temporaire. Tout cela est retiré au palier 9.
+- **Dépendances** : polices Manrope et Inter prises sur npm (`@fontsource-variable`), sous-ensemble latin. La flèche ↗ des liens externes est une icône SVG (hors de la police).
+- **Paliers manquants.** Le plan ne construit nulle part les pages Tarifs, À propos, Commencer, Merci, Conditions de vente et Mentions légales : le palier 3 ne couvre que « Le cas Clara » et les trois pages forfait. L'accueil les relie toutes. À répartir dans les paliers avant d'aller plus loin.
+- **Paramètre du formulaire.** Les deux boutons de l'accueil ouvrent `commencer?site=non` (« Créer mon portfolio ») et `commencer?site=oui` (« Refondre mon portfolio »), d'après l'exemple du guide (`/commencer?site=non&forfait=recommande`). À confirmer ou à renommer quand on construit Commencer.
+- **Netlify** : comportement des adresses sans extension et durée de conservation des envois du formulaire (1 an annoncé) à vérifier sur le site publié.
+
+## Journal
+
+- 2026-10-20 (palier 3, modèle « Le cas Clara ») : `cas-clara.html`, `styles/case.css`, `images/cas-clara/rapports/` (les 4 rapports PageSpeed en WebP, 930 Ko, cibles du lien de l'accueil). Les styles communs sont sortis de `home.css` vers `styles/sections.css` (sections, preuve avec téléphone, tableau de mesures) pour servir à toutes les pages ; l'accueil est resté identique pixel à pixel sur 6 rendus (3 largeurs, clair et sombre). Textes : guide d'abord, puis `cas-clara-clairfolio.md`. Écarts assumés : titre « Le cas Clara : un portfolio refait pour la servir. » (guide, arbitrage 19, au lieu de « ne la servait pas ») ; « Speed Index » présenté comme « Vitesse d'affichage (Speed Index) » et « smartphone » devenu « téléphone » (guide) ; décision 5 sans « [N] images retenues » ni poids de page (non mesurés) ; bloc « Ce que Clara en dit » non publié (le retour n'existe pas) ; ligne de prix du bloc 7 écrite « de 121 à 200 images à trier » (la grille de refonte donne 189, 229 et 269 € pour 121 à 200 images ; « jusqu'à 200 » aurait été faux pour les petits volumes) ; « l'ensemble ensemble » corrigé en « le tout ensemble » (répétition) ; le lien unique « Télécharger les rapports PageSpeed » est devenu un titre « Les rapports, à télécharger », une phrase d'introduction (de moi, tirée du §1 du document : les rapports ne sont pas affichés, les images sont à télécharger) et quatre liens, un par rapport, avec leur poids ; les termes en gras « Trouver le CV et un moyen de contact » et « Et aussi » sont devenus des titres de niveau 3 pour que les ancres et la navigation par titres fonctionnent. Liens externes vers l'ancien et le nouveau portfolio (adresses de `plateforme-de-marque`) : NON testés depuis ici, à ouvrir une fois par la personne. Reste pour la checklist « nouvelle page » : `og:*`, image de partage et `sitemap.xml` (palier 8, comme pour l'accueil) ; pas de clés de traduction (site monolingue).
+- 2026-10-20 (palier 2, accueil) : `index.html` complet (13 blocs, en-tête avec navigation, pied de page en trois groupes), `styles/home.css`, `styles/hero.css`, `styles/site-header.css` (navigation, menu mobile), `styles/no-js.css`, `js/nav.js` (menu « Menu » / « Fermer », Échap), bouton `.btn--compact`. Images : `images/cas-clara/` (captures Honor en WebP, 1175 et 600 px, cadre du téléphone inclus). Textes : guide Voix, UX et microtexte d'abord (ordre « crée ou refond », « Création dès 89 €, refonte dès 119 € », libellés des liens, cinq étapes, « Mes engagements », texte de l'IA), puis `cas-clara` et `a-propos` pour les blocs 3 à 6 et 11. Écarts assumés avec le document de structure : bloc 10 devenu « Mes engagements » (arbitrage 14 du guide) ; « Voir le détail » remplacé par deux liens distincts ; bloc 5 sans visuel et sans « [N] » ; le retour de Clara non publié (la phrase du bloc 7 reste en « je ») ; « vérifié » retiré des cartes. Vérifié en local (Chromium) : menu mobile (ouverture, Échap, focus rendu au bouton), ordre de tabulation égal à l'ordre visuel à 360 et 1366 px, navigation visible sans JavaScript, zéro erreur console, aucune requête externe, aucun défilement horizontal de 320 à 1440 px (clair et sombre), un seul h1 et aucun saut de titre, images chargées, typographie (insécables, apostrophes courbes, aucun tiret long, aucun crochet en ligne). En-tête sur une ligne à 360 px ; à 320 px il passe sur deux lignes (voulu : le bouton « Commencer » reste hors du menu). Point ouvert du test des 5 secondes : la réponse à « qui » est le nom Clairfolio (en-tête) ; le pseudo FGAMER768 n'apparaît qu'au bloc 11, car le texte du hero est celui du guide. À trancher après le test avec de vraies personnes.
+
+- 2026-10-20 (palier 1, revue de `/test`) : les trois messages d'état avaient un fond pastel, une bordure et un texte de la même teinte, sans icône : rendu jugé « IA ». Refaits d'après GOV.UK, Primer (GitHub), Geist (Vercel) et Carbon, puis alignés sur le guide Voix, UX et microtexte (lu en second, après un premier passage fait sans lui). Composant `site/styles/notice.css` : surface neutre, aucune ombre, texte en couleur courante, icône pleine par état (cercle, octogone, triangle), mot de l'état caché pour les lecteurs d'écran, contour plein de 2 px pour l'erreur. Structure du guide : titre qui décrit la situation (style de titre, pas du gras de phrase), texte, boutons (un principal, un secondaire) ; résumé d'erreurs en h2 avec liens vers les champs. Textes de la page `/test` pris dans le guide (échec d'envoi, succès, vidéo qui ne se charge pas, résumé), à la place des textes provisoires. Icônes `status-error`, `status-success`, `status-warning` dans `sprite.svg` (remplacent `alert`). `tokens.css` : jetons `--error-bg`, `--success-bg`, `--warning-bg` supprimés (aux trois endroits), `--warning` clair passé à `#b45309`. Vérifié en local (Chromium) : 0 FAIL à l'audit, zéro erreur console, aucun défilement horizontal à 360 et 1440 px (clair et sombre, section `.on-dark` comprise), texte 16,2:1 et plus, icônes 4,3:1 et plus, liens et boutons 4,6:1 et plus, zones cliquables d'au moins 44 px. Non vérifié : annonce par un lecteur d'écran (palier 5). À noter : le guide prévoit le succès d'envoi comme page distincte (`/merci`) et ne définit aucun message d'avertissement ; ces deux états existent pour la palette (direction artistique §7.1). Reste : validation à l'œil par la personne.
+
+- 2026-10-20 (palier 1) : arborescence, `tokens.css` (jetons, palette étendue, thème clair et sombre à deux endroits, commentés en tête), `fonts.css`, `base.css`, `button.css`, en-tête, pied de page sombre, accueil réduit au titre et à sa phrase, banc d'essai `/test`. Vérifié en local : 0 FAIL à l'audit, zéro erreur console, aucune requête externe, aucun défilement horizontal à 360 et 1440 px (clair et sombre), polices chargées, lien d'évitement au premier Tab. Aucun hexadécimal hors `tokens.css` dans les CSS.
+
+- 2026-10-20 : lecture du workspace (10 documents, preuves, icônes) et du skill. Verdict : documentation suffisante pour construire ; les points ouverts sont des décisions techniques et des preuves à venir, pas des documents à écrire.

@@ -1,0 +1,122 @@
+/*
+  Messages d'état : erreur, succès, avertissement.
+  Sources : guide Voix, UX et microtexte (sections « Messages d'erreur », « États de l'envoi »,
+  « Messages du système ») et direction artistique (§4.3, §6). Références d'interface relevées
+  sur GOV.UK, Primer (GitHub), Geist (Vercel) et Carbon.
+
+  Principes :
+  - Aucun fond teinté, aucune ombre : le message pose sur la surface neutre du site (--surface).
+  - Le texte garde la couleur du texte courant ; la couleur n'habille jamais la phrase.
+  - L'état est porté par une icône pleine dont la silhouette change (cercle, octogone, triangle),
+    jamais par la couleur seule (WCAG 1.4.1). Pour les lecteurs d'écran, le mot de l'état est écrit
+    en texte caché au début du titre (« Erreur : », « Succès : », « Avertissement : »).
+  - L'erreur a en plus un contour plein de 2 px (les autres états : filet de 1 px).
+  - Un message dit ce qui s'est passé (le titre), ce que la personne peut faire (le texte) et où
+    le faire (les boutons). Le titre décrit la situation, jamais « Erreur » seul.
+  - Un seul bouton principal par message, avec un secondaire de même taille au plus.
+
+  HTML, message avec titre, texte et actions :
+    <div class="notice notice--error" role="alert">
+      <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+      <div class="notice__body">
+        <h3 class="notice__title"><span class="visually-hidden">Erreur : </span>L’envoi n’a pas abouti.</h3>
+        <p class="notice__text">Vos réponses sont conservées. …</p>
+        <div class="notice__actions">
+          <button type="button" class="btn btn--primary btn--block-mobile">Réessayer l’envoi</button>
+          <a class="btn btn--secondary btn--block-mobile" href="…">M’écrire par e-mail</a>
+        </div>
+      </div>
+    </div>
+  Résumé des erreurs d'un formulaire : même composant, le titre est un h2 avec tabindex="-1" (le focus
+  s'y place), suivi de <ul class="notice__list"> dont chaque <li> est un lien vers son champ.
+  Icônes (icons/sprite.svg) : status-error, status-success, status-warning.
+  Rôles : role="alert" pour l'erreur, role="status" pour le succès et l'avertissement. Un lecteur
+  d'écran n'annonce que ce qui apparaît : insérer le message avec son rôle déjà posé.
+  Niveau du titre : à adapter à la page (h2 ou h3), le style vient de la classe.
+*/
+
+.notice {
+  --notice-accent: var(--text-muted);   /* surchargé par chaque état */
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  max-width: 40rem;
+  margin: 0 0 var(--space-3);
+  padding: var(--space-4);
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-m);
+}
+
+.notice__icon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  /* Centre l'icône sur la première ligne du titre */
+  margin-top: calc((var(--step-h3) * var(--leading-h3) - 1.5rem) / 2);
+  color: var(--notice-accent);   /* la forme pleine */
+  stroke: var(--surface);        /* le signe, en creux : même couleur que le fond du message */
+  fill: none;
+}
+
+.notice__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Titre : style de titre (Manrope 800, échelle des sous-titres), pas du gras de phrase */
+.notice__title {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  font-size: var(--step-h3);
+  line-height: var(--leading-h3);
+}
+
+.notice__text {
+  margin: 0;
+}
+
+.notice__title + .notice__list {
+  margin-top: var(--space-3);
+}
+
+.notice__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notice__list li {
+  max-width: none;
+  margin: 0;
+}
+
+.notice__list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
+}
+
+.notice__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.notice--error {
+  --notice-accent: var(--error);
+  padding: calc(var(--space-4) - 1px);   /* le contour de 2 px ne change pas la taille du contenu */
+  border-width: 2px;
+  border-color: var(--error);
+}
+
+.notice--success {
+  --notice-accent: var(--success);
+}
+
+.notice--warning {
+  --notice-accent: var(--warning);
+}

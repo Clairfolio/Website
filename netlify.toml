@@ -1,0 +1,4 @@
+# Configuration Netlify : seul le dossier site/ est publié.
+# branding/ (documents, preuves) et tools/ ne sont jamais en ligne.
+[build]
+  publish = "site"

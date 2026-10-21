@@ -1,0 +1,73 @@
+/*
+  Pied de page : section sombre (classe .on-dark posée dans le HTML).
+  Groupes titrés, puis une ligne légale (guide Voix, section « Le pied de page »).
+*/
+
+.site-footer {
+  background: var(--bg);
+  color: var(--text);
+  border-top: 1px solid var(--border-subtle);   /* sépare le pied de page de l'appel final, sombre lui aussi */
+  padding-block: var(--space-7) var(--space-6);
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 40em) {
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+@media (min-width: 64em) {
+  .site-footer__grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+  }
+}
+
+.site-footer .brand {
+  color: var(--text);
+}
+
+.site-footer__tagline {
+  margin-top: var(--space-3);
+  font-size: var(--step-small);
+  line-height: var(--leading-small);
+}
+
+.site-footer__title {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  font-size: var(--step-body);
+  line-height: var(--leading-h3);
+}
+
+.site-footer__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
+  color: var(--text);
+}
+
+.site-footer__list a:hover {
+  color: var(--link-hover);
+}
+
+.site-footer__legal {
+  max-width: none;
+  margin: var(--space-6) 0 0;
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border-subtle);
+  font-size: var(--step-small);
+  line-height: var(--leading-small);
+}

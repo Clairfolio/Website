@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le cas Clara : avant, après, mesures · Clairfolio</title>
+  <meta name="description" content="Le portfolio d’une game designer, avant et après : cinq décisions expliquées, des mesures datées et ce qui reste à améliorer.">
+  <meta name="theme-color" content="#080f22">
+  <!-- Domaine PROVISOIRE (nom du site Netlify à confirmer). Un seul remplacement global le moment venu : voir PROGRESSION.md. -->
+  <link rel="canonical" href="https://clairfolio.netlify.app/cas-clara">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Ordre des feuilles : tokens (jetons) avant tout le reste ; fonts avant base ; les composants en dernier. -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/button.css">
+  <link rel="stylesheet" href="styles/site-header.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/case.css">
+  <link rel="stylesheet" href="styles/site-footer.css">
+  <noscript><link rel="stylesheet" href="styles/no-js.css"></noscript>
+  <script src="js/nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+        <span class="brand-name">Clairfolio</span>
+      </a>
+      <div class="site-header__actions">
+        <a class="btn btn--primary btn--compact" href="commencer">Commencer</a>
+        <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span class="menu-toggle__label">Menu</span></button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Principale">
+        <ul>
+          <li><a href="cas-clara" aria-current="page">Le cas Clara</a></li>
+          <li><a href="tarifs">Tarifs</a></li>
+          <li><a href="a-propos">À propos</a></li>
+          <li class="site-nav__cta"><a class="btn btn--primary btn--compact" href="commencer">Commencer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Bloc 1 : qui est Clara -->
+    <section class="section page-head" aria-labelledby="titre">
+      <div class="container">
+        <h1 id="titre">Le cas Clara&nbsp;: un portfolio refait pour la servir.</h1>
+        <p class="page-head__lead">Clara Cahours de Virgile est game designer, avec un intérêt pour le level design et le narrative design. Elle cherche un stage en game design du 20&nbsp;juin au 31&nbsp;août 2027. Elle a donné son accord pour que son portfolio soit montré.</p>
+        <p><a class="link-action" href="https://claracahours.vercel.app/" target="_blank" rel="noopener">Voir le nouveau portfolio de Clara
+            <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+            <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a></p>
+      </div>
+    </section>
+
+    <!-- Bloc 2 : l'avant -->
+    <section class="section section--tint" id="avant" aria-labelledby="avant-titre">
+      <div class="container proof">
+        <div class="proof__text">
+          <h2 id="avant-titre">Avant&nbsp;: ce que le site demandait.</h2>
+          <p>Son ancien portfolio était fait avec un outil de création de sites. Ce n’était pas un mauvais site&nbsp;: c’était le sien, avec ses moyens. Mais ses projets étaient peu mis en valeur.</p>
+          <p>Sur téléphone, voici ce que voit un visiteur&nbsp;: le nom de Clara, «&nbsp;Bienvenue dans mon univers&nbsp;!&nbsp;», puis deux consignes&nbsp;: «&nbsp;À consulter de préférence sur ordinateur&nbsp;» et «&nbsp;Ctrl&nbsp;+&nbsp;Molette pour zoomer&nbsp;».</p>
+          <p>Le reste du site&nbsp;: tout sur une seule page, très longue&nbsp;; des vidéos qui restent cachées tant que les cookies ne sont pas acceptés&nbsp;; plus de 180&nbsp;images, aux noms illisibles, avec des doublons et sans ordre.</p>
+          <p><a class="link-action" href="https://clara-cahours-de-virgile.jimdosite.com/" target="_blank" rel="noopener">Voir l’ancien portfolio de Clara
+            <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+            <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a></p>
+        </div>
+        <div class="phones phones--proof">
+          <figure>
+            <img src="images/cas-clara/avant-600.webp" srcset="images/cas-clara/avant-600.webp 600w, images/cas-clara/avant.webp 1175w" sizes="(min-width: 48em) 17.5rem, 70vw" width="1175" height="2478" loading="lazy" alt="Ancien portfolio de Clara sur téléphone : sous son nom, un message demande de le consulter sur ordinateur et de zoomer avec Ctrl + molette.">
+            <figcaption>Avant. Capture sur téléphone Android (Honor), le 16 octobre 2026.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloc 3 : les cinq décisions -->
+    <section class="section" id="decisions" aria-labelledby="decisions-titre">
+      <div class="container decisions">
+        <h2 id="decisions-titre">Cinq décisions. Pourquoi, et ce que ça change.</h2>
+        <h3>Le CV, le contact et LinkedIn, dans le site</h3>
+        <p><strong>Ce que j’ai décidé.</strong> Mettre le CV, un moyen de contact et le lien vers son LinkedIn directement dans le portfolio.</p>
+        <p><strong>Pourquoi.</strong> Un recruteur qui reçoit un e-mail ouvre souvent le portfolio directement, sans passer par LinkedIn ni par le CV. S’il doit aller chercher le CV ailleurs, il peut ne pas revenir. Au début, je n’avais pas intégré le CV&nbsp;: c’est en y pensant que j’ai corrigé.</p>
+        <p><strong>Ce que ça change.</strong> Un visiteur trouve le CV en 4&nbsp;secondes et un contact en 7 (un test, <a href="#mesures">voir les mesures</a>), contre une recherche sans résultat après 3&nbsp;minutes sur l’ancien site.</p>
+        <h3>Les projets en jaquettes, dès l’accueil</h3>
+        <p><strong>Ce que j’ai décidé.</strong> Présenter les projets sous forme de jaquettes de jeux, visibles dès l’ouverture du site.</p>
+        <p><strong>Pourquoi.</strong> Clara est game designer&nbsp;: la jaquette fait le lien entre son métier et son site. Elle donne accès aux projets tout de suite, et elle invite à descendre dans la page.</p>
+        <p><strong>Ce que ça change.</strong> On peut ouvrir un projet dès le premier écran.</p>
+        <h3>Des cartes ni trop pleines, ni trop vides</h3>
+        <p><strong>Ce que j’ai décidé.</strong> Faire de chaque jaquette une carte qui dit ce qu’est le projet (son type), le rôle de Clara et, quand il y en a, des chiffres. Le détail est sur la page du projet. Partout où un projet est nommé (cartes, titres, frise de son parcours), toucher le nom ouvre sa page.</p>
+        <p><strong>Pourquoi.</strong> Avec les jaquettes seules, les recruteurs voyaient les projets sans voir ce qu’ils devaient voir&nbsp;: c’était trop, ou trop peu. Mon choix est un compromis&nbsp;: assez pour savoir si on veut en voir plus, pas assez pour encombrer l’accueil.</p>
+        <p><strong>Ce que ça change.</strong> Un visiteur sait en un regard ce qu’a fait Clara sur chaque projet, et peut entrer dans celui qui l’intéresse, d’où qu’il vienne dans la page.</p>
+        <h3>Les autres travaux rangés à part</h3>
+        <p><strong>Ce que j’ai décidé.</strong> Ranger les travaux additionnels (par exemple des analyses de jeux vidéo) dans des catégories&nbsp;: un titre, une icône, un court descriptif, et un bouton du type «&nbsp;Découvrir…&nbsp;».</p>
+        <p><strong>Pourquoi.</strong> Clara voulait aussi montrer ces travaux. Or, d’après un message qu’elle m’a transmis, des recruteurs ne voyaient pas bien ce qu’elle présentait par rapport au poste visé et se perdaient dans son profil. Nous avons compris que ces travaux pouvaient faire concurrence aux projets. Les ranger à part garde les projets au premier plan, sans cacher le reste.</p>
+        <p><strong>Ce que ça change.</strong> Les projets restent ce qu’on voit d’abord&nbsp;; les autres travaux restent accessibles à qui les cherche.</p>
+        <h3>Des images triées et adaptées à chaque écran</h3>
+        <p><strong>Ce que j’ai décidé.</strong> Trier plus de 180&nbsp;images (retirer les doublons, renommer, mettre dans l’ordre), puis préparer chaque image en plusieurs tailles&nbsp;: téléphone, tablette, ordinateur.</p>
+        <p><strong>Pourquoi.</strong> Charger une image d’ordinateur sur un téléphone était un des problèmes de départ&nbsp;: la page est plus lente et plus lourde pour rien.</p>
+        <p><strong>Ce que ça change.</strong> Un téléphone ne charge que l’image faite pour lui.</p>
+        <h3>Et aussi</h3>
+        <p>Le site existe en français et en anglais. Le thème clair ou sombre suit celui du navigateur. Les polices sont hébergées avec le site, et les icônes sont en SVG (nettes à toutes les tailles, légères). Un lien partagé affiche une illustration et un descriptif. Les moteurs de recherche reçoivent des données structurées et une adresse de référence (canonical).</p>
+        <p class="small muted">Je n’écris aucun effet chiffré pour cette liste&nbsp;: tant qu’il n’est pas mesuré, c’est un choix, pas une preuve.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 4 : l'après -->
+    <section class="section section--tint" id="apres" aria-labelledby="apres-titre">
+      <div class="container proof">
+        <div class="proof__text">
+          <h2 id="apres-titre">Après&nbsp;: le même téléphone.</h2>
+          <p>On voit en un regard qui elle est (game designer), ce qui l’intéresse (level design, narrative design) et ce qu’elle cherche (un stage, avec les dates). Les projets, le CV et le contact sont à portée de pouce.</p>
+          <p>Le site existe aussi en anglais, et son thème clair ou sombre suit celui du navigateur.</p>
+          <p><a class="link-action" href="https://claracahours.vercel.app/" target="_blank" rel="noopener">Voir le nouveau portfolio de Clara
+            <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+            <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a></p>
+        </div>
+        <div class="phones phones--proof">
+          <figure>
+            <img src="images/cas-clara/apres-600.webp" srcset="images/cas-clara/apres-600.webp 600w, images/cas-clara/apres.webp 1175w" sizes="(min-width: 48em) 17.5rem, 70vw" width="1175" height="2478" loading="lazy" alt="Nouveau portfolio de Clara sur téléphone : sa photo, son nom, son métier de game designer, et la période de stage recherchée, du 20 juin au 31 août 2027.">
+            <figcaption>Après. Capture sur téléphone Android (Honor), le 16 octobre 2026. Les outils de développement du navigateur donnent le même rendu.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloc 5 : les mesures (le retour de Clara n'est pas publié : il n'existe pas encore) -->
+    <section class="section" id="mesures" aria-labelledby="mesures-titre">
+      <div class="container mesures">
+        <h2 id="mesures-titre">Ce que j’ai mesuré.</h2>
+        <p><strong>Les scores.</strong> Rapports PageSpeed Insights du 16 octobre 2026 (nouveau site&nbsp;: 21&nbsp;h&nbsp;56&nbsp;; ancien site&nbsp;: 22&nbsp;h&nbsp;06), sur la page d’accueil de chaque site. En mobile, l’outil simule un téléphone Moto G Power sur une connexion 4G lente.</p>
+
+        <table class="measures measures--wide">
+          <caption class="visually-hidden">Scores et temps mesurés sur mobile</caption>
+          <thead><tr><th scope="col">Sur mobile</th><th scope="col">Ancien site</th><th scope="col">Nouveau site</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Performance (score)</th><td>53&nbsp;*</td><td>98</td></tr>
+            <tr><th scope="row">Accessibilité (score)</th><td>96</td><td>100</td></tr>
+            <tr><th scope="row">Bonnes pratiques (score)</th><td>100</td><td>100</td></tr>
+            <tr><th scope="row">Référencement (score)</th><td>92</td><td>100</td></tr>
+            <tr><th scope="row">Temps avant l’affichage du contenu principal</th><td>9,3&nbsp;s</td><td>1,7&nbsp;s</td></tr>
+            <tr><th scope="row">Temps avant le premier affichage</th><td>7,1&nbsp;s</td><td>0,9&nbsp;s</td></tr>
+            <tr><th scope="row">Vitesse d’affichage (Speed Index)</th><td>7,1&nbsp;s</td><td>4,1&nbsp;s</td></tr>
+          </tbody>
+        </table>
+        <p class="small muted">* 53 sur le rapport joint&nbsp;; l’ancien site a donné entre 53 et 66 selon les passages (la fenêtre de cookies, détectée ou non par l’outil, change le résultat). Le nouveau site a donné 98 à chaque passage.</p>
+
+        <table class="measures measures--wide">
+          <caption class="visually-hidden">Scores mesurés sur ordinateur</caption>
+          <thead><tr><th scope="col">Sur ordinateur</th><th scope="col">Ancien site</th><th scope="col">Nouveau site</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Performance (score)</th><td>93</td><td>100</td></tr>
+            <tr><th scope="row">Accessibilité (score)</th><td>96</td><td>100</td></tr>
+            <tr><th scope="row">Bonnes pratiques (score)</th><td>100</td><td>100</td></tr>
+            <tr><th scope="row">Référencement (score)</th><td>92</td><td>100</td></tr>
+          </tbody>
+        </table>
+
+        <p>L’ancien site était déjà correct sur l’accessibilité, les bonnes pratiques et le référencement. Là où l’écart est net, c’est la vitesse sur mobile. Un score d’accessibilité de 100 ne veut pas dire que le site est accessible à tous&nbsp;: l’outil ne vérifie qu’une partie des critères.</p>
+
+        <p><strong>Ce qui reste à améliorer sur le nouveau site, en mobile&nbsp;:</strong> la vitesse d’affichage (Speed Index, 4,1&nbsp;s), des ressources qui bloquent l’affichage (environ 730&nbsp;ms), des images qui pourraient être plus légères (environ 92&nbsp;Ko) et des images sans largeur ni hauteur déclarées.</p>
+
+        <h3 id="rapports">Les rapports, à télécharger</h3>
+        <p>Je ne les affiche pas en entier&nbsp;: le tableau ci-dessus donne les chiffres, et les images sont à télécharger.</p>
+        <ul class="link-list">
+          <li><a class="link-action" href="images/cas-clara/rapports/pagespeed-ancien-mobile.webp" download>Rapport PageSpeed de l’ancien site sur mobile (image WebP, 166&nbsp;Ko)</a></li>
+          <li><a class="link-action" href="images/cas-clara/rapports/pagespeed-ancien-ordinateur.webp" download>Rapport PageSpeed de l’ancien site sur ordinateur (image WebP, 287&nbsp;Ko)</a></li>
+          <li><a class="link-action" href="images/cas-clara/rapports/pagespeed-nouveau-mobile.webp" download>Rapport PageSpeed du nouveau site sur mobile (image WebP, 203&nbsp;Ko)</a></li>
+          <li><a class="link-action" href="images/cas-clara/rapports/pagespeed-nouveau-ordinateur.webp" download>Rapport PageSpeed du nouveau site sur ordinateur (image WebP, 274&nbsp;Ko)</a></li>
+        </ul>
+
+        <h3>Trouver le CV et un moyen de contact</h3>
+        <p>Le 16 octobre 2026, à 10&nbsp;h&nbsp;15, une personne a testé les deux sites sur tablette, l’ancien en premier. Sur l’ancien, elle a arrêté d’elle-même après 3&nbsp;minutes de recherche, sans avoir trouvé ni le CV ni un moyen de contacter Clara. Sur le nouveau, elle a trouvé le CV en 4&nbsp;secondes et un moyen de contact en 7, en comptant depuis l’apparition de la page.</p>
+        <p><strong>C’est un seul test, avec une seule personne.</strong> Une observation, pas une statistique. Comme elle avait déjà vu l’ancien site, elle savait ce qu’elle cherchait en arrivant sur le nouveau&nbsp;: cela joue en faveur du nouveau. Je le refais avec d’autres personnes, en tirant l’ordre au sort, et je mettrai cette partie à jour.</p>
+        <p class="small muted">PageSpeed affiche aussi une ligne «&nbsp;Navigation agentique&nbsp;» (ancien site&nbsp;: 1 sur 2, nouveau&nbsp;: 2 sur 2). C’est une catégorie expérimentale de l’outil, qui compte des vérifications réussies et pas un score sur 100&nbsp;; je ne la mets pas dans les tableaux.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 7 : ce que ça a demandé, honnêtement -->
+    <section class="section section--tint" aria-labelledby="demande">
+      <div class="container">
+        <h2 id="demande">Ce projet allait plus loin que l’offre standard.</h2>
+        <p>Je suis allé de la refonte jusqu’à la recréation du site, avec des éléments sur mesure. Les textes viennent de Clara&nbsp;: je ne rédige pas à la place de la personne. Je me suis occupé des titres, et nous avons relu et ajusté le tout ensemble.</p>
+        <p><strong>Pour un cas comparable (de 121 à 200&nbsp;images à trier), l’offre standard donne&nbsp;:</strong> Essentiel 189&nbsp;€, Recommandé 229&nbsp;€, Complet 269&nbsp;€, sans la rédaction ni les éléments sur mesure.</p>
+        <p><a class="link-action" href="tarifs">Voir les tarifs</a></p>
+      </div>
+    </section>
+
+    <!-- Bloc 8 : appel à l'action (section sombre) -->
+    <section class="section section--dark on-dark" aria-labelledby="final">
+      <div class="container">
+        <h2 id="final">Votre travail est bon. Montrons-le.</h2>
+        <div class="actions">
+          <a class="btn btn--primary btn--block-mobile" href="commencer?site=non">Créer mon portfolio</a>
+          <a class="btn btn--secondary btn--block-mobile" href="commencer?site=oui">Refondre mon portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="./">
+            <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+            <span class="brand-name">Clairfolio</span>
+          </a>
+          <p class="site-footer__tagline">Votre travail mérite d’être vu.</p>
+        </div>
+        <nav aria-labelledby="footer-service">
+          <h2 class="site-footer__title" id="footer-service">Le service</h2>
+          <ul class="site-footer__list">
+            <li><a href="tarifs">Tarifs</a></li>
+            <li><a href="cas-clara">Le cas Clara</a></li>
+            <li><a href="commencer">Commencer</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-confiance">
+          <h2 class="site-footer__title" id="footer-confiance">Confiance</h2>
+          <ul class="site-footer__list">
+            <li><a href="a-propos">À propos</a></li>
+            <li><a href="conditions-de-vente">Conditions de vente</a></li>
+            <li><a href="mentions-legales">Mentions légales</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-contact">
+          <h2 class="site-footer__title" id="footer-contact">Me contacter</h2>
+          <ul class="site-footer__list">
+            <li><a href="mailto:pro.fgamer768@gmail.com">pro.fgamer768@gmail.com</a></li>
+            <li>
+              <a href="https://www.instagram.com/clairfolioweb/" target="_blank" rel="noopener">Instagram&nbsp;: @clairfolioweb
+                <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+                <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <p class="site-footer__legal">© 2026 Clairfolio. Site édité par FGAMER768.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/*
+  Sections communes à toutes les pages : rythme vertical, fonds (neutre, teinté, sombre), boutons en ligne,
+  listes, preuve avec téléphone, tableau de mesures. Les blocs propres à l'accueil sont dans home.css.
+  Aucune couleur en dur : tout passe par tokens.css. Aucune ombre (direction artistique §6).
+*/
+
+.section {
+  padding-block: var(--space-7);
+}
+
+@media (min-width: 48em) {
+  .section {
+    padding-block: var(--space-8);
+  }
+}
+
+/* Section qui suit directement une section de même fond : pas de double marge */
+.section--flush-top {
+  padding-top: 0;
+}
+
+.section--tint {
+  background: var(--surface);
+}
+
+.section--dark {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.section > .container > :last-child {
+  margin-bottom: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+/* Listes numérotées : le gras ouvre chaque élément, un espace les sépare */
+.list-spaced {
+  padding-left: 1.5rem;
+}
+
+.list-spaced li + li {
+  margin-top: var(--space-3);
+}
+
+.link-list {
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link-list li {
+  margin: 0;
+}
+
+.link-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
+}
+
+/* Bloc 3 : la preuve responsive */
+.proof {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.phones--proof {
+  gap: var(--space-4);
+}
+
+.phones--proof figure {
+  margin: 0;
+}
+
+.phones--proof img {
+  width: clamp(8rem, 42vw, 17.5rem);
+}
+
+.phones--proof figcaption {
+  max-width: 17.5rem;
+  margin-top: var(--space-3);
+  color: var(--text-muted);
+  font-size: var(--step-small);
+  line-height: var(--leading-small);
+}
+
+@media (min-width: 48em) {
+  .proof {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-7);
+  }
+}
+
+/* Bloc 6 : les mesures (un vrai tableau, avec ses en-têtes) */
+.measures {
+  width: 100%;
+  margin: 0 0 var(--space-4);
+  border-collapse: collapse;
+}
+
+.measures th,
+.measures td {
+  padding: var(--space-3) var(--space-3) var(--space-3) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: left;
+  vertical-align: top;
+}
+
+.measures thead th {
+  border-bottom-width: 2px;
+  font-weight: var(--weight-strong);
+}
+
+.measures tbody th {
+  font-weight: var(--weight-body);
+}
+
+.measures td:last-child {
+  font-weight: var(--weight-strong);
+}
+
+/* Petit écran : texte de 14 px et marges réduites pour que le tableau tienne sans défiler */
+@media (max-width: 30em) {
+  .measures {
+    font-size: var(--step-small);
+    line-height: var(--leading-small);
+  }
+
+  .measures th,
+  .measures td {
+    padding-right: var(--space-2);
+  }
+}
+
+@media (min-width: 48em) {
+  .measures {
+    max-width: 48rem;
+  }
+}

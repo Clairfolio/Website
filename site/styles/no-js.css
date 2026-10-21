@@ -1,0 +1,3 @@
+/* Sans JavaScript : la navigation reste visible et le bouton « Menu » (inutile) disparaît. */
+.site-nav { display: block !important; }
+.menu-toggle { display: none !important; }

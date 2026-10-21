@@ -1,0 +1,22 @@
+/*
+  Polices auto-hébergées (aucun domaine externe). Fichiers variables WOFF2, sous-ensemble latin.
+  Licences : fonts/manrope/LICENSE.txt et fonts/inter/LICENSE.txt (SIL Open Font License 1.1).
+  Les chemins sont relatifs à ce fichier CSS.
+  Usage : Manrope 800 pour le nom et les titres ; Inter 400 pour le texte, Inter 600 pour le gras et les boutons.
+*/
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/manrope/manrope-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter/inter-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

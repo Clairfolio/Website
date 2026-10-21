@@ -1,0 +1,69 @@
+/*
+  Premier écran de l'accueil : la promesse, la phrase, les deux actions, le prix, et la preuve
+  (les deux téléphones : le même portfolio avant et après). Les captures ont déjà le cadre du
+  téléphone et leurs coins transparents : aucun cadre ni ombre ajoutés.
+  Sous 900 px de haut, le bloc se compacte pour que tout reste visible sans défiler.
+*/
+
+.hero {
+  padding-block: var(--space-6) var(--space-7);
+}
+
+.hero__grid {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.hero__lead {
+  font-size: var(--step-lead);
+  max-width: 40rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.hero__price {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.hero__visual {
+  margin: 0;
+}
+
+.hero__visual figcaption {
+  margin-top: var(--space-3);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--step-small);
+  line-height: var(--leading-small);
+}
+
+.phones {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.hero .phones img {
+  width: clamp(7rem, 38vw, 12rem);
+}
+
+@media (min-width: 60em) {
+  .hero__grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-7);
+  }
+}
+
+@media (min-width: 60em) and (max-height: 56.25em) {
+  .hero {
+    padding-block: var(--space-5) var(--space-6);
+  }
+}

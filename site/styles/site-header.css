@@ -1,0 +1,158 @@
+/*
+  En-tête : symbole (image décorative, alt vide) et nom en texte (direction artistique §3.4),
+  navigation en noms courts, bouton « Commencer » toujours visible (guide Voix, « L'en-tête »).
+  Téléphone : « Commencer » et « Menu » à droite, la liste s'ouvre dessous.
+  Ordinateur : symbole et nom, trois liens, « Commencer ». Le bouton existe deux fois dans le code,
+  une seule version est affichée à la fois (l'autre est en display: none : ni lue ni atteinte au clavier).
+*/
+
+.site-header {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-3);
+  min-height: 4.5rem;
+  padding-block: var(--space-2);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: var(--target);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+
+.menu-toggle {
+  min-height: var(--target);
+  padding: 0 var(--space-3);
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--border-control);
+  border-radius: var(--radius-m);
+  font-family: var(--font-body);
+  font-weight: var(--weight-strong);
+  font-size: var(--step-body);
+  cursor: pointer;
+}
+
+.menu-toggle:hover {
+  background: var(--surface);
+}
+
+.site-nav {
+  display: none;
+  flex-basis: 100%;
+}
+
+.site-nav.is-open {
+  display: block;
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0 0 var(--space-2);
+  list-style: none;
+}
+
+.site-nav li {
+  max-width: none;
+  margin: 0;
+}
+
+.site-nav a:not(.btn) {
+  display: flex;
+  align-items: center;
+  min-height: var(--target);
+  color: var(--text);
+  font-weight: var(--weight-strong);
+  text-decoration: none;
+}
+
+.site-nav a:not(.btn):hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Page courante : soulignée et annoncée (aria-current), jamais par la couleur seule */
+.site-nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.3em;
+}
+
+.site-nav__cta {
+  display: none;
+}
+
+@media (max-width: 30em) {
+  .brand img {
+    width: 2rem;
+    height: auto;
+  }
+
+  .brand {
+    gap: 0.5rem;
+  }
+
+  .brand-name {
+    font-size: 1.125rem;
+  }
+
+  .site-header__actions {
+    gap: 0.375rem;
+  }
+
+  .menu-toggle {
+    padding-inline: var(--space-2);
+    font-size: 0.9375rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .site-header__actions {
+    display: none;
+  }
+
+  .site-nav {
+    display: block;
+    flex-basis: auto;
+    margin-left: auto;
+  }
+
+  .site-nav ul {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    padding: 0;
+  }
+
+  .site-nav__cta {
+    display: block;
+  }
+}

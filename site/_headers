@@ -1,0 +1,12 @@
+# En-têtes HTTP envoyés par Netlify (fichier lu à la racine du dossier publié).
+
+# DÉVELOPPEMENT : le site ne doit pas être indexé tant qu'il n'est pas prêt.
+# À RETIRER au palier 9 (mise en production), avec robots.txt.
+/*
+  X-Robots-Tag: noindex
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Les polices ne changent jamais d'adresse : cache long.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <symbol id="arrow-up-right" viewBox="0 0 24 24">
+    <path d="M7 17 17 7M8 7h9v9"/>
+  </symbol>
+
+  <!--
+    Icônes d'état : une silhouette pleine par état (cercle, octogone, triangle), pour que le sens
+    ne dépende jamais de la couleur seule. La forme prend la couleur du texte courant (color),
+    le signe à l'intérieur prend la couleur de contour (stroke) : le CSS les fixe, voir notice.css.
+  -->
+  <symbol id="status-success" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="currentColor" stroke="none"/>
+    <path d="m7.7 12.4 3 3 5.7-6.3" fill="none" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="status-error" viewBox="0 0 24 24">
+    <path d="M9.1 2.9h5.8l6.2 6.2v5.8l-6.2 6.2H9.1l-6.2-6.2V9.1z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="m9.2 9.2 5.6 5.6M14.8 9.2l-5.6 5.6" fill="none" stroke-width="2.25" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="status-warning" viewBox="0 0 24 24">
+    <path d="M12 3.4 21.4 19.8H2.6z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M12 9.8v4.4M12 17.1v.01" fill="none" stroke-width="2.25" stroke-linecap="round"/>
+  </symbol>
+</svg>
