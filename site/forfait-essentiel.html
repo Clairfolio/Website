@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Essentiel, 89 € : un site complet · Clairfolio</title>
+  <meta name="description" content="Un site complet, prêt à publier : pages projets, images adaptées à tous les écrans, accessibilité de base, mise en ligne et un tour de corrections.">
+  <meta name="theme-color" content="#080f22">
+  <!-- Domaine PROVISOIRE (nom du site Netlify à confirmer). Un seul remplacement global le moment venu : voir PROGRESSION.md. -->
+  <link rel="canonical" href="https://clairfolio.netlify.app/forfait-essentiel">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Ordre des feuilles : tokens (jetons) avant tout le reste ; fonts avant base ; les composants en dernier. -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/button.css">
+  <link rel="stylesheet" href="styles/site-header.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/plan.css">
+  <link rel="stylesheet" href="styles/site-footer.css">
+  <noscript><link rel="stylesheet" href="styles/no-js.css"></noscript>
+  <script src="js/nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+        <span class="brand-name">Clairfolio</span>
+      </a>
+      <div class="site-header__actions">
+        <a class="btn btn--primary btn--compact" href="commencer">Commencer</a>
+        <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span class="menu-toggle__label">Menu</span></button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Principale">
+        <ul>
+          <li><a href="cas-clara">Le cas Clara</a></li>
+          <li><a href="tarifs">Tarifs</a></li>
+          <li><a href="a-propos">À propos</a></li>
+          <li class="site-nav__cta"><a class="btn btn--primary btn--compact" href="commencer">Commencer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="plan-page">
+    <!-- En-tête : retour, titre, prix, action -->
+    <section class="section page-head" aria-labelledby="titre">
+      <div class="container">
+        <a class="back-link" href="tarifs">Retour aux tarifs</a>
+        <h1 id="titre">Essentiel&nbsp;: un site complet, prêt à publier.</h1>
+        <p class="plan-head__price">89&nbsp;€</p>
+        <p class="plan-head__for">Pour se lancer.</p>
+        <p class="page-head__lead">Un site complet, prêt à publier&nbsp;: pages projets, images adaptées à tous les écrans, accessibilité de base, mise en ligne et un tour de corrections.</p>
+        <div class="plan-head__actions">
+          <a class="btn btn--primary btn--block-mobile" href="commencer?forfait=essentiel">Choisir Essentiel</a>
+          <a class="link-action" href="tarifs">Voir les tarifs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ce qui est inclus -->
+    <section class="section section--tint" aria-labelledby="inclus">
+      <div class="container">
+        <h2 id="inclus">Ce que vous recevez</h2>
+        <table class="measures">
+          <caption class="visually-hidden">Ce qui est inclus dans le forfait Essentiel</caption>
+          <thead><tr><th scope="col">Ce que comprend le forfait</th><th scope="col">Essentiel</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Site complet&nbsp;: structure, une page par projet, plan du site, référencement de base</th><td>Inclus</td></tr>
+            <tr><th scope="row">Images compressées et adaptées à tous les écrans</th><td>Inclus</td></tr>
+            <tr><th scope="row">Accessibilité de base&nbsp;: textes alternatifs, contrastes, clavier, titres structurés</th><td>Inclus</td></tr>
+            <tr><th scope="row">Mise en ligne et remise de tous les accès</th><td>Inclus</td></tr>
+            <tr><th scope="row">Un tour de corrections</th><td>Inclus</td></tr>
+            <tr><th scope="row">Suivi après livraison</th><td>Non inclus</td></tr>
+            <tr><th scope="row">Demandes de modification pendant le suivi</th><td>Non inclus</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Refonte : supplément de tri -->
+    <section class="section" aria-labelledby="refonte">
+      <div class="container">
+        <h2 id="refonte">Vous avez déjà un site&nbsp;: je récupère et je trie vos images</h2>
+        <p>Récupérer des images, retirer les doublons, les renommer, les mettre dans l’ordre et en bonne qualité prend du temps. Le supplément dépend du nombre d’images.</p>
+        <table class="measures">
+          <caption class="visually-hidden">Prix de la refonte avec l’Essentiel, selon le nombre d’images à trier</caption>
+          <thead><tr><th scope="col">Images à trier</th><th scope="col">Supplément</th><th scope="col">Essentiel</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Jusqu’à 50</th><td>+&nbsp;30&nbsp;€</td><td>119&nbsp;€</td></tr>
+            <tr><th scope="row">De 51 à 120</th><td>+&nbsp;70&nbsp;€</td><td>159&nbsp;€</td></tr>
+            <tr><th scope="row">De 121 à 200</th><td>+&nbsp;100&nbsp;€</td><td>189&nbsp;€</td></tr>
+          </tbody>
+        </table>
+        <p>Au-delà de 200&nbsp;images&nbsp;: +&nbsp;100&nbsp;€, puis 0,50&nbsp;€ par image supplémentaire.</p>
+      </div>
+    </section>
+
+    <!-- Les étapes et l'acompte -->
+    <section class="section section--tint" aria-labelledby="etapes">
+      <div class="container">
+        <h2 id="etapes">Cinq étapes, de la demande à la remise du code.</h2>
+        <ol class="list-spaced">
+          <li><strong>Vous me contactez, je vous réponds sous 2&nbsp;jours ouvrés.</strong> Nous nous mettons d’accord sur le forfait, le prix, l’acompte et le délai. Vous confirmez par écrit.</li>
+          <li><strong>Vous versez l’acompte et vous m’envoyez vos contenus</strong>&nbsp;: images, textes, liens.</li>
+          <li><strong>Je construis votre site</strong> en 10&nbsp;jours ouvrés (15 pour une refonte), à partir du dossier complet et de l’acompte.</li>
+          <li><strong>Vous voyez une vidéo de votre site.</strong> Vous validez, ou vous demandez une correction.</li>
+          <li><strong>Vous payez le solde</strong>&nbsp;: je vous remets le code et tous les accès.</li>
+        </ol>
+        <h3>Acompte, selon votre situation</h3>
+        <table class="measures">
+          <caption class="visually-hidden">Montant de l’acompte avec l’Essentiel</caption>
+          <thead><tr><th scope="col">Votre situation</th><th scope="col">Acompte</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Création (30&nbsp;% du prix)</th><td>27&nbsp;€</td></tr>
+            <tr><th scope="row">Refonte, jusqu’à 50&nbsp;images (50&nbsp;%)</th><td>60&nbsp;€</td></tr>
+            <tr><th scope="row">Refonte, 51 à 120&nbsp;images (50&nbsp;%)</th><td>80&nbsp;€</td></tr>
+            <tr><th scope="row">Refonte, 121 à 200&nbsp;images (50&nbsp;%)</th><td>95&nbsp;€</td></tr>
+          </tbody>
+        </table>
+        <p class="small muted">Montants arrondis à l’euro supérieur. L’acompte se règle en direct avec moi, par virement ou en espèces contre reçu. Pas de plateforme de paiement.</p>
+      </div>
+    </section>
+
+    <!-- Votre site vous appartient -->
+    <section class="section" aria-labelledby="appartient">
+      <div class="container">
+        <h2 id="appartient">Votre site vous appartient</h2>
+        <p>Le code, l’hébergement et le nom de domaine sont à votre nom. Vous m’invitez sur votre dépôt le temps de la mission, et je ne garde pas les accès à votre place.</p>
+        <p>Je recommande Netlify, dont l’offre gratuite suffit pour un portfolio. À votre charge&nbsp;: le nom de domaine, et l’hébergement s’il dépasse l’offre gratuite.</p>
+      </div>
+    </section>
+
+    <!-- Ce qui n'est pas inclus -->
+    <section class="section section--flush-top" aria-labelledby="exclus">
+      <div class="container">
+        <h2 id="exclus">Ce qui n’est pas inclus</h2>
+        <p>La rédaction de vos textes, les éléments sur mesure (par exemple des clins d’œil interactifs), la maintenance au-delà du suivi prévu, et les rapports d’audience réguliers.</p>
+      </div>
+    </section>
+
+    <!-- Appel final (section sombre) -->
+    <section class="section section--dark on-dark" aria-labelledby="final">
+      <div class="container">
+        <h2 id="final">Sortez votre travail de l’ombre.</h2>
+        <div class="plan-head__actions">
+          <a class="btn btn--primary btn--block-mobile" href="commencer?forfait=essentiel">Choisir Essentiel</a>
+          <a class="link-action" href="tarifs">Voir les tarifs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="./">
+            <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+            <span class="brand-name">Clairfolio</span>
+          </a>
+          <p class="site-footer__tagline">Votre travail mérite d’être vu.</p>
+        </div>
+        <nav aria-labelledby="footer-service">
+          <h2 class="site-footer__title" id="footer-service">Le service</h2>
+          <ul class="site-footer__list">
+            <li><a href="tarifs">Tarifs</a></li>
+            <li><a href="cas-clara">Le cas Clara</a></li>
+            <li><a href="commencer">Commencer</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-confiance">
+          <h2 class="site-footer__title" id="footer-confiance">Confiance</h2>
+          <ul class="site-footer__list">
+            <li><a href="a-propos">À propos</a></li>
+            <li><a href="conditions-de-vente">Conditions de vente</a></li>
+            <li><a href="mentions-legales">Mentions légales</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-contact">
+          <h2 class="site-footer__title" id="footer-contact">Me contacter</h2>
+          <ul class="site-footer__list">
+            <li><a href="mailto:pro.fgamer768@gmail.com">pro.fgamer768@gmail.com</a></li>
+            <li>
+              <a href="https://www.instagram.com/clairfolioweb/" target="_blank" rel="noopener">Instagram&nbsp;: @clairfolioweb
+                <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+                <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <p class="site-footer__legal">© 2026 Clairfolio. Site édité par FGAMER768.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tarifs : trois forfaits dès 89 € · Clairfolio</title>
+  <meta name="description" content="Essentiel 89 €, Recommandé 129 €, Complet 169 €. Supplément de tri pour une refonte, acompte et délais : tout est détaillé avant de commencer.">
+  <meta name="theme-color" content="#080f22">
+  <!-- Domaine PROVISOIRE (nom du site Netlify à confirmer). Un seul remplacement global le moment venu : voir PROGRESSION.md. -->
+  <link rel="canonical" href="https://clairfolio.netlify.app/tarifs">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Ordre des feuilles : tokens (jetons) avant tout le reste ; fonts avant base ; les composants en dernier. -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/button.css">
+  <link rel="stylesheet" href="styles/site-header.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/tarifs.css">
+  <link rel="stylesheet" href="styles/site-footer.css">
+  <noscript><link rel="stylesheet" href="styles/no-js.css"></noscript>
+  <script src="js/nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+        <span class="brand-name">Clairfolio</span>
+      </a>
+      <div class="site-header__actions">
+        <a class="btn btn--primary btn--compact" href="commencer">Commencer</a>
+        <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span class="menu-toggle__label">Menu</span></button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Principale">
+        <ul>
+          <li><a href="cas-clara">Le cas Clara</a></li>
+          <li><a href="tarifs" aria-current="page">Tarifs</a></li>
+          <li><a href="a-propos">À propos</a></li>
+          <li class="site-nav__cta"><a class="btn btn--primary btn--compact" href="commencer">Commencer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Bloc 1 : en-tête -->
+    <section class="section page-head" aria-labelledby="titre">
+      <div class="container">
+        <h1 id="titre">Des tarifs clairs.</h1>
+        <p class="page-head__lead">Vous savez ce que vous payez et ce que vous recevez, avant de commencer.</p>
+        <p class="price-from">À partir de 89&nbsp;€.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 2 : voyez d'abord (avant/après seul : la vidéo de démonstration n'existe pas encore) -->
+    <section class="section section--tint" aria-labelledby="apercu">
+      <div class="container">
+        <h2 id="apercu">Voyez d’abord ce que ça donne</h2>
+        <p>Voici le portfolio de Clara, avant et après&nbsp;: un site sur une seule page, devenu un portfolio clair, avec une page par projet.</p>
+        <ul class="link-list">
+          <li><a class="link-action" href="https://clara-cahours-de-virgile.jimdosite.com/" target="_blank" rel="noopener">Voir l’ancien portfolio de Clara
+              <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+              <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a></li>
+          <li><a class="link-action" href="https://claracahours.vercel.app/" target="_blank" rel="noopener">Voir le nouveau portfolio de Clara
+              <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+              <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a></li>
+          <li><a class="link-action" href="cas-clara">Lire le cas de Clara</a></li>
+        </ul>
+        <p>Ce projet allait plus loin que l’offre standard (rédaction et éléments sur mesure). Ce qui est inclus dans chaque forfait est détaillé ci-dessous. Clara a donné son accord pour que son portfolio soit montré.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 3 : choix du parcours -->
+    <section class="section" aria-labelledby="parcours">
+      <div class="container">
+        <h2 id="parcours">Vous avez déjà un site&nbsp;?</h2>
+        <div class="paths">
+          <a class="path" href="#forfaits"><strong>Non, je pars de zéro</strong> Vous m’envoyez vos contenus, je construis votre portfolio.</a>
+          <a class="path" href="#refonte"><strong>Oui, je veux le refaire</strong> Je récupère vos contenus existants, je les trie et je reconstruis votre portfolio.</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloc 4 : les trois forfaits (création) -->
+    <section class="section section--flush-top" id="forfaits" aria-labelledby="forfaits-titre">
+      <div class="container">
+        <h2 id="forfaits-titre">Choisissez votre forfait</h2>
+        <ul class="tiers">
+        <li class="tier">
+          <div class="tier__head">
+            <h3 class="tier__name">Essentiel</h3>
+            <p class="tier__for">Pour se lancer.</p>
+            <p class="tier__lead">Un site complet, prêt à publier.</p>
+          </div>
+          <p class="tier__price">89&nbsp;€</p>
+          <ul class="tier__lines">
+            <li><span>Site complet&nbsp;: structure, une page par projet, plan du site, référencement de base</span> <strong>Inclus</strong></li>
+            <li><span>Images compressées et adaptées à tous les écrans</span> <strong>Inclus</strong></li>
+            <li><span>Accessibilité de base&nbsp;: textes alternatifs, contrastes, clavier, titres structurés</span> <strong>Inclus</strong></li>
+            <li><span>Mise en ligne et remise de tous les accès</span> <strong>Inclus</strong></li>
+            <li><span>Un tour de corrections</span> <strong>Inclus</strong></li>
+            <li><span>Suivi après livraison</span> <strong>Non inclus</strong></li>
+            <li><span>Demandes de modification pendant le suivi</span> <strong>Non inclus</strong></li>
+          </ul>
+          <div class="tier__actions">
+            <a class="btn btn--secondary" href="commencer?forfait=essentiel">Choisir Essentiel</a>
+            <a class="link-action" href="forfait-essentiel">En savoir plus sur l’Essentiel</a>
+          </div>
+        </li>
+        <li class="tier tier--featured">
+          <div class="tier__head">
+            <h3 class="tier__name">Recommandé</h3>
+            <p class="tier__for">Pour candidater.</p>
+            <p class="tier__lead">Ma recommandation&nbsp;: le site, avec 30&nbsp;jours de suivi.</p>
+          </div>
+          <p class="tier__price">129&nbsp;€</p>
+          <ul class="tier__lines">
+            <li><span>Site complet&nbsp;: structure, une page par projet, plan du site, référencement de base</span> <strong>Inclus</strong></li>
+            <li><span>Images compressées et adaptées à tous les écrans</span> <strong>Inclus</strong></li>
+            <li><span>Accessibilité de base&nbsp;: textes alternatifs, contrastes, clavier, titres structurés</span> <strong>Inclus</strong></li>
+            <li><span>Mise en ligne et remise de tous les accès</span> <strong>Inclus</strong></li>
+            <li><span>Un tour de corrections</span> <strong>Inclus</strong></li>
+            <li><span>Suivi après livraison</span> <strong>30&nbsp;jours</strong></li>
+            <li><span>Demandes de modification pendant le suivi</span> <strong>2</strong></li>
+          </ul>
+          <div class="tier__actions">
+            <a class="btn btn--primary" href="commencer?forfait=recommande">Choisir Recommandé</a>
+            <a class="link-action" href="forfait-recommande">En savoir plus sur le Recommandé</a>
+          </div>
+        </li>
+        <li class="tier">
+          <div class="tier__head">
+            <h3 class="tier__name">Complet</h3>
+            <p class="tier__for">Pour être accompagné.</p>
+            <p class="tier__lead">Le site, avec 3&nbsp;mois de suivi.</p>
+          </div>
+          <p class="tier__price">169&nbsp;€</p>
+          <ul class="tier__lines">
+            <li><span>Site complet&nbsp;: structure, une page par projet, plan du site, référencement de base</span> <strong>Inclus</strong></li>
+            <li><span>Images compressées et adaptées à tous les écrans</span> <strong>Inclus</strong></li>
+            <li><span>Accessibilité de base&nbsp;: textes alternatifs, contrastes, clavier, titres structurés</span> <strong>Inclus</strong></li>
+            <li><span>Mise en ligne et remise de tous les accès</span> <strong>Inclus</strong></li>
+            <li><span>Un tour de corrections</span> <strong>Inclus</strong></li>
+            <li><span>Suivi après livraison</span> <strong>3&nbsp;mois</strong></li>
+            <li><span>Demandes de modification pendant le suivi</span> <strong>4</strong></li>
+          </ul>
+          <div class="tier__actions">
+            <a class="btn btn--secondary" href="commencer?forfait=complet">Choisir Complet</a>
+            <a class="link-action" href="forfait-complet">En savoir plus sur le Complet</a>
+          </div>
+        </li>
+        </ul>
+        <p class="small muted">Une demande de modification est un changement précis (un texte, une image, un ajustement). Un nouveau projet compte pour deux demandes.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 5 : refonte, supplément de tri -->
+    <section class="section section--tint" id="refonte" aria-labelledby="refonte-titre">
+      <div class="container">
+        <h2 id="refonte-titre">Vous avez déjà un site&nbsp;: je récupère et je trie vos images</h2>
+        <p>Récupérer des images, retirer les doublons, les renommer, les mettre dans l’ordre et en bonne qualité prend du temps. Le supplément dépend du nombre d’images.</p>
+        <table class="measures measures--grid measures--tranches">
+          <caption class="visually-hidden">Prix d’une refonte, selon le nombre d’images à trier</caption>
+          <thead><tr><th scope="col">Images à trier</th><th scope="col">Jusqu’à 50</th><th scope="col">51 à 120</th><th scope="col">121 à 200</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Supplément de tri</th><td>+&nbsp;30&nbsp;€</td><td>+&nbsp;70&nbsp;€</td><td>+&nbsp;100&nbsp;€</td></tr>
+            <tr><th scope="row">Essentiel</th><td>119&nbsp;€</td><td>159&nbsp;€</td><td>189&nbsp;€</td></tr>
+            <tr><th scope="row">Recommandé</th><td>159&nbsp;€</td><td>199&nbsp;€</td><td>229&nbsp;€</td></tr>
+            <tr><th scope="row">Complet</th><td>199&nbsp;€</td><td>239&nbsp;€</td><td>269&nbsp;€</td></tr>
+          </tbody>
+        </table>
+        <p>Au-delà de 200&nbsp;images&nbsp;: +&nbsp;100&nbsp;€, puis 0,50&nbsp;€ par image supplémentaire.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 6 : comment ça se passe -->
+    <section class="section" aria-labelledby="etapes">
+      <div class="container">
+        <h2 id="etapes">Cinq étapes, de la demande à la remise du code.</h2>
+        <ol class="list-spaced">
+          <li><strong>Vous me contactez, je vous réponds sous 2&nbsp;jours ouvrés.</strong> Nous nous mettons d’accord sur le forfait, le prix, l’acompte et le délai. Vous confirmez par écrit.</li>
+          <li><strong>Vous versez l’acompte et vous m’envoyez vos contenus</strong>&nbsp;: images, textes, liens.</li>
+          <li><strong>Je construis votre site</strong> en 10&nbsp;jours ouvrés (15 pour une refonte), à partir du dossier complet et de l’acompte.</li>
+          <li><strong>Vous voyez une vidéo de votre site.</strong> Vous validez, ou vous demandez une correction.</li>
+          <li><strong>Vous payez le solde</strong>&nbsp;: je vous remets le code et tous les accès.</li>
+        </ol>
+        <h3 class="subhead">Acompte, selon votre situation</h3>
+        <table class="measures measures--grid">
+          <caption class="visually-hidden">Montant de l’acompte, selon le forfait et la situation</caption>
+          <thead><tr><th scope="col">Votre situation</th><th scope="col">Essentiel</th><th scope="col">Recommandé</th><th scope="col">Complet</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Création (30&nbsp;%)</th><td>27&nbsp;€</td><td>39&nbsp;€</td><td>51&nbsp;€</td></tr>
+            <tr><th scope="row">Refonte, jusqu’à 50&nbsp;images (50&nbsp;%)</th><td>60&nbsp;€</td><td>80&nbsp;€</td><td>100&nbsp;€</td></tr>
+            <tr><th scope="row">Refonte, 51 à 120&nbsp;images (50&nbsp;%)</th><td>80&nbsp;€</td><td>100&nbsp;€</td><td>120&nbsp;€</td></tr>
+            <tr><th scope="row">Refonte, 121 à 200&nbsp;images (50&nbsp;%)</th><td>95&nbsp;€</td><td>115&nbsp;€</td><td>135&nbsp;€</td></tr>
+          </tbody>
+        </table>
+        <p class="small muted">Montants arrondis à l’euro supérieur. L’acompte se règle en direct avec moi, par virement ou en espèces contre reçu. Pas de plateforme de paiement.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 7 : votre site vous appartient -->
+    <section class="section section--tint" aria-labelledby="appartient">
+      <div class="container">
+        <h2 id="appartient">Votre site vous appartient</h2>
+        <p>Le code, l’hébergement et le nom de domaine sont à votre nom. Vous m’invitez sur votre dépôt le temps de la mission, et je ne garde pas les accès à votre place.</p>
+        <p>Je recommande Netlify, dont l’offre gratuite suffit pour un portfolio. À votre charge&nbsp;: le nom de domaine, et l’hébergement s’il dépasse l’offre gratuite.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 8 : ce qui n'est pas inclus -->
+    <section class="section" aria-labelledby="exclus">
+      <div class="container">
+        <h2 id="exclus">Ce qui n’est pas inclus</h2>
+        <p>La rédaction de vos textes, les éléments sur mesure (par exemple des clins d’œil interactifs), la maintenance au-delà du suivi prévu, et les rapports d’audience réguliers.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 9 : questions fréquentes (la question sur la mention WCAG revient avec la vérification réelle) -->
+    <section class="section section--tint" aria-labelledby="faq">
+      <div class="container faq">
+        <h2 id="faq">Questions fréquentes</h2>
+        <h3>Pourquoi des prix aussi bas&nbsp;?</h3>
+        <p>Beaucoup de mes clients sont étudiants ou jeunes diplômés. Le prix suit le temps passé&nbsp;: le site, puis le tri des images si vous avez déjà un site.</p>
+        <h3>Qui héberge mon site&nbsp;?</h3>
+        <p>Vous. Le site est déployé sur votre compte, chez l’hébergeur de votre choix.</p>
+        <h3>Mes images sont en vrac. Que faire&nbsp;?</h3>
+        <p>Le supplément de tri s’applique aussi à une création dont les images sont en vrac (voir «&nbsp;Refonte&nbsp;»).</p>
+        <h3>Pouvez-vous rédiger mes textes&nbsp;?</h3>
+        <p>Non, la rédaction n’est pas incluse&nbsp;: vos textes sont les vôtres, avec votre façon de parler. Je m’occupe des titres et des textes d’interface, et je relis le reste avec vous.</p>
+        <h3>Et si j’ai besoin d’un changement après le suivi&nbsp;?</h3>
+        <p>Ce n’est plus inclus, mais vous pouvez m’écrire&nbsp;: je vous dis si c’est possible et à quel prix.</p>
+        <h3>Comment se fait le paiement&nbsp;?</h3>
+        <p>En direct avec moi, sans plateforme de paiement&nbsp;: par virement, ou en espèces contre un reçu si nous pouvons nous rencontrer. Je vous donne mes informations de paiement uniquement par e-mail, et je confirme chaque paiement par écrit.</p>
+        <h3>Puis-je annuler&nbsp;?</h3>
+        <p>Oui. Si je n’ai pas commencé, je rembourse l’acompte en totalité sous 14&nbsp;jours. Si j’ai déjà commencé, vous payez la part du travail déjà faite, et l’acompte vient en déduction. Si vous êtes un particulier, vous avez aussi 14&nbsp;jours après la commande pour vous rétracter. Les détails sont dans les conditions de vente.</p>
+      </div>
+    </section>
+
+    <!-- Bloc 10 : appel final (section sombre) -->
+    <section class="section section--dark on-dark" aria-labelledby="final">
+      <div class="container">
+        <h2 id="final">Sortez votre travail de l’ombre.</h2>
+        <div class="actions">
+          <a class="btn btn--primary btn--block-mobile" href="commencer?site=non">Créer mon portfolio</a>
+          <a class="btn btn--secondary btn--block-mobile" href="commencer?site=oui">Refondre mon portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="./">
+            <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+            <span class="brand-name">Clairfolio</span>
+          </a>
+          <p class="site-footer__tagline">Votre travail mérite d’être vu.</p>
+        </div>
+        <nav aria-labelledby="footer-service">
+          <h2 class="site-footer__title" id="footer-service">Le service</h2>
+          <ul class="site-footer__list">
+            <li><a href="tarifs">Tarifs</a></li>
+            <li><a href="cas-clara">Le cas Clara</a></li>
+            <li><a href="commencer">Commencer</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-confiance">
+          <h2 class="site-footer__title" id="footer-confiance">Confiance</h2>
+          <ul class="site-footer__list">
+            <li><a href="a-propos">À propos</a></li>
+            <li><a href="conditions-de-vente">Conditions de vente</a></li>
+            <li><a href="mentions-legales">Mentions légales</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-contact">
+          <h2 class="site-footer__title" id="footer-contact">Me contacter</h2>
+          <ul class="site-footer__list">
+            <li><a href="mailto:pro.fgamer768@gmail.com">pro.fgamer768@gmail.com</a></li>
+            <li>
+              <a href="https://www.instagram.com/clairfolioweb/" target="_blank" rel="noopener">Instagram&nbsp;: @clairfolioweb
+                <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+                <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <p class="site-footer__legal">© 2026 Clairfolio. Site édité par FGAMER768.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -144,3 +144,39 @@
     max-width: 48rem;
   }
 }
+
+/* En-tête de page (cas Clara, pages forfait) */
+.page-head {
+  padding-bottom: var(--space-6);
+}
+
+.page-head__lead {
+  font-size: var(--step-lead);
+  max-width: 44rem;
+}
+
+/* Ancre atteinte par un lien : le titre ne se colle pas au bord du navigateur */
+[id] {
+  scroll-margin-top: var(--space-5);
+}
+
+/* Les deux tableaux de mesures se suivent : un espace entre eux, et une colonne de plus à l'aise */
+.measures--wide {
+  margin-top: var(--space-4);
+  table-layout: fixed;   /* mêmes colonnes dans les deux tableaux, pour les comparer d'un coup d'œil */
+}
+
+.measures--wide th:first-child {
+  width: 50%;
+}
+
+/* Questions fréquentes (accueil, tarifs) */
+.faq h3 {
+  margin-bottom: var(--space-2);
+  font-size: var(--step-lead);
+  line-height: var(--leading-h3);
+}
+
+.faq h3 + p {
+  margin-bottom: var(--space-5);
+}

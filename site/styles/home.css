@@ -1,5 +1,5 @@
 /*
-  Blocs propres à l'accueil : les trois forfaits et les questions fréquentes.
+  Blocs propres à l'accueil : les trois forfaits.
   Le reste (sections, preuve, mesures) est dans sections.css.
 */
 
@@ -37,15 +37,4 @@
   .plans {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-
-/* Bloc 12 : questions fréquentes */
-.faq h3 {
-  margin-bottom: var(--space-2);
-  font-size: var(--step-lead);
-  line-height: var(--leading-h3);
-}
-
-.faq h3 + p {
-  margin-bottom: var(--space-5);
 }

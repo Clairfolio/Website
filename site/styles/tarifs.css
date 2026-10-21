@@ -1,0 +1,209 @@
+/*
+  Page Tarifs : choix du parcours, trois forfaits comparables, tableaux de prix.
+  Règles du document des forfaits §5 : le forfait central a une bordure épaisse, « Inclus » et
+  « Non inclus » sont écrits en toutes lettres, chaque bouton nomme son forfait. Sur téléphone, les
+  forfaits s'empilent avec le Recommandé en premier pour qu'il ne soit pas perdu sous les deux autres.
+  Les sections, tableaux et FAQ viennent de sections.css.
+*/
+
+.price-from {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  font-size: var(--step-h3);
+  line-height: var(--leading-h3);
+}
+
+/* Choix du parcours : deux options qui mènent à la grille correspondante (pas un bouton d'envoi) */
+.paths {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-4) 0 0;
+}
+
+.path {
+  display: block;
+  padding: var(--space-4);
+  color: var(--text);
+  text-decoration: none;
+  border: 2px solid var(--border-control);
+  border-radius: var(--radius-m);
+}
+
+.path strong {
+  display: block;
+  margin-bottom: var(--space-1);
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.path:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+@media (min-width: 48em) {
+  .paths {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Les trois forfaits */
+.tiers {
+  display: grid;
+  gap: var(--space-4);
+  margin: var(--space-4) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tier {
+  display: flex;
+  flex-direction: column;
+  max-width: none;
+  margin: 0;
+  padding: var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-m);
+}
+
+.tier--featured {
+  padding: calc(var(--space-5) - 3px);
+  border: 4px solid var(--action-bg);   /* bordure épaisse : le forfait que je recommande */
+}
+
+.tier__name {
+  margin: 0 0 var(--space-1);
+  font-size: var(--step-h3);
+  line-height: var(--leading-h3);
+}
+
+.tier__for {
+  margin: 0 0 var(--space-2);
+  color: var(--text-muted);
+}
+
+.tier__lead {
+  margin: 0 0 var(--space-3);
+}
+
+.tier__price {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  font-size: var(--step-h2);
+  line-height: var(--leading-h2);
+}
+
+.tier__lines {
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.tier__lines li {
+  max-width: none;
+  margin: 0;
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tier__lines strong {
+  display: block;
+}
+
+.tier__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+.tier__actions .btn {
+  width: 100%;
+}
+
+/* Téléphone : le Recommandé d'abord */
+@media (max-width: 47.99em) {
+  .tier--featured {
+    order: -1;
+  }
+}
+
+/* Ordinateur : trois colonnes, et les mêmes lignes à la même hauteur dans chaque carte */
+@media (min-width: 48em) {
+  .tiers {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @supports (grid-template-rows: subgrid) {
+    .tier {
+      display: grid;
+      grid-row: span 4;
+      grid-template-rows: subgrid;
+      row-gap: 0;
+    }
+  }
+}
+
+/* Tableaux à plus de colonnes : texte et marges réduits sur téléphone */
+.measures--grid th,
+.measures--grid td {
+  padding-right: var(--space-2);
+}
+
+.measures--grid td:last-child {
+  font-weight: var(--weight-body);
+}
+
+@media (max-width: 30em) {
+  .measures--grid {
+    font-size: var(--step-small);
+    line-height: var(--leading-small);
+  }
+
+  .measures--grid th,
+  .measures--grid td {
+    padding-right: var(--space-1);
+  }
+}
+
+.measures--grid td {
+  white-space: nowrap;
+}
+
+.subhead {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-3);
+  font-size: var(--step-h3);
+  line-height: var(--leading-h3);
+}
+
+/* Écrans les plus étroits (320 px) : marges minimales entre colonnes */
+@media (max-width: 22.5em) {
+  .measures--grid th,
+  .measures--grid td {
+    padding-right: 0.125rem;
+  }
+}
+
+/* Tarifs de refonte, téléphone : première colonne étroite et marges nettes, les en-têtes des
+   trois tranches passent sur deux lignes plutôt que de se toucher */
+@media (max-width: 30em) {
+  .measures--tranches th:first-child {
+    width: 30%;
+  }
+
+  .measures--tranches th,
+  .measures--tranches td {
+    padding-right: var(--space-3);
+  }
+}
+
+/* Liste de liens suivie d'un paragraphe : un espace entre les deux */
+.link-list + p {
+  margin-top: var(--space-4);
+}

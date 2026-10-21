@@ -1,0 +1,54 @@
+/*
+  Pages forfait (Essentiel, Recommandé, Complet) : lien de retour, prix en tête, sous-titres.
+  Les sections, l'en-tête de page et les tableaux viennent de sections.css.
+  Règles du guide Voix, UX et microtexte : le lien « Retour aux tarifs » est au-dessus du titre,
+  « Inclus » et « Non inclus » sont écrits en toutes lettres (jamais une icône ou une couleur seule).
+*/
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
+  margin-bottom: var(--space-2);
+}
+
+.plan-head__price {
+  margin: 0 0 var(--space-1);
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  font-size: var(--step-h2);
+  line-height: var(--leading-h2);
+}
+
+.plan-head__for {
+  margin: 0 0 var(--space-4);
+  color: var(--text-muted);
+}
+
+.plan-head__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-5);
+  margin-top: var(--space-4);
+}
+
+.plan-page h3 {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-3);
+  font-size: var(--step-h3);
+  line-height: var(--leading-h3);
+}
+
+.plan-page .measures {
+  margin-top: var(--space-4);
+}
+
+/* Les tableaux de ces pages ont deux ou trois colonnes : la première plus large */
+.plan-page .measures th:first-child {
+  width: 55%;
+}
+
+.plan-page .measures td:last-child {
+  font-weight: var(--weight-strong);
+}

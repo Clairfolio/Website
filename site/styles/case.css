@@ -1,16 +1,7 @@
 /*
   Page « Le cas Clara » (modèle des pages de preuve) : en-tête de page, décisions, mesures.
-  Les sections, la preuve avec téléphone et le tableau de mesures viennent de sections.css.
+  Les sections, l'en-tête de page, la preuve avec téléphone et les tableaux viennent de sections.css.
 */
-
-.page-head {
-  padding-bottom: var(--space-6);
-}
-
-.page-head__lead {
-  font-size: var(--step-lead);
-  max-width: 44rem;
-}
 
 /* Cinq décisions : un sous-titre, puis trois paragraphes qui commencent par un terme en gras */
 .decisions h3,
@@ -27,21 +18,6 @@
 
 .decisions p {
   margin-bottom: var(--space-3);
-}
-
-/* Ancre atteinte par un lien : le titre ne se colle pas au bord du navigateur */
-[id] {
-  scroll-margin-top: var(--space-5);
-}
-
-/* Les deux tableaux de mesures se suivent : un espace entre eux, et une colonne de plus à l'aise */
-.measures--wide {
-  margin-top: var(--space-4);
-  table-layout: fixed;   /* mêmes colonnes dans les deux tableaux, pour les comparer d'un coup d'œil */
-}
-
-.measures--wide th:first-child {
-  width: 50%;
 }
 
 .measures + p.small {
