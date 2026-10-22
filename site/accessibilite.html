@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibilité · Clairfolio</title>
+  <meta name="description" content="Ce que j’ai contrôlé sur ce site, avec quels outils, ce qui ne l’a pas encore été, et comment me signaler un problème.">
+  <meta name="theme-color" content="#080f22">
+  <!-- Domaine PROVISOIRE (nom du site Netlify à confirmer). Un seul remplacement global le moment venu : voir PROGRESSION.md. -->
+  <link rel="canonical" href="https://clairfolio.netlify.app/accessibilite">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Ordre des feuilles : tokens (jetons) avant tout le reste ; fonts avant base ; les composants en dernier. -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/button.css">
+  <link rel="stylesheet" href="styles/site-header.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/legal.css">
+  <link rel="stylesheet" href="styles/site-footer.css">
+  <noscript><link rel="stylesheet" href="styles/no-js.css"></noscript>
+  <script src="js/nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+        <span class="brand-name">Clairfolio</span>
+      </a>
+      <div class="site-header__actions">
+        <a class="btn btn--primary btn--compact" href="commencer">Commencer</a>
+        <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span class="menu-toggle__label">Menu</span></button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Principale">
+        <ul>
+          <li><a href="cas-clara">Le cas Clara</a></li>
+          <li><a href="tarifs">Tarifs</a></li>
+          <li><a href="a-propos">À propos</a></li>
+          <li class="site-nav__cta"><a class="btn btn--primary btn--compact" href="commencer">Commencer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section page-head" aria-labelledby="titre">
+      <div class="container">
+        <h1 id="titre">Accessibilité</h1>
+        <p class="page-head__lead">Ce que j’ai vérifié sur ce site, avec quels outils, ce qui ne l’a pas encore été, et comment me signaler un problème.</p>
+        <p class="small muted">Dernière mise à jour&nbsp;: 22&nbsp;octobre 2026.</p>
+      </div>
+    </section>
+
+    <section class="section section--flush-top legal-body" aria-label="Le texte de la page Accessibilité">
+      <div class="container legal">
+
+        <section class="legal__block" aria-labelledby="verifie">
+          <h2 id="verifie">Ce que j’ai vérifié</h2>
+          <p>Le 22&nbsp;octobre 2026, j’ai vérifié les 12&nbsp;pages de ce site. La référence est WCAG&nbsp;2.2, niveau AA&nbsp;: les règles d’accessibilité du web. Ce n’est pas une certification, et je ne dis pas que le site respecte chaque critère.</p>
+          <ul>
+            <li><strong>Outil automatique</strong>&nbsp;: axe-core 4.10.2, dans Chromium, en thème clair et en thème sombre, à 360, 768 et 1440&nbsp;px de large. Il ne signale aucune erreur.</li>
+            <li><strong>Clavier</strong>&nbsp;: j’ai parcouru chaque page avec la touche Tabulation. Aucun piège, un contour visible sur chaque élément (4,65:1 de contraste au minimum), et le lien «&nbsp;Aller au contenu&nbsp;» en premier.</li>
+            <li><strong>Contrastes</strong>&nbsp;: calculés pour chaque paire de couleurs, en clair et en sombre, survol et appui compris. Les textes ont 4,5:1 au minimum, les contours des champs et des boutons 3:1 au minimum.</li>
+            <li><strong>Agrandissement</strong>&nbsp;: texte à 200&nbsp;%, page affichée à 320&nbsp;px de large (zoom à 400&nbsp;%), espacement du texte renforcé selon le critère 1.4.12. Rien n’est coupé. Seuls les tableaux défilent de côté, dans leur propre zone, atteignable au clavier.</li>
+            <li><strong>Formulaire</strong>&nbsp;: chaque champ a un libellé visible, chaque erreur dit quoi corriger et où, et le focus se place sur le résumé des erreurs.</li>
+            <li><strong>Mouvement et contraste forcé</strong>&nbsp;: le site respecte la demande de mouvement réduit et reste lisible en mode contraste forcé.</li>
+          </ul>
+          <p>Les pages vérifiées&nbsp;: l’accueil, Le cas Clara, Tarifs, les trois pages de forfait, À propos, Commencer, la page de confirmation, les conditions de vente, les mentions légales et cette page.</p>
+        </section>
+
+        <section class="legal__block" aria-labelledby="pas-verifie">
+          <h2 id="pas-verifie">Ce que je n’ai pas vérifié</h2>
+          <p>Je n’ai pas encore testé le site avec un lecteur d’écran (NVDA, VoiceOver ou TalkBack). J’ai relu ce que le navigateur en expose, noms, rôles et ordre de lecture&nbsp;: c’est cohérent, mais ce n’est pas la même chose.</p>
+          <p>Toutes les vérifications ont été faites dans Chromium, pas dans Firefox ni dans Safari. Les tests sur téléphone sont des simulations dans le navigateur.</p>
+          <p>Un score d’outil n’est pas une vérification&nbsp;: un outil automatique ne repère qu’une partie des problèmes.</p>
+        </section>
+
+        <section class="legal__block" aria-labelledby="gene">
+          <h2 id="gene">Ce qui peut encore gêner</h2>
+          <p>Sur la page Tarifs, sur téléphone, le forfait Recommandé s’affiche en premier. Au clavier et avec un lecteur d’écran, il vient en deuxième, après l’Essentiel. Chaque forfait se lit seul&nbsp;: l’ordre ne change pas le sens.</p>
+          <p>Les quatre rapports PageSpeed à télécharger sont des images. Leurs chiffres sont aussi écrits dans les tableaux de la page Le cas Clara.</p>
+          <p>Les captures de l’ancien et du nouveau portfolio de Clara sont des images. Leur texte alternatif dit ce qu’elles prouvent, sans recopier tout leur texte.</p>
+        </section>
+
+        <section class="legal__block" aria-labelledby="signaler">
+          <h2 id="signaler">Signaler un problème</h2>
+          <p>Une page ou un bouton vous pose problème&nbsp;? Écrivez-moi en indiquant la page, ce que vous essayiez de faire, et l’appareil ou l’outil que vous utilisez. Je vous réponds sous 2&nbsp;jours ouvrés.</p>
+          <p>Mon adresse&nbsp;: pro.fgamer768@gmail.com</p>
+          <div class="actions">
+            <a class="btn btn--secondary btn--block-mobile" href="mailto:pro.fgamer768@gmail.com">M’écrire par e-mail</a>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="./">
+            <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+            <span class="brand-name">Clairfolio</span>
+          </a>
+          <p class="site-footer__tagline">Votre travail mérite d’être vu.</p>
+        </div>
+        <nav aria-labelledby="footer-service">
+          <h2 class="site-footer__title" id="footer-service">Le service</h2>
+          <ul class="site-footer__list">
+            <li><a href="tarifs">Tarifs</a></li>
+            <li><a href="cas-clara">Le cas Clara</a></li>
+            <li><a href="commencer">Commencer</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-confiance">
+          <h2 class="site-footer__title" id="footer-confiance">Confiance</h2>
+          <ul class="site-footer__list">
+            <li><a href="a-propos">À propos</a></li>
+            <li><a href="conditions-de-vente">Conditions de vente</a></li>
+            <li><a href="mentions-legales">Mentions légales</a></li>
+            <li><a href="accessibilite">Accessibilité</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-contact">
+          <h2 class="site-footer__title" id="footer-contact">Me contacter</h2>
+          <ul class="site-footer__list">
+            <li><a href="mailto:pro.fgamer768@gmail.com">pro.fgamer768@gmail.com</a></li>
+            <li>
+              <a href="https://www.instagram.com/clairfolioweb/" target="_blank" rel="noopener">Instagram&nbsp;: @clairfolioweb
+                <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+                <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <p class="site-footer__legal">© 2026 Clairfolio. Site édité par FGAMER768.</p>
+    </div>
+  </footer>
+</body>
+</html>

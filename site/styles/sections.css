@@ -67,6 +67,7 @@
 /* Bloc 3 : la preuve responsive */
 .proof {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-6);
   align-items: center;
 }
@@ -76,11 +77,14 @@
 }
 
 .phones--proof figure {
+  min-width: 0;
+  max-width: calc(50% - var(--space-2));
   margin: 0;
 }
 
 .phones--proof img {
   width: clamp(8rem, 42vw, 17.5rem);
+  max-width: 100%;
 }
 
 .phones--proof figcaption {
