@@ -153,27 +153,43 @@
     button.removeAttribute('aria-busy');
   }
 
-  function send() {
-    normalizeUrl();
-    failure.hidden = true;
-    sending = true;
-    button.disabled = true;
-    button.textContent = 'Envoi en cours…';
-    button.setAttribute('aria-busy', 'true');
-    var action = form.getAttribute('action');
-    fetch(action, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
-    }).then(function (response) {
-      if (!response.ok) throw new Error('HTTP ' + response.status);
-      window.location.assign(action);   // la page de confirmation est une vraie page
-    }).catch(function () {
+  
+function send() {
+  normalizeUrl();
+  failure.hidden = true;
+  sending = true;
+  button.disabled = true;
+  button.textContent = 'Envoi en cours…';
+  button.setAttribute('aria-busy', 'true');
+
+  // Conserver l'action comme URL de confirmation.
+  var action = form.getAttribute('action') || '/commencer/merci';
+
+  // Envoyer les données à Netlify Forms, pas à la page de merci.
+  var data = new FormData(form);
+
+  fetch('/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: new URLSearchParams(data).toString()
+  })
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error('HTTP ' + response.status);
+      }
+
+      // Rediriger seulement après une réponse réussie.
+      window.location.assign(action);
+    })
+    .catch(function (error) {
+      console.error('Échec de l’envoi du formulaire :', error);
       resetButton();
       failure.hidden = false;
-      failureTitle.focus();             // les réponses restent dans le formulaire
+      failureTitle.focus();
     });
-  }
+}
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
