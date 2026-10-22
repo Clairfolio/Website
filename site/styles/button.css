@@ -35,10 +35,20 @@
   color: var(--action-text);
 }
 
-.btn--primary:hover {
-  background: var(--action-bg-hover);
-  border-color: var(--action-bg-hover);
-  color: var(--action-text);
+
+/* Survol : seulement avec une souris. Au toucher, :hover reste collé après le tap ; :active donne le retour. */
+@media (hover: hover) and (pointer: fine) {
+  .btn--primary:hover {
+    background: var(--action-bg-hover);
+    border-color: var(--action-bg-hover);
+    color: var(--action-text);
+  }
+
+  .btn--secondary:hover {
+    background: var(--action-bg-hover);
+    border-color: var(--action-bg-hover);
+    color: var(--action-text);
+  }
 }
 
 .btn--primary:active {
@@ -52,11 +62,6 @@
   color: var(--link);
 }
 
-.btn--secondary:hover {
-  background: var(--action-bg-hover);
-  border-color: var(--action-bg-hover);
-  color: var(--action-text);
-}
 
 .btn--secondary:active {
   background: var(--action-bg-pressed);
@@ -86,6 +91,16 @@
 /* Lien d'action : texte avec un verbe, souligné, sans apparence de bouton */
 .link-action {
   font-weight: var(--weight-strong);
+}
+
+/* Téléphone et tablette : un lien d'action seul sur sa ligne a une zone de toucher de 44 px de haut */
+@media (max-width: 47.99em), (pointer: coarse) {
+  .link-action {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    min-height: var(--target);
+  }
 }
 
 /* Petite flèche des liens externes (icône décorative, aria-hidden dans le HTML) */

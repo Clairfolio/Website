@@ -126,6 +126,21 @@
   font-weight: var(--weight-strong);
 }
 
+/* Un tableau trop large pour l'écran (zoom, texte agrandi) défile dans sa propre zone, pas dans la page.
+   La zone est atteignable au clavier (tabindex) et annoncée comme une région nommée. */
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.table-scroll > .measures {
+  margin-bottom: 0;
+}
+
+.table-scroll + * {
+  margin-top: var(--space-4);
+}
+
 /* Petit écran : texte de 14 px et marges réduites pour que le tableau tienne sans défiler */
 @media (max-width: 30em) {
   .measures {

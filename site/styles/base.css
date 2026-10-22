@@ -21,6 +21,7 @@ html {
 }
 
 body {
+  overflow-wrap: break-word;   /* un mot plus long que la ligne se coupe, il ne fait pas défiler la page */
   margin: 0;
   min-height: 100vh;
   display: flex;

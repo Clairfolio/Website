@@ -118,8 +118,10 @@
   cursor: pointer;
 }
 
-.choice input:hover {
-  border-color: var(--action-bg);
+@media (hover: hover) and (pointer: fine) {
+  .choice input:hover {
+    border-color: var(--action-bg);
+  }
 }
 
 .choice input:checked {

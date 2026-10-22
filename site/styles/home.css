@@ -6,6 +6,7 @@
 /* Bloc 8 : les trois forfaits */
 .plans {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-4);
   margin-bottom: var(--space-5);
 }
@@ -22,6 +23,7 @@
 }
 
 .plan__name {
+  overflow-wrap: anywhere;   /* dernier recours : un nom de forfait se coupe plutôt que de déborder */
   margin-bottom: var(--space-2);
 }
 
@@ -35,6 +37,6 @@
 
 @media (min-width: 48em) {
   .plans {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

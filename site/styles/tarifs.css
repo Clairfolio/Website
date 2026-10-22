@@ -38,9 +38,11 @@
   text-underline-offset: 0.2em;
 }
 
-.path:hover {
-  background: var(--surface);
-  color: var(--text);
+@media (hover: hover) and (pointer: fine) {
+  .path:hover {
+    background: var(--surface);
+    color: var(--text);
+  }
 }
 
 @media (min-width: 48em) {
@@ -52,6 +54,7 @@
 /* Les trois forfaits */
 .tiers {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-4);
   margin: var(--space-4) 0;
   padding: 0;
@@ -75,6 +78,7 @@
 }
 
 .tier__name {
+  overflow-wrap: anywhere;   /* dernier recours : un nom de forfait se coupe plutôt que de déborder */
   margin: 0 0 var(--space-1);
   font-size: var(--step-h3);
   line-height: var(--leading-h3);
