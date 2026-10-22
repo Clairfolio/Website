@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commencer : dites-moi où vous en êtes · Clairfolio</title>
+  <meta name="description" content="Une demande n’engage à rien. Je vous réponds sous 2 jours ouvrés et nous en parlons ensemble.">
+  <meta name="theme-color" content="#080f22">
+  <!-- Domaine PROVISOIRE (nom du site Netlify à confirmer). Un seul remplacement global le moment venu : voir PROGRESSION.md. -->
+  <link rel="canonical" href="https://clairfolio.netlify.app/commencer">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Ordre des feuilles : tokens (jetons) avant tout le reste ; fonts avant base ; les composants en dernier. -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/button.css">
+  <link rel="stylesheet" href="styles/site-header.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/notice.css">
+  <link rel="stylesheet" href="styles/form.css">
+  <link rel="stylesheet" href="styles/commencer.css">
+  <link rel="stylesheet" href="styles/site-footer.css">
+  <noscript><link rel="stylesheet" href="styles/no-js.css"></noscript>
+  <script src="js/nav.js" defer></script>
+  <script src="js/commencer.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+        <span class="brand-name">Clairfolio</span>
+      </a>
+      <div class="site-header__actions">
+        <a class="btn btn--primary btn--compact" href="commencer">Commencer</a>
+        <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span class="menu-toggle__label">Menu</span></button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Principale">
+        <ul>
+          <li><a href="cas-clara">Le cas Clara</a></li>
+          <li><a href="tarifs">Tarifs</a></li>
+          <li><a href="a-propos">À propos</a></li>
+          <li class="site-nav__cta"><a class="btn btn--primary btn--compact" href="commencer">Commencer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Bloc 1 : en-tête -->
+    <section class="section page-head" aria-labelledby="titre">
+      <div class="container">
+        <h1 id="titre">Commençons.</h1>
+        <p class="page-head__lead">Dites-moi où vous en êtes. Je vous réponds et nous en parlons ensemble. <strong>Rien n’est facturé avant votre accord.</strong></p>
+      </div>
+    </section>
+
+    <!-- Bloc 2 : le formulaire (envoyé par Netlify Forms, écrit dans le HTML pour être détecté) -->
+    <section class="section section--flush-top" aria-labelledby="demande">
+      <div class="container">
+        <h2 id="demande" class="visually-hidden">Votre demande</h2>
+        <form id="formulaire" class="form" name="demande" method="POST" action="/commencer/merci" data-netlify="true" netlify-honeypot="champ-piege">
+      <input type="hidden" name="form-name" value="demande">
+      <p hidden><label>Ne pas remplir&nbsp;: <input name="champ-piege" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="notice notice--error" id="resume-erreurs" role="alert" hidden>
+        <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+        <div class="notice__body">
+          <h2 class="notice__title" id="resume-titre" tabindex="-1"><span class="visually-hidden">Erreur&nbsp;: </span><span id="resume-texte"></span></h2>
+          <ul class="notice__list" id="resume-liste"></ul>
+        </div>
+      </div>
+
+      <div class="field" id="champ-prenom">
+        <label for="prenom">Prénom (obligatoire)</label>
+        <input id="prenom" name="prenom" type="text" autocomplete="given-name" required>
+        <p class="field-error" id="erreur-prenom" hidden>
+          <svg aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <span><span class="visually-hidden">Erreur&nbsp;: </span><span class="field-error__text"></span></span>
+        </p>
+      </div>
+
+      <div class="field" id="champ-nom">
+        <label for="nom">Nom (obligatoire)</label>
+        <input id="nom" name="nom" type="text" autocomplete="family-name" required>
+        <p class="field-error" id="erreur-nom" hidden>
+          <svg aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <span><span class="visually-hidden">Erreur&nbsp;: </span><span class="field-error__text"></span></span>
+        </p>
+      </div>
+
+      <div class="field" id="champ-email">
+        <label for="email">Adresse e-mail (obligatoire)</label>
+        <p class="field-help" id="aide-email">Je vous réponds à cette adresse.</p>
+        <input id="email" name="email" type="email" autocomplete="email" aria-describedby="aide-email" required inputmode="email" spellcheck="false">
+        <p class="field-error" id="erreur-email" hidden>
+          <svg aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <span><span class="visually-hidden">Erreur&nbsp;: </span><span class="field-error__text"></span></span>
+        </p>
+      </div>
+
+      <fieldset class="field" id="champ-deja-un-site">
+        <legend>Vous avez déjà un site&nbsp;? (obligatoire)</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" id="deja-un-site-non" name="deja-un-site" value="Non, je pars de zéro" data-key="non" required> <span>Non, je pars de zéro</span></label>
+          <label class="choice"><input type="radio" id="deja-un-site-oui" name="deja-un-site" value="Oui, je veux le refaire" data-key="oui" required> <span>Oui, je veux le refaire</span></label>
+        </div>
+        <p class="field-error" id="erreur-deja-un-site" hidden>
+          <svg aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <span><span class="visually-hidden">Erreur&nbsp;: </span><span class="field-error__text"></span></span>
+        </p>
+      </fieldset>
+
+      <div class="field" id="champ-adresse-site">
+        <label for="adresse-site">Adresse de votre site actuel (facultatif)</label>
+        <p class="field-help" id="aide-adresse-site">Si vous en avez un. Exemple&nbsp;: monsite.fr</p>
+        <input id="adresse-site" name="adresse-site" type="text" autocomplete="url" aria-describedby="aide-adresse-site" inputmode="url" autocapitalize="none" spellcheck="false">
+        <p class="field-error" id="erreur-adresse-site" hidden>
+          <svg aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <span><span class="visually-hidden">Erreur&nbsp;: </span><span class="field-error__text"></span></span>
+        </p>
+      </div>
+
+      <fieldset class="field" id="champ-forfait" aria-describedby="aide-forfait">
+        <legend>Forfait envisagé (obligatoire)</legend>
+        <p class="field-help" id="aide-forfait">Ce sont les prix de création. Pour une refonte, le supplément de tri s’ajoute&nbsp;: voir <a href="tarifs">les tarifs</a>.</p>
+        <div class="choices">
+          <label class="choice"><input type="radio" id="forfait-essentiel" name="forfait" value="Essentiel, 89 €" data-key="essentiel" required> <span>Essentiel, 89&nbsp;€</span></label>
+          <label class="choice"><input type="radio" id="forfait-recommande" name="forfait" value="Recommandé, 129 €" data-key="recommande" required> <span>Recommandé, 129&nbsp;€</span></label>
+          <label class="choice"><input type="radio" id="forfait-complet" name="forfait" value="Complet, 169 €" data-key="complet" required> <span>Complet, 169&nbsp;€</span></label>
+          <label class="choice"><input type="radio" id="forfait-je-ne-sais-pas" name="forfait" value="Je ne sais pas encore" data-key="je-ne-sais-pas" required> <span>Je ne sais pas encore</span></label>
+        </div>
+        <p class="field-error" id="erreur-forfait" hidden>
+          <svg aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <span><span class="visually-hidden">Erreur&nbsp;: </span><span class="field-error__text"></span></span>
+        </p>
+      </fieldset>
+
+      <fieldset class="field" id="champ-nombre-images" aria-describedby="aide-nombre-images">
+        <legend>Combien d’images avez-vous, environ&nbsp;? (facultatif)</legend>
+        <p class="field-help" id="aide-nombre-images">Comptez les images de vos projets, doublons compris. Une estimation suffit&nbsp;: je la confirme avec vous.</p>
+        <div class="choices">
+          <label class="choice"><input type="radio" id="nombre-images-50" name="nombre-images" value="Jusqu’à 50" data-key="50"> <span>Jusqu’à 50</span></label>
+          <label class="choice"><input type="radio" id="nombre-images-120" name="nombre-images" value="De 51 à 120" data-key="120"> <span>De 51 à 120</span></label>
+          <label class="choice"><input type="radio" id="nombre-images-200" name="nombre-images" value="De 121 à 200" data-key="200"> <span>De 121 à 200</span></label>
+          <label class="choice"><input type="radio" id="nombre-images-plus" name="nombre-images" value="Plus de 200" data-key="plus"> <span>Plus de 200</span></label>
+          <label class="choice"><input type="radio" id="nombre-images-inconnu" name="nombre-images" value="Je ne sais pas" data-key="inconnu"> <span>Je ne sais pas</span></label>
+        </div>
+        <p class="field-error" id="erreur-nombre-images" hidden>
+          <svg aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <span><span class="visually-hidden">Erreur&nbsp;: </span><span class="field-error__text"></span></span>
+        </p>
+      </fieldset>
+
+      <fieldset class="field" id="champ-images-triees" aria-describedby="aide-images-triees">
+        <legend>Vos images sont-elles déjà triées et prêtes&nbsp;? (facultatif)</legend>
+        <p class="field-help" id="aide-images-triees">Si elles sont en vrac, le supplément de tri s’applique, même pour une création.</p>
+        <div class="choices">
+          <label class="choice"><input type="radio" id="images-triees-oui" name="images-triees" value="Oui" data-key="oui"> <span>Oui</span></label>
+          <label class="choice"><input type="radio" id="images-triees-non" name="images-triees" value="Non, elles sont en vrac" data-key="non"> <span>Non, elles sont en vrac</span></label>
+          <label class="choice"><input type="radio" id="images-triees-inconnu" name="images-triees" value="Je ne sais pas" data-key="inconnu"> <span>Je ne sais pas</span></label>
+        </div>
+        <p class="field-error" id="erreur-images-triees" hidden>
+          <svg aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <span><span class="visually-hidden">Erreur&nbsp;: </span><span class="field-error__text"></span></span>
+        </p>
+      </fieldset>
+
+      <div class="field" id="champ-date-mise-en-ligne">
+        <label for="date-mise-en-ligne">Pour quand voulez-vous être en ligne&nbsp;? (facultatif)</label>
+        <p class="field-help" id="aide-date-mise-en-ligne">Mes délais&nbsp;: 10&nbsp;jours ouvrés (15 pour une refonte), dès le dossier complet et l’acompte. Votre date est plus proche&nbsp;? Dites-le-moi&nbsp;: je vous répondrai franchement.</p>
+        <input id="date-mise-en-ligne" name="date-mise-en-ligne" type="date" aria-describedby="aide-date-mise-en-ligne">
+        <p class="field-error" id="erreur-date-mise-en-ligne" hidden>
+          <svg aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <span><span class="visually-hidden">Erreur&nbsp;: </span><span class="field-error__text"></span></span>
+        </p>
+      </div>
+
+      <div class="field" id="champ-message">
+        <label for="message">Message (facultatif)</label>
+        <p class="field-help" id="aide-message">Votre métier, ce que vous cherchez (un stage, des clients…), ce qui vous gêne dans votre portfolio actuel.</p>
+        <textarea id="message" name="message" rows="6" aria-describedby="aide-message"></textarea>
+      </div>
+
+      <div class="form__submit">
+        <button type="submit" id="envoyer" class="btn btn--primary btn--block-mobile">Envoyer ma demande</button>
+        <p class="form__note">Réponse sous 2&nbsp;jours ouvrés.</p>
+        <p class="form__note">J’utilise votre nom et votre adresse e-mail uniquement pour vous répondre et préparer notre accord. Les demandes sont supprimées de l’outil du formulaire au bout d’1&nbsp;an&nbsp;; leur copie reçue par e-mail est conservée avec mes e-mails, sans limite de durée. <a href="mentions-legales#donnees">Données personnelles</a></p>
+      </div>
+
+      <div class="notice notice--error" id="echec" role="alert" hidden>
+        <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+        <div class="notice__body">
+          <h3 class="notice__title" id="echec-titre" tabindex="-1"><span class="visually-hidden">Erreur&nbsp;: </span>L’envoi n’a pas abouti.</h3>
+          <p class="notice__text">Vos réponses sont conservées. Réessayez dans un instant, ou écrivez-moi à pro.fgamer768@gmail.com.</p>
+          <div class="notice__actions">
+            <button type="button" id="reessayer" class="btn btn--primary btn--block-mobile">Réessayer l’envoi</button>
+            <a class="btn btn--secondary btn--block-mobile" href="mailto:pro.fgamer768@gmail.com">M’écrire par e-mail</a>
+          </div>
+        </div>
+      </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Bloc 3 : ce qui se passe ensuite -->
+    <section class="section section--tint" aria-labelledby="ensuite">
+      <div class="container">
+        <h2 id="ensuite">Et ensuite&nbsp;?</h2>
+        <ol class="list-spaced">
+          <li><strong>Je vous réponds sous 2&nbsp;jours ouvrés</strong> et nous en parlons&nbsp;: vos questions, vos contenus, le forfait qui vous convient. Je m’adapte.</li>
+          <li><strong>Nous nous mettons d’accord</strong> sur le forfait, le prix, l’acompte et le délai, et vous confirmez d’un mot, par écrit.</li>
+          <li><strong>Nous réglons l’acompte en direct</strong>&nbsp;: 30&nbsp;% du prix pour une création, 50&nbsp;% pour une refonte. Par virement ou, si nous pouvons nous voir, en espèces contre un reçu. Pas de plateforme de paiement.</li>
+          <li><strong>Vous m’envoyez vos contenus</strong>&nbsp;: images, textes, liens. Je commence à la réception de votre dossier complet et de l’acompte.</li>
+          <li><strong>Je construis votre site</strong> en 10&nbsp;jours ouvrés (15 pour une refonte).</li>
+          <li><strong>Vous voyez une vidéo de votre site.</strong> Vous validez, ou vous demandez une correction.</li>
+          <li><strong>Vous payez le solde</strong>&nbsp;: je vous remets le code et tous les accès.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Bloc 4 : écrire directement -->
+    <section class="section" aria-labelledby="ecrire">
+      <div class="container">
+        <h2 id="ecrire">Vous préférez m’écrire&nbsp;?</h2>
+        <p>Écrivez-moi à <a href="mailto:pro.fgamer768@gmail.com">pro.fgamer768@gmail.com</a>, ou sur Instagram&nbsp;: @clairfolioweb. Je vous réponds de la même façon. Mes informations de paiement, je ne les donne que par e-mail, jamais sur Instagram.</p>
+        <div class="actions">
+          <a class="btn btn--secondary btn--block-mobile" href="https://www.instagram.com/clairfolioweb/" target="_blank" rel="noopener">M’écrire sur Instagram
+            <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+            <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="./">
+            <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+            <span class="brand-name">Clairfolio</span>
+          </a>
+          <p class="site-footer__tagline">Votre travail mérite d’être vu.</p>
+        </div>
+        <nav aria-labelledby="footer-service">
+          <h2 class="site-footer__title" id="footer-service">Le service</h2>
+          <ul class="site-footer__list">
+            <li><a href="tarifs">Tarifs</a></li>
+            <li><a href="cas-clara">Le cas Clara</a></li>
+            <li><a href="commencer">Commencer</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-confiance">
+          <h2 class="site-footer__title" id="footer-confiance">Confiance</h2>
+          <ul class="site-footer__list">
+            <li><a href="a-propos">À propos</a></li>
+            <li><a href="conditions-de-vente">Conditions de vente</a></li>
+            <li><a href="mentions-legales">Mentions légales</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-contact">
+          <h2 class="site-footer__title" id="footer-contact">Me contacter</h2>
+          <ul class="site-footer__list">
+            <li><a href="mailto:pro.fgamer768@gmail.com">pro.fgamer768@gmail.com</a></li>
+            <li>
+              <a href="https://www.instagram.com/clairfolioweb/" target="_blank" rel="noopener">Instagram&nbsp;: @clairfolioweb
+                <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+                <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <p class="site-footer__legal">© 2026 Clairfolio. Site édité par FGAMER768.</p>
+    </div>
+  </footer>
+</body>
+</html>

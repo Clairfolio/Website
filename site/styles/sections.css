@@ -180,3 +180,9 @@
 .faq h3 + p {
   margin-bottom: var(--space-5);
 }
+
+/* Un titre qui reçoit le focus par script (page de confirmation) n'est pas un élément interactif : pas de cadre autour.
+   Le résumé d'erreurs, lui, garde son contour (notice.css). */
+h1[tabindex="-1"]:focus {
+  outline: none;
+}

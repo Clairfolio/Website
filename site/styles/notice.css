@@ -49,6 +49,11 @@
   border-radius: var(--radius-m);
 }
 
+/* L'attribut hidden doit toujours gagner contre display: flex (messages cachés tant qu'ils ne servent pas) */
+.notice[hidden] {
+  display: none;
+}
+
 .notice__icon {
   flex: none;
   width: 1.5rem;
@@ -91,6 +96,10 @@
 .notice__list li {
   max-width: none;
   margin: 0;
+}
+
+.notice__list li + li {
+  margin-top: var(--space-1);
 }
 
 .notice__list a {

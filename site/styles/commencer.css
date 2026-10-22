@@ -1,0 +1,42 @@
+/*
+  Page « Commencer » : mise en page du formulaire et de ses messages.
+  Les champs viennent de form.css, les messages de notice.css, les sections de sections.css.
+*/
+
+.form {
+  max-width: 36rem;
+}
+
+.form .field {
+  max-width: none;
+}
+
+.form__notices > .notice {
+  max-width: none;
+}
+
+.form__submit {
+  margin-top: var(--space-5);
+}
+
+.form__note {
+  margin: var(--space-3) 0 0;
+  color: var(--text-muted);
+  font-size: var(--step-small);
+  line-height: var(--leading-small);
+}
+
+.form__note:first-of-type {
+  margin-top: var(--space-3);
+  color: var(--text);
+  font-weight: var(--weight-strong);
+}
+
+.form .notice {
+  margin-top: var(--space-5);
+}
+
+.form .notice:first-child {
+  margin-top: 0;
+  margin-bottom: var(--space-5);
+}
