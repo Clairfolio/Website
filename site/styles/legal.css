@@ -1,0 +1,103 @@
+/*
+  Pages légales (conditions de vente, mentions légales) : texte long, découpé en blocs titrés.
+  Les sections, l'en-tête de page et les tableaux viennent de sections.css.
+  Aucune couleur en dur : tout passe par tokens.css. Aucune ombre (direction artistique §6).
+*/
+
+/* Le texte commence un peu sous le chapeau de la page (la section ne reprend pas tout son espace du haut) */
+.legal-body {
+  padding-top: var(--space-5);
+}
+
+/* Chaque bloc est séparé du précédent par un filet : on repère où l'on est en faisant défiler */
+.legal__block {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.legal__block:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.legal__block > :last-child {
+  margin-bottom: 0;
+}
+
+.legal h2 {
+  margin-bottom: var(--space-4);
+}
+
+.legal h3 {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+  font-size: var(--step-lead);
+  line-height: var(--leading-h3);
+}
+
+.legal ul,
+.legal ol {
+  padding-left: 1.25rem;
+}
+
+.legal li + li {
+  margin-top: var(--space-2);
+}
+
+/* Le tableau des étapes : une colonne de plus que les tableaux de mesures, la deuxième plus large */
+.legal__table th:first-child {
+  width: 22%;
+}
+
+.legal__table td:last-child {
+  white-space: nowrap;
+}
+
+/* Les cas particuliers : une situation, puis ce qui se passe. Une liste de définitions plutôt qu'un
+   tableau, parce que les réponses sont longues et que les colonnes ne tiendraient pas sur téléphone. */
+.cases {
+  margin: 0;
+}
+
+.cases > div {
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.cases > div:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.cases dt {
+  margin: 0 0 var(--space-1);
+  font-weight: var(--weight-strong);
+}
+
+.cases dd {
+  max-width: var(--measure);
+  margin: 0;
+}
+
+@media (min-width: 48em) {
+  .cases > div {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: var(--space-5);
+  }
+
+  .cases dt {
+    margin: 0;
+  }
+}
+
+/* Le modèle de message de rétractation : un filet à gauche, pas de fond teinté ni d'ombre */
+.legal__quote {
+  margin: var(--space-4) 0 0;
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--border-control);
+}
+
+.legal__quote p {
+  margin-bottom: 0;
+}

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>À propos : une personne, pas une plateforme · Clairfolio</title>
+  <meta name="description" content="FGAMER768 fait des portfolios pour des créatifs. Comment je travaille, ce que je décide et ce que fait l’IA.">
+  <meta name="theme-color" content="#080f22">
+  <!-- Domaine PROVISOIRE (nom du site Netlify à confirmer). Un seul remplacement global le moment venu : voir PROGRESSION.md. -->
+  <link rel="canonical" href="https://clairfolio.netlify.app/a-propos">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Ordre des feuilles : tokens (jetons) avant tout le reste ; fonts avant base ; les composants en dernier. -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/button.css">
+  <link rel="stylesheet" href="styles/site-header.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/site-footer.css">
+  <noscript><link rel="stylesheet" href="styles/no-js.css"></noscript>
+  <script src="js/nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+        <span class="brand-name">Clairfolio</span>
+      </a>
+      <div class="site-header__actions">
+        <a class="btn btn--primary btn--compact" href="commencer">Commencer</a>
+        <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span class="menu-toggle__label">Menu</span></button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Principale">
+        <ul>
+          <li><a href="cas-clara">Le cas Clara</a></li>
+          <li><a href="tarifs">Tarifs</a></li>
+          <li><a href="a-propos" aria-current="page">À propos</a></li>
+          <li class="site-nav__cta"><a class="btn btn--primary btn--compact" href="commencer">Commencer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- En-tête : qui parle -->
+    <section class="section page-head" aria-labelledby="titre">
+      <div class="container">
+        <h1 id="titre">Une personne, pas une plateforme.</h1>
+        <p class="page-head__lead">Je suis FGAMER768. Je fais des portfolios pour des créatifs.</p>
+      </div>
+    </section>
+
+    <!-- Qui je suis -->
+    <section class="section section--tint" aria-labelledby="qui">
+      <div class="container">
+        <h2 id="qui">Qui je suis</h2>
+        <p>Je mène des projets de A à Z&nbsp;: de l’idée jusqu’au produit terminé. J’ai créé PresetStore, qui rassemble au même endroit les <span lang="en">presets After Effects</span> d’un motion designer, et MotivR, un coach en ligne qui aide à rédiger sa lettre de motivation, sans compte à créer.</p>
+        <p>Ce qui me ressemble&nbsp;: je cherche toujours la façon la plus simple de faire les choses, et je remarque quand une affiche, un panneau ou une phrase guide mal. Pour un portfolio, c’est exactement ce qu’il faut.</p>
+      </div>
+    </section>
+
+    <!-- Pourquoi Clairfolio -->
+    <section class="section" aria-labelledby="pourquoi">
+      <div class="container">
+        <h2 id="pourquoi">Pourquoi Clairfolio</h2>
+        <p>Je cherchais des personnes pour m’aider sur mon jeu, PARAUTOGNOSYS&nbsp;: level design, sound design. C’est comme ça que je suis tombé sur le portfolio de Clara.</p>
+        <p>Ses projets m’ont plu, surtout Sînnaya. Mais en ouvrant son site, un message demandait de le consulter sur ordinateur, et ses projets n’étaient pas mis en valeur.</p>
+        <p>Son site n’était pas mauvais&nbsp;: il ne la servait pas. Un profil solide, un portfolio qui n’était pas à sa hauteur.</p>
+        <p>Je l’ai refait avec elle. Et j’ai eu envie d’aider d’autres jeunes créateurs à donner de la valeur à leur travail.</p>
+        <p><a class="link-action" href="cas-clara">Lire le cas de Clara</a></p>
+      </div>
+    </section>
+
+    <!-- Comment je travaille -->
+    <section class="section section--tint" aria-labelledby="methode">
+      <div class="container">
+        <h2 id="methode">Comment je travaille</h2>
+        <ol class="list-spaced">
+          <li><strong>Je comprends ce que vous cherchez</strong>, et ce que celui qui regarde doit voir en premier.</li>
+          <li><strong>Je construis le site en pensant au téléphone dès le départ</strong>, pas à la fin.</li>
+          <li><strong>Je me demande si le site donne envie de descendre.</strong> Je choisis le meilleur compromis, pas la perfection. Exemple&nbsp;: quand quelqu’un a beaucoup de projets, je les présente en cartes (une illustration, une description, un rôle, des chiffres), et le détail est sur la page du projet. Pour Clara, c’était le bon équilibre&nbsp;: les recruteurs voyaient trop, ou pas assez.</li>
+          <li><strong>Je vérifie.</strong> D’abord avec les outils du navigateur, puis sur mon vrai téléphone&nbsp;: est-ce que je vois la même chose que sur l’ordinateur&nbsp;? Je ne peux pas promettre que ça marche partout, mais je teste.</li>
+          <li><strong>Je vous montre une vidéo de votre site.</strong> Vous validez, ou je corrige.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- L'IA, honnêtement : texte de référence du guide Voix, UX et microtexte -->
+    <section class="section" aria-labelledby="ia">
+      <div class="container">
+        <h2 id="ia">Oui, j’utilise l’IA. Voici qui décide.</h2>
+        <p><strong>L’IA exécute</strong>&nbsp;: une partie de la mise en forme et du code, les tâches répétitives, la traduction (en anglais ou dans une autre langue).</p>
+        <p><strong>Je décide</strong>&nbsp;: la structure, l’ordre des projets, le tri des images, les textes d’interface, le design, et chaque vérification avant la livraison.</p>
+        <p>Sur les choix difficiles, je discute avec elle, je compare les solutions, puis je tranche. J’ai déjà travaillé ainsi&nbsp;: sur PresetStore, quand mes développeurs bénévoles ont poursuivi leur chemin, j’ai continué seul.</p>
+      </div>
+    </section>
+
+    <!-- Ce que couvre mon travail (arbitrage 15 du guide : chaque paragraphe commence par ce qui est fait) -->
+    <section class="section section--tint" aria-labelledby="couvre">
+      <div class="container">
+        <h2 id="couvre">Ce que couvre mon travail</h2>
+        <p><strong>Vos textes restent les vôtres</strong>, avec votre façon de parler. Je m’occupe des titres et des textes d’interface, et je relis le reste avec vous.</p>
+        <p><strong>Le suivi a une durée et un nombre de demandes</strong>, indiqués dans les <a href="tarifs">tarifs</a>. Les sites que je construis sont statiques et faits pour durer.</p>
+        <p><strong>Je m’engage sur le portfolio, pas sur la décision de celui qui le regarde.</strong> Personne ne peut dire quel élément a décidé un recruteur&nbsp;: je vous aide à présenter votre travail clairement, et à faciliter la tâche de celui qui regarde.</p>
+        <p>Par exemple, au début, le CV de Clara n’était pas dans son site&nbsp;: un recruteur arrivé directement sur le portfolio pouvait en repartir sans le voir. Je l’ai mis dans le site.</p>
+      </div>
+    </section>
+
+    <!-- Écrivez-moi -->
+    <section class="section" aria-labelledby="contact">
+      <div class="container">
+        <h2 id="contact">Écrivez-moi</h2>
+        <p>Vous m’écrivez, je vous réponds&nbsp;: pro.fgamer768@gmail.com, ou sur Instagram&nbsp;: @clairfolioweb.</p>
+        <div class="actions">
+          <a class="btn btn--secondary btn--block-mobile" href="mailto:pro.fgamer768@gmail.com">M’écrire par e-mail</a>
+          <a class="btn btn--secondary btn--block-mobile" href="https://www.instagram.com/clairfolioweb/" target="_blank" rel="noopener">M’écrire sur Instagram
+            <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+            <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appel final (section sombre) -->
+    <section class="section section--dark on-dark" aria-labelledby="final">
+      <div class="container">
+        <h2 id="final">Sortez votre travail de l’ombre.</h2>
+        <div class="actions">
+          <a class="btn btn--primary btn--block-mobile" href="commencer?site=non">Créer mon portfolio</a>
+          <a class="btn btn--secondary btn--block-mobile" href="commencer?site=oui">Refondre mon portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="./">
+            <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+            <span class="brand-name">Clairfolio</span>
+          </a>
+          <p class="site-footer__tagline">Votre travail mérite d’être vu.</p>
+        </div>
+        <nav aria-labelledby="footer-service">
+          <h2 class="site-footer__title" id="footer-service">Le service</h2>
+          <ul class="site-footer__list">
+            <li><a href="tarifs">Tarifs</a></li>
+            <li><a href="cas-clara">Le cas Clara</a></li>
+            <li><a href="commencer">Commencer</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-confiance">
+          <h2 class="site-footer__title" id="footer-confiance">Confiance</h2>
+          <ul class="site-footer__list">
+            <li><a href="a-propos">À propos</a></li>
+            <li><a href="conditions-de-vente">Conditions de vente</a></li>
+            <li><a href="mentions-legales">Mentions légales</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-contact">
+          <h2 class="site-footer__title" id="footer-contact">Me contacter</h2>
+          <ul class="site-footer__list">
+            <li><a href="mailto:pro.fgamer768@gmail.com">pro.fgamer768@gmail.com</a></li>
+            <li>
+              <a href="https://www.instagram.com/clairfolioweb/" target="_blank" rel="noopener">Instagram&nbsp;: @clairfolioweb
+                <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up-right"/></svg>
+                <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <p class="site-footer__legal">© 2026 Clairfolio. Site édité par FGAMER768.</p>
+    </div>
+  </footer>
+</body>
+</html>
