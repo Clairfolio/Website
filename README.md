@@ -56,7 +56,11 @@ Chargées dans cet ordre sur toutes les pages : `tokens`, `fonts`, `base`, `butt
 
 ### Navigation
 
-`js/nav.js` gère le bouton « Menu » et le retour d'appui des boutons-liens (classe `.is-pressed` posée au clic, retirée au retour par l'historique : sur téléphone, le `:active` du navigateur arrive trop tard pour un tap rapide). Sans JavaScript, la navigation reste visible et `:active` reste le retour d'appui. Le lien « Aller au contenu » est le premier élément atteint au clavier.
+`js/nav.js` gère le bouton « Menu » et le retour d'appui des boutons-liens (classe `.is-pressed` posée au clic, retirée au retour par l'historique : sur téléphone, le `:active` du navigateur arrive trop tard pour un tap rapide). Sans JavaScript, la navigation reste visible et `:active` reste le retour d'appui. Le lien « Aller au contenu » est le premier élément atteint au clavier. Sur téléphone, la liste se déroule sous la barre en panneau par-dessus la page (hauteur animée, `visibility: hidden` quand elle est fermée, un appui ailleurs ou Échap la ferme) ; l'en-tête ne change pas de hauteur. Sans JavaScript, la liste reste visible dans le flux (`no-js.css`).
+
+### Questions fréquentes
+
+Accueil et Tarifs : un `<details>` par question, la question est un `h3` dans le `<summary>` (styles dans `sections.css`). Fonctionne sans JavaScript. Le déroulé animé utilise `::details-content` et `interpolate-size` (navigateurs récents) ; ailleurs, ou avec « réduire les animations », la réponse apparaît d'un coup. Pour ajouter une question, copier un bloc `<details>`.
 
 ### Formulaire « Commencer »
 

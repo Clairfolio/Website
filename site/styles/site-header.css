@@ -1,12 +1,14 @@
 /*
   En-tête : symbole (image décorative, alt vide) et nom en texte (direction artistique §3.4),
   navigation en noms courts, bouton « Commencer » toujours visible (guide Voix, « L'en-tête »).
-  Téléphone : « Commencer » et « Menu » à droite, la liste s'ouvre dessous.
+  Téléphone : « Commencer » et « Menu » à droite ; la liste se déroule sous la barre, par-dessus la page,
+  sans changer la hauteur de l'en-tête.
   Ordinateur : symbole et nom, trois liens, « Commencer ». Le bouton existe deux fois dans le code,
   une seule version est affichée à la fois (l'autre est en display: none : ni lue ni atteinte au clavier).
 */
 
 .site-header {
+  position: relative;   /* la liste du menu s'ancre sous la barre sur téléphone */
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -77,11 +79,6 @@ a.brand:active {
 
 .site-nav {
   display: none;
-  flex-basis: 100%;
-}
-
-.site-nav.is-open {
-  display: block;
 }
 
 .site-nav ul {
@@ -148,6 +145,51 @@ a.brand:active {
   .menu-toggle {
     padding-inline: var(--space-2);
     font-size: 0.9375rem;
+  }
+}
+
+/* Téléphone : la liste est un panneau qui se déroule sous la barre (hauteur animée de 0 à sa taille).
+   Fermé, il est en visibility: hidden : ni lu ni atteint au clavier, comme avec display: none. */
+@media (max-width: 47.99em) {
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 1px);   /* sous le trait de l'en-tête, qui reste visible */
+    inset-inline: 0;
+    z-index: 20;
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .site-nav.is-open {
+    grid-template-rows: 1fr;
+    visibility: visible;
+  }
+
+  .site-nav ul {
+    min-height: 0;
+    overflow: hidden;
+    padding: 0 var(--gutter);
+  }
+
+  .site-nav li + li {
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .site-nav a:not(.btn) {
+    min-height: 3rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .site-nav {
+      transition: grid-template-rows 0.25s ease, visibility 0s linear 0.25s;
+    }
+
+    .site-nav.is-open {
+      transition: grid-template-rows 0.25s ease, visibility 0s;
+    }
   }
 }
 

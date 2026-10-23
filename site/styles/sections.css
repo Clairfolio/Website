@@ -189,15 +189,103 @@
   width: 50%;
 }
 
-/* Questions fréquentes (accueil, tarifs) */
-.faq h3 {
-  margin-bottom: var(--space-2);
+/*
+  Questions fréquentes (accueil, tarifs) : une ligne par question, la réponse se déroule dessous.
+  <details> natif : fonctionne sans JavaScript, au clavier (Entrée, Espace) et avec un lecteur d'écran.
+  La question reste un titre h3 (dans le <summary>). Pas de couleur en dur, pas d'ombre.
+  Le déroulé animé (::details-content) est un plus : sans lui (ou avec « réduire les animations »), la réponse apparaît d'un coup.
+*/
+.faq details {
+  max-width: 48rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.faq details:first-of-type {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: var(--target);
+  margin-inline: calc(-1 * var(--space-3));   /* le texte reste aligné sur le titre, seul le fond de survol déborde */
+  padding: var(--space-4) var(--space-3);
+  cursor: pointer;
+  list-style: none;   /* le triangle du navigateur est remplacé par le chevron */
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary h3 {
+  margin: 0;
   font-size: var(--step-lead);
   line-height: var(--leading-h3);
 }
 
-.faq h3 + p {
-  margin-bottom: var(--space-5);
+/* Chevron dessiné en CSS (les images en data: sont bloquées par la politique de sécurité du site) */
+.faq summary::after {
+  content: "";
+  flex: none;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-right: var(--space-1);
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.15rem) rotate(45deg);
+}
+
+.faq details[open] > summary::after {
+  transform: translateY(0.15rem) rotate(-135deg);
+}
+
+/* Survol (souris) et appui (toucher) : le fond change, jamais le texte seul */
+@media (hover: hover) and (pointer: fine) {
+  .faq summary:hover {
+    background: var(--surface);
+  }
+
+  .section--tint .faq summary:hover {
+    background: var(--bg);
+  }
+}
+
+.faq summary:active {
+  background: var(--surface);
+}
+
+.section--tint .faq summary:active {
+  background: var(--bg);
+}
+
+.faq details > p {
+  margin: 0;
+  padding: 0 0 var(--space-4);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .faq summary::after {
+    transition: transform 0.2s ease;
+  }
+
+  @supports (interpolate-size: allow-keywords) and selector(::details-content) {
+    .faq details {
+      interpolate-size: allow-keywords;
+    }
+
+    .faq details::details-content {
+      block-size: 0;
+      overflow: clip;
+      transition: block-size 0.25s ease, content-visibility 0.25s allow-discrete;
+    }
+
+    .faq details[open]::details-content {
+      block-size: auto;
+    }
+  }
 }
 
 /* Un titre qui reçoit le focus par script (page de confirmation) n'est pas un élément interactif : pas de cadre autour.

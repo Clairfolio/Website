@@ -1,6 +1,7 @@
 /*
   Menu de l'en-tête sur téléphone (guide Voix, UX et microtexte, « L'en-tête ») :
-  bouton « Menu » qui devient « Fermer », la touche Échap ferme le menu et rend le focus au bouton.
+  bouton « Menu » qui devient « Fermer », la liste se déroule sous la barre ; la touche Échap ou un appui ailleurs
+  ferme le menu (Échap rend le focus au bouton).
   Sans JavaScript, la navigation reste visible (styles/no-js.css).
 
   Retour d'appui des boutons-liens : sur téléphone, le :active du navigateur arrive après un court délai,
@@ -53,5 +54,12 @@
 
   nav.addEventListener('click', function (event) {
     if (event.target.closest('a')) setOpen(false);
+  });
+
+  // Le menu se déroule par-dessus la page : toucher ailleurs le referme
+  document.addEventListener('click', function (event) {
+    if (button.getAttribute('aria-expanded') !== 'true') return;
+    if (event.target.closest('#site-nav, #menu-toggle')) return;
+    setOpen(false);
   });
 })();
