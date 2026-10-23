@@ -1,4 +1,5 @@
-# DÉVELOPPEMENT : tout est interdit aux robots.
-# À REMPLACER au palier 9 par : User-agent: * / Allow: / / Sitemap: https://<domaine>/sitemap.xml
+# DEVELOPPEMENT : tout est interdit aux robots tant que la mise en ligne n'est pas décidée.
+# python3 tools/go_live.py remplace ce fichier par la version de production :
+#   User-agent: * / Allow: / / Sitemap: https://clairfolio.me/sitemap.xml
 User-agent: *
 Disallow: /

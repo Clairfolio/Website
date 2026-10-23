@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable · Clairfolio</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#080f22">
+  <!--
+    Page 404. Exception à la règle des chemins relatifs : Netlify sert ce fichier à l'adresse
+    demandée (par exemple /nimporte/quoi), un chemin relatif casserait alors les styles et les liens.
+    Tous les chemins de cette page commencent donc par « / ». Pas de canonical : une 404 n'a pas d'adresse.
+  -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preload" href="/fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Ordre des feuilles : tokens (jetons) avant tout le reste ; fonts avant base ; les composants en dernier. -->
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/fonts.css">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/button.css">
+  <link rel="stylesheet" href="/styles/site-header.css">
+  <link rel="stylesheet" href="/styles/sections.css">
+  <link rel="stylesheet" href="/styles/site-footer.css">
+  <noscript><link rel="stylesheet" href="/styles/no-js.css"></noscript>
+  <script src="/js/nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/">
+        <img src="/icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+        <span class="brand-name">Clairfolio</span>
+      </a>
+      <div class="site-header__actions">
+        <a class="btn btn--primary btn--compact" href="/commencer">Commencer</a>
+        <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span class="menu-toggle__label">Menu</span></button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Principale">
+        <ul>
+          <li><a href="/cas-clara">Le cas Clara</a></li>
+          <li><a href="/tarifs">Tarifs</a></li>
+          <li><a href="/a-propos">À propos</a></li>
+          <li class="site-nav__cta"><a class="btn btn--primary btn--compact" href="/commencer">Commencer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section page-head" aria-labelledby="titre">
+      <div class="container">
+        <h1 id="titre">Cette page est introuvable.</h1>
+        <p class="page-head__lead">L’adresse est peut-être mal écrite, ou la page a changé de place.</p>
+        <div class="actions">
+          <a class="btn btn--primary btn--block-mobile" href="/">Retourner à l’accueil</a>
+        </div>
+        <p><a class="link-action" href="/tarifs">Voir les tarifs</a></p>
+        <p><a class="link-action" href="/cas-clara">Lire le cas de Clara</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="/">
+            <img src="/icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+            <span class="brand-name">Clairfolio</span>
+          </a>
+          <p class="site-footer__tagline">Votre travail mérite d’être vu.</p>
+        </div>
+        <nav aria-labelledby="footer-service">
+          <h2 class="site-footer__title" id="footer-service">Le service</h2>
+          <ul class="site-footer__list">
+            <li><a href="/tarifs">Tarifs</a></li>
+            <li><a href="/cas-clara">Le cas Clara</a></li>
+            <li><a href="/commencer">Commencer</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-confiance">
+          <h2 class="site-footer__title" id="footer-confiance">Confiance</h2>
+          <ul class="site-footer__list">
+            <li><a href="/a-propos">À propos</a></li>
+            <li><a href="/conditions-de-vente">Conditions de vente</a></li>
+            <li><a href="/mentions-legales">Mentions légales</a></li>
+            <li><a href="/accessibilite">Accessibilité</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-contact">
+          <h2 class="site-footer__title" id="footer-contact">Me contacter</h2>
+          <ul class="site-footer__list">
+            <li><a href="mailto:pro.fgamer768@gmail.com">pro.fgamer768@gmail.com</a></li>
+            <li>
+              <a href="https://www.instagram.com/clairfolioweb/" target="_blank" rel="noopener">Instagram&nbsp;: @clairfolioweb
+                <svg class="ext-icon" aria-hidden="true" focusable="false"><use href="/icons/sprite.svg#arrow-up-right"/></svg>
+                <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <p class="site-footer__legal">© 2026 Clairfolio. Site édité par FGAMER768.</p>
+    </div>
+  </footer>
+</body>
+</html>

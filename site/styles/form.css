@@ -124,6 +124,11 @@
   }
 }
 
+/* Appui sur un choix (toucher) : l'anneau prend la couleur d'action, comme au survol à la souris */
+.choice:active input {
+  border-color: var(--action-bg);
+}
+
 .choice input:checked {
   border: 0.4rem solid var(--action-bg);   /* anneau épais : le choix se voit sans couleur seule (forme) */
 }

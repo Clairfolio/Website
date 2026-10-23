@@ -1,11 +1,21 @@
 # En-têtes HTTP envoyés par Netlify (fichier lu à la racine du dossier publié).
+# Une règle par bloc : un en-tête déclaré dans plusieurs blocs qui s'appliquent à la même adresse est cumulé.
 
-# DÉVELOPPEMENT : le site ne doit pas être indexé tant qu'il n'est pas prêt.
-# À RETIRER au palier 9 (mise en production), avec robots.txt.
+# DEBUT DU BLOC DEVELOPPEMENT : le site n'est pas indexé tant que la mise en ligne n'est pas décidée.
+# Ce bloc (avec le « Disallow » de robots.txt) est retiré par : python3 tools/go_live.py
 /*
   X-Robots-Tag: noindex
+# FIN DU BLOC DEVELOPPEMENT
+
+# Sécurité, pour toutes les pages. Le site n'appelle aucun domaine externe, d'où une politique stricte.
+# Si un jour un outil externe est ajouté (mesure d'audience, vidéo), son domaine s'ajoute ici, dans la ligne
+# Content-Security-Policy, sinon le navigateur le bloque.
+/*
   X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'
 
 # Les polices ne changent jamais d'adresse : cache long.
 /fonts/*

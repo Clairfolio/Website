@@ -29,7 +29,8 @@
   text-decoration: none;
 }
 
-.brand:hover {
+.brand:hover,
+a.brand:active {
   color: var(--text);
   text-decoration: none;
 }
@@ -63,7 +64,14 @@
   cursor: pointer;
 }
 
-.menu-toggle:hover {
+/* Survol : seulement avec une souris (au toucher il reste collé) ; l'appui donne le retour */
+@media (hover: hover) and (pointer: fine) {
+  .menu-toggle:hover {
+    background: var(--surface);
+  }
+}
+
+.menu-toggle:active {
   background: var(--surface);
 }
 
@@ -96,7 +104,14 @@
   text-decoration: none;
 }
 
-.site-nav a:not(.btn):hover {
+@media (hover: hover) and (pointer: fine) {
+  .site-nav a:not(.btn):hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+}
+
+.site-nav a:not(.btn):active {
   color: var(--link-hover);
   text-decoration: underline;
 }

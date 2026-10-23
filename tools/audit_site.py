@@ -295,7 +295,9 @@ def main() -> int:
         if pg.meta("viewport") is None:
             rep.add("FAIL", "Structure de page", name, "meta viewport absente.")
         desc = pg.meta("description")
-        if not desc:
+        if not desc and ("noindex" in (pg.meta("robots") or "").lower() or name == "404.html"):
+            pass  # le guide prévoit « aucune » description pour la confirmation et la page introuvable
+        elif not desc:
             rep.add("WARN", "Référencement", name, "meta description absente.")
         elif len(desc) > 160:
             rep.add("WARN", "Référencement", name, f"meta description de {len(desc)} caractères (> 160).")
@@ -322,7 +324,13 @@ def main() -> int:
         # --- canonical / Open Graph
         can = pg.canonical()
         ogu = pg.meta("og:url")
-        if not can:
+        noindex = "noindex" in (pg.meta("robots") or "").lower() or name == "404.html"
+        if noindex:
+            # Page hors référencement (confirmation, banc d'essai, 404) : ni canonical ni balises de partage requis.
+            can = None
+            ogu = None
+            rep.add("INFO", "Référencement", name, "Page hors référencement (noindex ou 404) : canonical et balises de partage non contrôlés.")
+        elif not can:
             rep.add("FAIL", "Référencement", name, "<link rel=canonical> absent.")
         else:
             cu = urlparse(can)
@@ -336,15 +344,18 @@ def main() -> int:
                     expected = origin + page_url_path(name)
                     if can != expected:
                         rep.add("FAIL", "Référencement", name, f"canonical {can} différent de l'adresse attendue {expected}.")
-        if ogu is None:
+        if noindex:
+            pass
+        elif ogu is None:
             rep.add("WARN", "Référencement", name, "og:url absent.")
         elif can and ogu != can:
             rep.add("FAIL", "Référencement", name, f"og:url ({ogu}) différent du canonical ({can}).")
-        for key in ("og:title", "og:description", "og:image", "twitter:card"):
-            if pg.meta(key) is None:
-                rep.add("WARN", "Référencement", name, f"{key} absent.")
+        if not noindex:
+            for key in ("og:title", "og:description", "og:image", "twitter:card"):
+                if pg.meta(key) is None:
+                    rep.add("WARN", "Référencement", name, f"{key} absent.")
         ogi = pg.meta("og:image")
-        if ogi:
+        if ogi and not noindex:
             if not ogi.startswith("https://"):
                 rep.add("WARN", "Référencement", name, f"og:image non absolue : {ogi}")
             elif origin and ogi.startswith(origin + "/"):
@@ -399,7 +410,7 @@ def main() -> int:
             except ValueError:
                 rep.add("FAIL", "Liens et ressources", f"{name}:{line}", f"Chemin hors du site : {v}")
                 continue
-            if path_part.startswith("/") and tag != "a":
+            if path_part.startswith("/") and tag != "a" and name != "404.html":
                 rep.add("INFO", "Liens et ressources", f"{name}:{line}", f"Chemin absolu (à éviter hors scripts de plateforme) : {v}")
             ok, via_clean, target_html = target_exists(p)
             rp = rel(root, p) if p != root else ""
@@ -456,8 +467,15 @@ def main() -> int:
     rb = root / "robots.txt"
     if not rb.exists():
         rep.add("WARN", "Sitemap et robots", "robots.txt", "Fichier absent.")
-    elif sm.exists() and not re.search(r"(?im)^\s*sitemap\s*:", rb.read_text(encoding="utf-8", errors="replace")):
-        rep.add("WARN", "Sitemap et robots", "robots.txt", "Pas de ligne « Sitemap: ».")
+    else:
+        rtxt = rb.read_text(encoding="utf-8", errors="replace")
+        if re.search(r"(?im)^\s*disallow\s*:\s*/\s*$", rtxt):
+            rep.add("WARN", "Sitemap et robots", "robots.txt", "Tout le site est interdit aux robots (mode développement). Normal avant la mise en ligne ; à lever avec tools/go_live.py.")
+        elif sm.exists() and not re.search(r"(?im)^\s*sitemap\s*:", rtxt):
+            rep.add("WARN", "Sitemap et robots", "robots.txt", "Pas de ligne « Sitemap: ».")
+    hp = root / "_headers"
+    if hp.exists() and re.search(r"(?im)^\s+x-robots-tag\s*:\s*noindex", hp.read_text(encoding="utf-8", errors="replace")):
+        rep.add("WARN", "Sitemap et robots", "_headers", "En-tête X-Robots-Tag: noindex actif (mode développement). Normal avant la mise en ligne ; à lever avec tools/go_live.py.")
 
     # ---- traductions
     ip = root / args.i18n

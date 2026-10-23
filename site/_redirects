@@ -1,0 +1,17 @@
+# Redirections Netlify (fichier lu à la racine du dossier publié).
+# Une seule adresse par page : la forme sans extension, celle des balises canonical et du plan du site.
+# Le « ! » force la redirection même si le fichier .html existe. Statut 301 : permanent.
+# À garder indéfiniment : si une page change d'adresse un jour, une ligne s'ajoute ici.
+
+/index.html                /                     301!
+/a-propos.html             /a-propos             301!
+/accessibilite.html        /accessibilite        301!
+/cas-clara.html            /cas-clara            301!
+/commencer.html            /commencer            301!
+/conditions-de-vente.html  /conditions-de-vente  301!
+/forfait-complet.html      /forfait-complet      301!
+/forfait-essentiel.html    /forfait-essentiel    301!
+/forfait-recommande.html   /forfait-recommande   301!
+/mentions-legales.html     /mentions-legales     301!
+/tarifs.html               /tarifs               301!
+/commencer/merci.html      /commencer/merci      301!

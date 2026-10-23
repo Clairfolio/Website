@@ -6,32 +6,32 @@
   <title>Banc d’essai des jetons · Clairfolio</title>
   <meta name="description" content="Page temporaire de développement : palette, typographie, boutons et champs de Clairfolio en situation.">
   <meta name="robots" content="noindex">
+  <!-- Banc d'essai des jetons : hors du dossier publié (site/). Ouvrir ce fichier directement dans le navigateur. Les chemins pointent vers ../../site/. -->
   <meta name="theme-color" content="#080f22">
-  <link rel="canonical" href="https://clairfolio.netlify.app/test">
-
-  <link rel="icon" href="favicon.ico" sizes="32x32">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/inter/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <link rel="icon" href="../../site/favicon.ico" sizes="32x32">
+  <link rel="icon" href="../../site/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../../site/fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../site/fonts/inter/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Ordre des feuilles : tokens (jetons) avant tout le reste ; fonts avant base ; les composants en dernier. -->
-  <link rel="stylesheet" href="styles/tokens.css">
-  <link rel="stylesheet" href="styles/fonts.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/button.css">
-  <link rel="stylesheet" href="styles/site-header.css">
-  <link rel="stylesheet" href="styles/site-footer.css">
-  <link rel="stylesheet" href="styles/notice.css">
-  <link rel="stylesheet" href="styles/form.css">
-  <link rel="stylesheet" href="styles/test.css">
+  <link rel="stylesheet" href="../../site/styles/tokens.css">
+  <link rel="stylesheet" href="../../site/styles/fonts.css">
+  <link rel="stylesheet" href="../../site/styles/base.css">
+  <link rel="stylesheet" href="../../site/styles/button.css">
+  <link rel="stylesheet" href="../../site/styles/site-header.css">
+  <link rel="stylesheet" href="../../site/styles/site-footer.css">
+  <link rel="stylesheet" href="../../site/styles/notice.css">
+  <link rel="stylesheet" href="../../site/styles/form.css">
+  <link rel="stylesheet" href="test.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Aller au contenu</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="./">
-        <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+      <a class="brand" href="../../site/index.html">
+        <img src="../../site/icons/clairfolio-symbol.svg" alt="" width="40" height="34">
         <span class="brand-name">Clairfolio</span>
       </a>
     </div>
@@ -41,7 +41,7 @@
     <section class="test-section">
       <div class="container">
         <h1>Banc d’essai des jetons.</h1>
-        <p>Page temporaire, absente des moteurs de recherche, supprimée avant la mise en production. Elle sert à valider la palette étendue à l’œil et à tester les adresses sans extension sur l’hébergeur.</p>
+        <p>Page de développement, rangée hors du dossier publié : elle n’est jamais en ligne. Elle sert à valider la palette étendue à l’œil et à tester les adresses sans extension sur l’hébergeur.</p>
         <p class="muted">Les deux premières sections suivent le thème de votre navigateur. La section « Sur fond sombre » est toujours sombre.</p>
       </div>
     </section>
@@ -104,7 +104,7 @@
         <p class="h1">Titre principal, Manrope 800.</p>
         <p class="h2">Titre de section, Manrope 800.</p>
         <p class="h3">Sous-titre, Manrope 800.</p>
-        <p>Texte courant en Inter 400. Une phrase qui se dit à voix haute, avec <strong>un engagement en gras</strong> (Inter 600) et un <a href="./">lien souligné en permanence</a>. Les prix ne se coupent pas : <span class="nowrap">89&nbsp;€</span>, <span class="nowrap">129&nbsp;€</span>, <span class="nowrap">169&nbsp;€</span>, <span class="nowrap">+&nbsp;30&nbsp;€</span>, <span class="nowrap">9,3&nbsp;s</span>, <span class="nowrap">10&nbsp;jours ouvrés</span>.</p>
+        <p>Texte courant en Inter 400. Une phrase qui se dit à voix haute, avec <strong>un engagement en gras</strong> (Inter 600) et un <a href="../../site/index.html">lien souligné en permanence</a>. Les prix ne se coupent pas : <span class="nowrap">89&nbsp;€</span>, <span class="nowrap">129&nbsp;€</span>, <span class="nowrap">169&nbsp;€</span>, <span class="nowrap">+&nbsp;30&nbsp;€</span>, <span class="nowrap">9,3&nbsp;s</span>, <span class="nowrap">10&nbsp;jours ouvrés</span>.</p>
         <p class="small muted">Légende en Inter 400, 14 px : « Avant. Capture sur téléphone Android (Honor), le 16 octobre 2026. »</p>
       </div>
     </section>
@@ -113,13 +113,13 @@
       <div class="container">
         <h2 id="t-btn">Boutons, champ et messages</h2>
         <div class="btn-row">
-          <a class="btn btn--primary" href="./">Créer mon portfolio</a>
-          <a class="btn btn--secondary" href="./">Refondre mon portfolio</a>
+          <a class="btn btn--primary" href="../../site/index.html">Créer mon portfolio</a>
+          <a class="btn btn--secondary" href="../../site/index.html">Refondre mon portfolio</a>
         </div>
-        <p><a class="link-action" href="./">Lire le cas de Clara</a></p>
+        <p><a class="link-action" href="../../site/index.html">Lire le cas de Clara</a></p>
 
         <div class="notice notice--error" role="alert">
-          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="../../site/icons/sprite.svg#status-error"/></svg>
           <div class="notice__body">
             <h3 class="notice__title" id="t-resume" tabindex="-1"><span class="visually-hidden">Erreur : </span>Corrigez 1&nbsp;champ pour envoyer votre demande.</h3>
             <ul class="notice__list">
@@ -136,32 +136,32 @@
           <label for="t-nom">Nom (obligatoire)</label>
           <input id="t-nom" name="nom" autocomplete="family-name" aria-invalid="true" aria-describedby="t-nom-err">
           <p class="field-error" id="t-nom-err">
-            <svg aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+            <svg aria-hidden="true" focusable="false"><use href="../../site/icons/sprite.svg#status-error"/></svg>
             <span><span class="visually-hidden">Erreur : </span>Indiquez votre nom.</span>
           </p>
         </div>
 
         <p class="small muted">Textes du guide Voix, UX et microtexte. Le succès d’envoi est en réalité une page distincte (/merci) et l’avertissement n’a pas encore d’usage prévu : ils servent ici à valider le style.</p>
         <div class="notice notice--error" role="alert">
-          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="../../site/icons/sprite.svg#status-error"/></svg>
           <div class="notice__body">
             <h3 class="notice__title"><span class="visually-hidden">Erreur : </span>L’envoi n’a pas abouti.</h3>
             <p class="notice__text">Vos réponses sont conservées. Réessayez dans un instant, ou écrivez-moi à pro.fgamer768@gmail.com.</p>
             <div class="notice__actions">
               <button type="button" class="btn btn--primary btn--block-mobile">Réessayer l’envoi</button>
-              <a class="btn btn--secondary btn--block-mobile" href="./">M’écrire par e-mail</a>
+              <a class="btn btn--secondary btn--block-mobile" href="../../site/index.html">M’écrire par e-mail</a>
             </div>
           </div>
         </div>
         <div class="notice notice--success" role="status">
-          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-success"/></svg>
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="../../site/icons/sprite.svg#status-success"/></svg>
           <div class="notice__body">
             <h3 class="notice__title"><span class="visually-hidden">Succès : </span>C’est bien reçu.</h3>
             <p class="notice__text">Merci. Je vous réponds sous 2&nbsp;jours ouvrés et nous en parlons. Rien n’est facturé avant votre accord.</p>
           </div>
         </div>
         <div class="notice notice--warning" role="status">
-          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-warning"/></svg>
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="../../site/icons/sprite.svg#status-warning"/></svg>
           <div class="notice__body">
             <h3 class="notice__title"><span class="visually-hidden">Avertissement : </span>La vidéo ne se charge pas.</h3>
             <p class="notice__text">La transcription est juste en dessous.</p>
@@ -183,34 +183,34 @@
           <li class="sw sw--warning">Avertissement</li>
         </ul>
         <div class="btn-row">
-          <a class="btn btn--primary" href="./">Créer mon portfolio</a>
-          <a class="btn btn--secondary" href="./">Refondre mon portfolio</a>
+          <a class="btn btn--primary" href="../../site/index.html">Créer mon portfolio</a>
+          <a class="btn btn--secondary" href="../../site/index.html">Refondre mon portfolio</a>
         </div>
-        <p>Texte courant sur marine, avec <a href="./">un lien vert souligné</a>.</p>
+        <p>Texte courant sur marine, avec <a href="../../site/index.html">un lien vert souligné</a>.</p>
         <div class="field">
           <label for="t-mail">Adresse e-mail (obligatoire)</label>
           <input id="t-mail" name="mail" type="email" autocomplete="email">
         </div>
         <div class="notice notice--error" role="alert">
-          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="../../site/icons/sprite.svg#status-error"/></svg>
           <div class="notice__body">
             <h3 class="notice__title"><span class="visually-hidden">Erreur : </span>L’envoi n’a pas abouti.</h3>
             <p class="notice__text">Vos réponses sont conservées. Réessayez dans un instant, ou écrivez-moi à pro.fgamer768@gmail.com.</p>
             <div class="notice__actions">
               <button type="button" class="btn btn--primary btn--block-mobile">Réessayer l’envoi</button>
-              <a class="btn btn--secondary btn--block-mobile" href="./">M’écrire par e-mail</a>
+              <a class="btn btn--secondary btn--block-mobile" href="../../site/index.html">M’écrire par e-mail</a>
             </div>
           </div>
         </div>
         <div class="notice notice--success" role="status">
-          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-success"/></svg>
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="../../site/icons/sprite.svg#status-success"/></svg>
           <div class="notice__body">
             <h3 class="notice__title"><span class="visually-hidden">Succès : </span>C’est bien reçu.</h3>
             <p class="notice__text">Merci. Je vous réponds sous 2&nbsp;jours ouvrés et nous en parlons. Rien n’est facturé avant votre accord.</p>
           </div>
         </div>
         <div class="notice notice--warning" role="status">
-          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-warning"/></svg>
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="../../site/icons/sprite.svg#status-warning"/></svg>
           <div class="notice__body">
             <h3 class="notice__title"><span class="visually-hidden">Avertissement : </span>La vidéo ne se charge pas.</h3>
             <p class="notice__text">La transcription est juste en dessous.</p>

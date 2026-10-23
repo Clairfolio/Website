@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banc d’essai des jetons · Clairfolio</title>
+  <meta name="description" content="Page temporaire de développement : palette, typographie, boutons et champs de Clairfolio en situation.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#080f22">
+  <link rel="canonical" href="https://clairfolio.netlify.app/test">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Ordre des feuilles : tokens (jetons) avant tout le reste ; fonts avant base ; les composants en dernier. -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/button.css">
+  <link rel="stylesheet" href="styles/site-header.css">
+  <link rel="stylesheet" href="styles/site-footer.css">
+  <link rel="stylesheet" href="styles/notice.css">
+  <link rel="stylesheet" href="styles/form.css">
+  <link rel="stylesheet" href="styles/test.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img src="icons/clairfolio-symbol.svg" alt="" width="40" height="34">
+        <span class="brand-name">Clairfolio</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="test-section">
+      <div class="container">
+        <h1>Banc d’essai des jetons.</h1>
+        <p>Page temporaire, absente des moteurs de recherche, supprimée avant la mise en production. Elle sert à valider la palette étendue à l’œil et à tester les adresses sans extension sur l’hébergeur.</p>
+        <p class="muted">Les deux premières sections suivent le thème de votre navigateur. La section « Sur fond sombre » est toujours sombre.</p>
+      </div>
+    </section>
+
+    <section class="test-section" aria-labelledby="t-palette">
+      <div class="container">
+        <h2 id="t-palette">Palette, thème du navigateur</h2>
+        <ul class="sw-grid">
+          <li class="sw sw--bg">Fond</li>
+          <li class="sw sw--text">Texte</li>
+          <li class="sw sw--muted">Texte atténué</li>
+          <li class="sw sw--surface">Surface</li>
+          <li class="sw sw--link">Lien</li>
+          <li class="sw sw--link-hover">Lien au survol</li>
+          <li class="sw sw--action">Bouton principal</li>
+          <li class="sw sw--action-hover">Bouton, survol</li>
+          <li class="sw sw--action-pressed">Bouton, appui</li>
+          <li class="sw sw--error">Erreur</li>
+          <li class="sw sw--success">Succès</li>
+          <li class="sw sw--warning">Avertissement</li>
+        </ul>
+
+        <div class="table-wrap">
+          <table class="test-table">
+            <caption>Valeurs et contrastes (seuil : 4,5 pour le texte, 3 pour les formes)</caption>
+            <thead>
+              <tr>
+                <th scope="col">Rôle</th>
+                <th scope="col">Thème clair</th>
+                <th scope="col">Contraste</th>
+                <th scope="col">Thème sombre</th>
+                <th scope="col">Contraste</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Texte sur fond</th><td>#080f22 sur #f8f8f6</td><td>17,93</td><td>#f8f8f6 sur #080f22</td><td>17,93</td></tr>
+              <tr><th scope="row">Texte atténué</th><td>#4a5266 sur #f8f8f6</td><td>7,34</td><td>#b4b9c6 sur #080f22</td><td>9,71</td></tr>
+              <tr><th scope="row">Texte sur surface</th><td>#080f22 sur #eeeeea</td><td>16,39</td><td>#f8f8f6 sur #111a33</td><td>16,20</td></tr>
+              <tr><th scope="row">Lien</th><td>#2457ff sur #f8f8f6</td><td>5,09</td><td>#c8ff3d sur #080f22</td><td>16,18</td></tr>
+              <tr><th scope="row">Lien au survol</th><td>#1b45d6 sur #f8f8f6</td><td>6,88</td><td>#d9ff75 sur #080f22</td><td>16,80</td></tr>
+              <tr><th scope="row">Bouton principal</th><td>#f8f8f6 sur #2457ff</td><td>5,09</td><td>#080f22 sur #c8ff3d</td><td>16,18</td></tr>
+              <tr><th scope="row">Bouton, survol</th><td>#f8f8f6 sur #1b45d6</td><td>6,88</td><td>#080f22 sur #d9ff75</td><td>16,80</td></tr>
+              <tr><th scope="row">Bouton, appui</th><td>#f8f8f6 sur #1636a8</td><td>9,28</td><td>#080f22 sur #b2e62f</td><td>12,94</td></tr>
+              <tr><th scope="row">Erreur (icône, contour, texte de champ)</th><td>#b42318 sur #f8f8f6</td><td>6,18</td><td>#ff8a7a sur #080f22</td><td>8,32</td></tr>
+              <tr><th scope="row">Succès (icône)</th><td>#166534 sur #f8f8f6</td><td>6,71</td><td>#6ee7a0 sur #080f22</td><td>12,34</td></tr>
+              <tr><th scope="row">Avertissement (icône)</th><td>#b45309 sur #f8f8f6</td><td>4,72</td><td>#fbbf24 sur #080f22</td><td>11,42</td></tr>
+              <tr><th scope="row">État sur la surface du message (pire cas : avertissement)</th><td>#b45309 sur #eeeeea</td><td>4,32</td><td>#fbbf24 sur #111a33</td><td>10,32</td></tr>
+              <tr><th scope="row">Texte d’un message sur sa surface</th><td>#080f22 sur #eeeeea</td><td>16,39</td><td>#f8f8f6 sur #111a33</td><td>16,20</td></tr>
+              <tr><th scope="row">Bordure de champ (50 %)</th><td>marine à 50 %</td><td>3,53</td><td>ivoire à 50 %</td><td>5,08</td></tr>
+              <tr><th scope="row">Contour de focus</th><td>#2457ff</td><td>5,09</td><td>#c8ff3d</td><td>16,18</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section" aria-labelledby="t-typo">
+      <div class="container">
+        <h2 id="t-typo">Typographie</h2>
+        <p class="h1">Titre principal, Manrope 800.</p>
+        <p class="h2">Titre de section, Manrope 800.</p>
+        <p class="h3">Sous-titre, Manrope 800.</p>
+        <p>Texte courant en Inter 400. Une phrase qui se dit à voix haute, avec <strong>un engagement en gras</strong> (Inter 600) et un <a href="./">lien souligné en permanence</a>. Les prix ne se coupent pas : <span class="nowrap">89&nbsp;€</span>, <span class="nowrap">129&nbsp;€</span>, <span class="nowrap">169&nbsp;€</span>, <span class="nowrap">+&nbsp;30&nbsp;€</span>, <span class="nowrap">9,3&nbsp;s</span>, <span class="nowrap">10&nbsp;jours ouvrés</span>.</p>
+        <p class="small muted">Légende en Inter 400, 14 px : « Avant. Capture sur téléphone Android (Honor), le 16 octobre 2026. »</p>
+      </div>
+    </section>
+
+    <section class="test-section" aria-labelledby="t-btn">
+      <div class="container">
+        <h2 id="t-btn">Boutons, champ et messages</h2>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="./">Créer mon portfolio</a>
+          <a class="btn btn--secondary" href="./">Refondre mon portfolio</a>
+        </div>
+        <p><a class="link-action" href="./">Lire le cas de Clara</a></p>
+
+        <div class="notice notice--error" role="alert">
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <div class="notice__body">
+            <h3 class="notice__title" id="t-resume" tabindex="-1"><span class="visually-hidden">Erreur : </span>Corrigez 1&nbsp;champ pour envoyer votre demande.</h3>
+            <ul class="notice__list">
+              <li><a href="#t-nom">Indiquez votre nom.</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="t-prenom">Prénom (obligatoire)</label>
+          <input id="t-prenom" name="prenom" autocomplete="given-name">
+        </div>
+        <div class="field field--error">
+          <label for="t-nom">Nom (obligatoire)</label>
+          <input id="t-nom" name="nom" autocomplete="family-name" aria-invalid="true" aria-describedby="t-nom-err">
+          <p class="field-error" id="t-nom-err">
+            <svg aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+            <span><span class="visually-hidden">Erreur : </span>Indiquez votre nom.</span>
+          </p>
+        </div>
+
+        <p class="small muted">Textes du guide Voix, UX et microtexte. Le succès d’envoi est en réalité une page distincte (/merci) et l’avertissement n’a pas encore d’usage prévu : ils servent ici à valider le style.</p>
+        <div class="notice notice--error" role="alert">
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <div class="notice__body">
+            <h3 class="notice__title"><span class="visually-hidden">Erreur : </span>L’envoi n’a pas abouti.</h3>
+            <p class="notice__text">Vos réponses sont conservées. Réessayez dans un instant, ou écrivez-moi à pro.fgamer768@gmail.com.</p>
+            <div class="notice__actions">
+              <button type="button" class="btn btn--primary btn--block-mobile">Réessayer l’envoi</button>
+              <a class="btn btn--secondary btn--block-mobile" href="./">M’écrire par e-mail</a>
+            </div>
+          </div>
+        </div>
+        <div class="notice notice--success" role="status">
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-success"/></svg>
+          <div class="notice__body">
+            <h3 class="notice__title"><span class="visually-hidden">Succès : </span>C’est bien reçu.</h3>
+            <p class="notice__text">Merci. Je vous réponds sous 2&nbsp;jours ouvrés et nous en parlons. Rien n’est facturé avant votre accord.</p>
+          </div>
+        </div>
+        <div class="notice notice--warning" role="status">
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-warning"/></svg>
+          <div class="notice__body">
+            <h3 class="notice__title"><span class="visually-hidden">Avertissement : </span>La vidéo ne se charge pas.</h3>
+            <p class="notice__text">La transcription est juste en dessous.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section on-dark" aria-labelledby="t-dark">
+      <div class="container">
+        <h2 id="t-dark">Sur fond sombre</h2>
+        <ul class="sw-grid">
+          <li class="sw sw--bg">Fond</li>
+          <li class="sw sw--surface">Surface</li>
+          <li class="sw sw--link">Lien</li>
+          <li class="sw sw--action">Bouton principal</li>
+          <li class="sw sw--error">Erreur</li>
+          <li class="sw sw--success">Succès</li>
+          <li class="sw sw--warning">Avertissement</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="./">Créer mon portfolio</a>
+          <a class="btn btn--secondary" href="./">Refondre mon portfolio</a>
+        </div>
+        <p>Texte courant sur marine, avec <a href="./">un lien vert souligné</a>.</p>
+        <div class="field">
+          <label for="t-mail">Adresse e-mail (obligatoire)</label>
+          <input id="t-mail" name="mail" type="email" autocomplete="email">
+        </div>
+        <div class="notice notice--error" role="alert">
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-error"/></svg>
+          <div class="notice__body">
+            <h3 class="notice__title"><span class="visually-hidden">Erreur : </span>L’envoi n’a pas abouti.</h3>
+            <p class="notice__text">Vos réponses sont conservées. Réessayez dans un instant, ou écrivez-moi à pro.fgamer768@gmail.com.</p>
+            <div class="notice__actions">
+              <button type="button" class="btn btn--primary btn--block-mobile">Réessayer l’envoi</button>
+              <a class="btn btn--secondary btn--block-mobile" href="./">M’écrire par e-mail</a>
+            </div>
+          </div>
+        </div>
+        <div class="notice notice--success" role="status">
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-success"/></svg>
+          <div class="notice__body">
+            <h3 class="notice__title"><span class="visually-hidden">Succès : </span>C’est bien reçu.</h3>
+            <p class="notice__text">Merci. Je vous réponds sous 2&nbsp;jours ouvrés et nous en parlons. Rien n’est facturé avant votre accord.</p>
+          </div>
+        </div>
+        <div class="notice notice--warning" role="status">
+          <svg class="notice__icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#status-warning"/></svg>
+          <div class="notice__body">
+            <h3 class="notice__title"><span class="visually-hidden">Avertissement : </span>La vidéo ne se charge pas.</h3>
+            <p class="notice__text">La transcription est juste en dessous.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <p class="site-footer__legal">Page de développement. © 2026 Clairfolio. Site édité par FGAMER768.</p>
+    </div>
+  </footer>
+</body>
+</html>

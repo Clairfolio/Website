@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Mêmes adresses que les balises canonical. Hors plan du site, volontairement : /commencer/merci (noindex). -->
+  <url><loc>https://clairfolio.me/</loc></url>
+  <url><loc>https://clairfolio.me/cas-clara</loc></url>
+  <url><loc>https://clairfolio.me/tarifs</loc></url>
+  <url><loc>https://clairfolio.me/forfait-essentiel</loc></url>
+  <url><loc>https://clairfolio.me/forfait-recommande</loc></url>
+  <url><loc>https://clairfolio.me/forfait-complet</loc></url>
+  <url><loc>https://clairfolio.me/a-propos</loc></url>
+  <url><loc>https://clairfolio.me/commencer</loc></url>
+  <url><loc>https://clairfolio.me/conditions-de-vente</loc></url>
+  <url><loc>https://clairfolio.me/mentions-legales</loc></url>
+  <url><loc>https://clairfolio.me/accessibilite</loc></url>
+</urlset>

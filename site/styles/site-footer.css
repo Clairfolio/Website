@@ -61,7 +61,13 @@
   color: var(--text);
 }
 
-.site-footer__list a:hover {
+@media (hover: hover) and (pointer: fine) {
+  .site-footer__list a:hover {
+    color: var(--link-hover);
+  }
+}
+
+.site-footer__list a:active {
   color: var(--link-hover);
 }
 

@@ -45,6 +45,11 @@
   }
 }
 
+a.path:active {
+  background: var(--surface);
+  color: var(--text);
+}
+
 @media (min-width: 48em) {
   .paths {
     grid-template-columns: 1fr 1fr;

@@ -12,6 +12,9 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Pas de rectangle de surlignage du navigateur au toucher : le retour d'appui est dessiné par le site
+     (:active sur les boutons, les liens, le menu, les cartes et les choix du formulaire). */
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -118,7 +121,17 @@ a {
   text-underline-offset: 0.18em;
 }
 
-a:hover {
+/* Survol : seulement avec une souris. Au toucher, :hover reste collé après le tap (et au retour sur la page) :
+   sans cette garde, le texte d'un bouton prenait la couleur de survol des liens, identique à son fond (1,04:1 en sombre). */
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    color: var(--link-hover);
+    text-decoration-thickness: 0.14em;
+  }
+}
+
+/* Retour d'appui des liens (au toucher, c'est lui qui montre que le tap a été pris en compte) */
+a:not(.btn):active {
   color: var(--link-hover);
   text-decoration-thickness: 0.14em;
 }
@@ -161,6 +174,12 @@ a:hover {
 
 .skip-link:focus {
   transform: none;
+}
+
+/* Le lien d'évitement est un bouton (fond d'action) : jamais la couleur de survol ou d'appui des liens */
+a.skip-link:hover,
+a.skip-link:active {
+  color: var(--action-text);
 }
 
 .container {
