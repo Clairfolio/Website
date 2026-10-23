@@ -1,5 +1,5 @@
-# DEVELOPPEMENT : tout est interdit aux robots tant que la mise en ligne n'est pas décidée.
-# python3 tools/go_live.py remplace ce fichier par la version de production :
-#   User-agent: * / Allow: / / Sitemap: https://clairfolio.me/sitemap.xml
+# Production : tout le site peut être exploré.
+# La page de confirmation du formulaire et la page 404 portent leur propre « noindex ».
 User-agent: *
-Disallow: /
+Allow: /
+Sitemap: https://clairfolio.me/sitemap.xml

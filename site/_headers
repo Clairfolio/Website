@@ -1,12 +1,6 @@
 # En-têtes HTTP envoyés par Netlify (fichier lu à la racine du dossier publié).
 # Une règle par bloc : un en-tête déclaré dans plusieurs blocs qui s'appliquent à la même adresse est cumulé.
 
-# DEBUT DU BLOC DEVELOPPEMENT : le site n'est pas indexé tant que la mise en ligne n'est pas décidée.
-# Ce bloc (avec le « Disallow » de robots.txt) est retiré par : python3 tools/go_live.py
-/*
-  X-Robots-Tag: noindex
-# FIN DU BLOC DEVELOPPEMENT
-
 # Sécurité, pour toutes les pages. Le site n'appelle aucun domaine externe, d'où une politique stricte.
 # Si un jour un outil externe est ajouté (mesure d'audience, vidéo), son domaine s'ajoute ici, dans la ligne
 # Content-Security-Policy, sinon le navigateur le bloque.
