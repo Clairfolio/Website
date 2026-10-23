@@ -22,7 +22,8 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color var(--duration-fast), border-color var(--duration-fast);
+  /* Le texte change en même temps que le fond : sinon il passe un instant à la couleur du fond (texte invisible) */
+  transition: background-color var(--duration-fast), border-color var(--duration-fast), color var(--duration-fast);
 }
 
 .btn:hover {
@@ -51,7 +52,8 @@
   }
 }
 
-.btn--primary:active {
+.btn--primary:active,
+.btn--primary.is-pressed {
   background: var(--action-bg-pressed);
   border-color: var(--action-bg-pressed);
 }
@@ -63,10 +65,17 @@
 }
 
 
-.btn--secondary:active {
+.btn--secondary:active,
+.btn--secondary.is-pressed {
   background: var(--action-bg-pressed);
   border-color: var(--action-bg-pressed);
   color: var(--action-text);
+}
+
+/* L'appui se voit tout de suite, sans fondu (le fondu reste pour le relâchement) */
+.btn:active,
+.btn.is-pressed {
+  transition-duration: 0s;
 }
 
 /* Version compacte : bouton « Commencer » de l'en-tête (même zone cliquable de 44 px) */

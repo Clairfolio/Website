@@ -29,7 +29,7 @@ site/                   Seul dossier publié
   images/cas-clara/     Captures de téléphone (avant, après) en 300, 400, 600 et 1175 px de large
   images/cas-clara/rapports/   Les 4 rapports PageSpeed (WebP)
   images/og/clairfolio.jpg     Image de partage, 1200 x 630
-  js/nav.js             Menu « Menu » / « Fermer » sur téléphone
+  js/nav.js             Menu « Menu » / « Fermer » sur téléphone, retour d'appui des boutons-liens
   js/commencer.js       Formulaire : pré-remplissage, validation, envoi
   js/merci.js           Place le focus sur le titre de la confirmation
   styles/               Voir « Feuilles de style »
@@ -56,7 +56,7 @@ Chargées dans cet ordre sur toutes les pages : `tokens`, `fonts`, `base`, `butt
 
 ### Navigation
 
-`js/nav.js` gère le bouton « Menu ». Sans JavaScript, la navigation reste visible. Le lien « Aller au contenu » est le premier élément atteint au clavier.
+`js/nav.js` gère le bouton « Menu » et le retour d'appui des boutons-liens (classe `.is-pressed` posée au clic, retirée au retour par l'historique : sur téléphone, le `:active` du navigateur arrive trop tard pour un tap rapide). Sans JavaScript, la navigation reste visible et `:active` reste le retour d'appui. Le lien « Aller au contenu » est le premier élément atteint au clavier.
 
 ### Formulaire « Commencer »
 

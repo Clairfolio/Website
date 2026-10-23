@@ -2,8 +2,33 @@
   Menu de l'en-tête sur téléphone (guide Voix, UX et microtexte, « L'en-tête ») :
   bouton « Menu » qui devient « Fermer », la touche Échap ferme le menu et rend le focus au bouton.
   Sans JavaScript, la navigation reste visible (styles/no-js.css).
+
+  Retour d'appui des boutons-liens : sur téléphone, le :active du navigateur arrive après un court délai,
+  un tap rapide ne le montre donc pas. Au clic, le bouton prend l'état « appuyé » (.is-pressed) jusqu'au
+  changement de page ; au retour par l'historique, il est remis à l'état normal sans fondu.
 */
 (function () {
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest('a.btn');
+    if (!link || event.defaultPrevented || event.button !== 0) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (link.target === '_blank' || link.hasAttribute('download')) return;
+    if (!/^https?:$/.test(link.protocol)) return;   // mailto: ne change pas de page
+    if (link.hash && link.pathname === location.pathname && link.search === location.search) return;   // ancre de la même page
+    link.classList.add('is-pressed');
+  });
+
+  window.addEventListener('pageshow', function (event) {
+    if (!event.persisted) return;
+    var pressed = document.querySelectorAll('.btn.is-pressed');
+    Array.prototype.forEach.call(pressed, function (el) {
+      el.style.transition = 'none';
+      el.classList.remove('is-pressed');
+      void el.offsetWidth;
+      el.style.transition = '';
+    });
+  });
+
   var button = document.getElementById('menu-toggle');
   var nav = document.getElementById('site-nav');
   if (!button || !nav) return;

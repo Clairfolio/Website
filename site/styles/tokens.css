@@ -90,7 +90,7 @@
     --link-hover: #d9ff75;
     --action-bg: var(--color-green);
     --action-bg-hover: #d9ff75;
-    --action-bg-pressed: #b2e62f;
+    --action-bg-pressed: #8cbb1c;
     --action-text: var(--color-navy);
     --border-subtle: rgb(248 248 246 / 0.15);
     --border-control: rgb(248 248 246 / 0.5);   /* 5,08:1 sur marine */
@@ -112,7 +112,7 @@
   --link-hover: #d9ff75;
   --action-bg: var(--color-green);
   --action-bg-hover: #d9ff75;
-  --action-bg-pressed: #b2e62f;
+  --action-bg-pressed: #8cbb1c;
   --action-text: var(--color-navy);
   --border-subtle: rgb(248 248 246 / 0.15);
   --border-control: rgb(248 248 246 / 0.5);
