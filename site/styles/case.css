@@ -1,5 +1,7 @@
 /*
   Page « Le cas Clara » (modèle des pages de preuve) : en-tête de page, décisions, mesures.
+  Les décisions sont des étapes numérotées (.steps, sections.css) ; le texte technique et secondaire
+  est replié dans le composant déroulant des questions fréquentes (.faq, sections.css).
   Les sections, l'en-tête de page, la preuve avec téléphone et les tableaux viennent de sections.css.
 */
 
@@ -22,4 +24,16 @@
 
 .measures + p.small {
   margin-bottom: var(--space-5);
+}
+
+/* Décisions en étapes : le titre de chaque décision s'aligne sur sa pastille (le reste du gabarit lui donne une marge au-dessus) */
+.decisions .steps > li > h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+}
+
+/* Volets repliés après le texte principal : un espace avant le premier */
+.decisions .faq,
+.mesures .faq {
+  margin-top: var(--space-6);
 }

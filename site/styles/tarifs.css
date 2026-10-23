@@ -112,7 +112,13 @@ a.path:active {
   list-style: none;
 }
 
+/* Seules les lignes qui changent d'un forfait à l'autre restent dans la carte (le reste est dans « Dans tous les forfaits ») :
+   l'étiquette à gauche, la valeur à droite, sur la même ligne */
 .tier__lines li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
   max-width: none;
   margin: 0;
   padding: var(--space-2) 0;
@@ -120,7 +126,9 @@ a.path:active {
 }
 
 .tier__lines strong {
-  display: block;
+  flex: none;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .tier__actions {
@@ -215,4 +223,9 @@ a.path:active {
 /* Liste de liens suivie d'un paragraphe : un espace entre les deux */
 .link-list + p {
   margin-top: var(--space-4);
+}
+
+/* « Dans tous les forfaits » : juste sous le titre de la section, sans double marge */
+h2 + .subhead {
+  margin-top: 0;
 }

@@ -1,5 +1,5 @@
 /*
-  Blocs propres à l'accueil : les trois forfaits.
+  Blocs propres à l'accueil : le tri des images (avant / après) et les trois forfaits.
   Le reste (sections, preuve, mesures) est dans sections.css.
 */
 
@@ -38,5 +38,164 @@
 @media (min-width: 48em) {
   .plans {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/*
+  Bloc 5 : le tri. Reconstitution d'une fenêtre de dossier, avant et après, en HTML et CSS (pas une capture) avec les vrais fichiers
+  de Clara. Fenêtre générique : un cadre, une barre de titre en texte et trois pastilles décoratives en couleurs de la marque
+  (clin d'œil aux fenêtres de bureau, sans imiter un système ni sa palette : les couleurs viennent de tokens.css).
+  Le bloc est annoncé aux lecteurs d'écran par un seul texte (aria-label sur .sort__panes), pas fichier par fichier.
+  Téléphone : 12 fichiers par fenêtre, l'avant au-dessus de l'après. Ordinateur : 24, côte à côte.
+*/
+.sort {
+  margin: var(--space-5) 0 0;
+}
+
+.sort__panes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+.sort__pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--bg);
+  border: 2px solid var(--border-control);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+.sort__bar,
+.sort__foot {
+  max-width: none;
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+}
+
+.sort__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--surface);
+  border-bottom: 2px solid var(--border-control);
+  font-weight: var(--weight-strong);
+}
+
+/* Trois pastilles décoratives (formes seulement : bleu, vert, fond) ; le contour les garde visibles sur fond clair, où le vert pâlit */
+.sort__dots {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.sort__dots i {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid var(--border-control);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.sort__dots i:nth-child(1) {
+  background: var(--decor-blue);
+}
+
+.sort__dots i:nth-child(2) {
+  background: var(--decor-green);
+}
+
+.sort__foot {
+  margin-top: auto;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: var(--step-small);
+  line-height: var(--leading-small);
+}
+
+.sort__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  list-style: none;
+}
+
+.sort__grid li {
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+}
+
+.sort__grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--surface);
+  border-radius: var(--radius-s);
+}
+
+/* Les noms sont du vrai texte, coupés par des points de suspension comme dans un dossier */
+.sort__name,
+.sort__dir {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--step-small);
+  line-height: var(--leading-small);
+}
+
+.sort__name {
+  margin-top: var(--space-1);
+}
+
+.sort__dir {
+  color: var(--text-muted);
+}
+
+/* Après : les noms clairs se lisent en entier (ils passent à la ligne au tiret) ; seul le dossier est coupé */
+.sort__pane--after .sort__name {
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.sort figcaption {
+  margin-top: var(--space-3);
+  color: var(--text-muted);
+  font-size: var(--step-small);
+  line-height: var(--leading-small);
+}
+
+.only-wide {
+  display: none;
+}
+
+/* Téléphone : les 12 premiers fichiers seulement (les images masquées ne sont pas chargées) */
+@media (max-width: 47.99em) {
+  .sort__item--wide {
+    display: none;
+  }
+}
+
+@media (min-width: 48em) {
+  .sort__panes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-5);
+    align-items: start;
+  }
+
+  .sort__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .only-wide {
+    display: inline;
+  }
+
+  .only-narrow {
+    display: none;
   }
 }

@@ -48,6 +48,158 @@
   margin-top: var(--space-3);
 }
 
+/*
+  Étapes : une liste ordonnée dont chaque numéro est dans une pastille (cercle de 2 px), reliée à la suivante par un trait.
+  C'est toujours un <ol> : le numéro est un compteur CSS, caché aux lecteurs d'écran qui lisent déjà « 1 sur 5 ».
+  role="list" dans le HTML : sans lui, Safari retire la sémantique de liste quand list-style vaut none.
+  Pastille et trait prennent la couleur du texte (aucune couleur en dur) ; le trait est décoratif.
+*/
+.steps {
+  --badge: 2.25rem;
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps > li {
+  position: relative;
+  max-width: none;
+  margin: 0;
+  /* le haut du texte descend de la moitié de l'écart pour que la première ligne soit centrée sur la pastille */
+  padding: calc((var(--badge) - 1.5em) / 2) 0 var(--space-5) calc(var(--badge) + var(--space-4));
+  counter-increment: step;
+}
+
+.steps > li:last-child {
+  padding-bottom: 0;
+}
+
+.steps > li > :last-child {
+  margin-bottom: 0;
+}
+
+.steps > li::before {
+  content: counter(step);
+  content: counter(step) / "";   /* texte de remplacement vide : le numéro n'est pas lu deux fois */
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: var(--badge);
+  height: var(--badge);
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  font-size: var(--step-body);
+  line-height: 1;
+}
+
+/* Le trait relie le bas d'une pastille au haut de la suivante */
+.steps > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--badge) + var(--space-1));
+  bottom: var(--space-1);
+  left: calc(var(--badge) / 2 - 1px);
+  width: 2px;
+  background: var(--border-control);
+}
+
+/* Lignes à cocher : « Dans tous les forfaits ». La coche aide à balayer l'œil ; le mot « Inclus » reste dans le HTML (masqué à l'écran). */
+.checklist {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  max-width: none;
+  margin: 0;
+}
+
+.checklist .icon {
+  color: var(--link);   /* bleu sur fond clair, vert sur fond sombre : jamais du vert sur clair */
+  margin-top: 0.125rem;
+}
+
+/* Une coche seule dans la cellule d'un tableau : le mot « Inclus » est masqué à l'écran */
+.measures td .icon {
+  display: inline-block;
+  vertical-align: -0.3em;
+  color: var(--link);
+}
+
+/* Engagements : trois petits blocs, une icône et une phrase chacun */
+.pledges {
+  display: grid;
+  gap: var(--space-4);
+  margin: var(--space-4) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pledges li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: none;
+  margin: 0;
+}
+
+.pledges .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--link);
+}
+
+.pledges p {
+  margin: 0;
+  font-weight: var(--weight-strong);
+}
+
+@media (min-width: 48em) {
+  .pledges {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+
+  .pledges li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+}
+
+/* Citation d'une personne (retour de Clara) : texte exact entre « », filet à gauche, puis qui parle et quand.
+   Guillemets français : l'ouvrant ouvre chaque paragraphe, le fermant n'est qu'à la fin. Aucune étoile, aucune note. */
+.quote {
+  margin: var(--space-5) 0;
+}
+
+.quote blockquote {
+  margin: 0;
+  padding-left: var(--space-4);
+  border-left: 4px solid var(--link);   /* bleu sur fond clair, vert sur fond sombre */
+}
+
+.quote blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.quote figcaption {
+  margin-top: var(--space-3);
+  padding-left: calc(var(--space-4) + 4px);
+  font-weight: var(--weight-strong);
+}
+
 .link-list {
   margin: var(--space-4) 0 0;
   padding: 0;

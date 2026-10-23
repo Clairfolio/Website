@@ -159,6 +159,20 @@ a:not(.btn):active {
   border: 0;
 }
 
+/* Icônes de contenu (sprite icons/sprite.svg) : trait de 2 px comme la flèche des liens externes, aucun aplat.
+   Toujours décoratives : aria-hidden dans le HTML, le sens est dans un texte (visible, ou masqué à l'écran).
+   La couleur suit la couleur du texte (currentColor) ; on la fixe sur le conteneur, jamais en dur ici. */
+.icon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .skip-link {
   position: absolute;
   left: var(--space-4);

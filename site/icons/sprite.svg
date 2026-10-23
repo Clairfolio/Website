@@ -4,6 +4,27 @@
   </symbol>
 
   <!--
+    Icônes de contenu : même écriture que la flèche (trait de 2 px, bouts et angles arrondis, aucun aplat).
+    Le trait, la couleur et la taille viennent du CSS (classe .icon, base.css), pas du fichier.
+    Toujours décoratives (aria-hidden) : le sens est porté par un texte, visible ou masqué à l'écran.
+  -->
+  <symbol id="check" viewBox="0 0 24 24">
+    <path d="m5 12.5 4.5 4.5L19 7.5"/>
+  </symbol>
+  <symbol id="key" viewBox="0 0 24 24">
+    <circle cx="7.5" cy="16.5" r="4.5"/>
+    <path d="m10.7 13.3 10.3-10.3M17.5 6.5l3 3M14 10l2.5 2.5"/>
+  </symbol>
+  <symbol id="video" viewBox="0 0 24 24">
+    <rect x="2.5" y="4.5" width="19" height="15" rx="3.5"/>
+    <path d="m10 8.8 5.5 3.2-5.5 3.2z"/>
+  </symbol>
+  <symbol id="undo" viewBox="0 0 24 24">
+    <path d="M3.5 4.5v5h5"/>
+    <path d="M4.4 9.5a8.5 8.5 0 1 1-.9 5.2"/>
+  </symbol>
+
+  <!--
     Icônes d'état : une silhouette pleine par état (cercle, octogone, triangle), pour que le sens
     ne dépende jamais de la couleur seule. La forme prend la couleur du texte courant (color),
     le signe à l'intérieur prend la couleur de contour (stroke) : le CSS les fixe, voir notice.css.

@@ -7,6 +7,9 @@
   Retour d'appui des boutons-liens : sur téléphone, le :active du navigateur arrive après un court délai,
   un tap rapide ne le montre donc pas. Au clic, le bouton prend l'état « appuyé » (.is-pressed) jusqu'au
   changement de page ; au retour par l'historique, il est remis à l'état normal sans fondu.
+
+  Ancres : si l'adresse (ou un lien de la page) vise un élément placé dans un volet replié (<details>), le volet
+  s'ouvre, puis la page défile jusqu'à l'élément (cas-clara#rapports). Sans JavaScript, le volet reste fermé.
 */
 (function () {
   document.addEventListener('click', function (event) {
@@ -62,4 +65,21 @@
     if (event.target.closest('#site-nav, #menu-toggle')) return;
     setOpen(false);
   });
+})();
+
+(function () {
+  function revealTarget() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var target = id && document.getElementById(id);
+    var panel = target && target.closest('details');
+    if (!panel || panel.open) return;
+    while (panel) {
+      panel.open = true;
+      panel = panel.parentElement && panel.parentElement.closest('details');
+    }
+    target.scrollIntoView();
+  }
+
+  window.addEventListener('hashchange', revealTarget);
+  revealTarget();
 })();

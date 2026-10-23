@@ -117,26 +117,13 @@
       </div>
     </section>
 
-    <!-- Bloc 3 : la preuve responsive -->
+    <!-- Bloc 3 : la preuve responsive (les deux téléphones sont dans le hero : ici, le texte seul) -->
     <section class="section section--tint" aria-labelledby="preuve">
-      <div class="container proof">
-        <div class="proof__text">
-          <h2 id="preuve">Même téléphone. Même contenu. Deux résultats.</h2>
-          <p><strong>Avant</strong>&nbsp;: le site demande lui-même d’être consulté sur ordinateur.</p>
-          <p><strong>Après</strong>&nbsp;: on comprend en un regard qui elle est, ce qu’elle cherche, et où trouver son CV et ses projets.</p>
-          <p class="small muted">Captures sur un téléphone Android, le 16 octobre 2026. Environ une visite sur deux se fait sur mobile (Statcounter, 2026).</p>
-          <p><a class="link-action" href="cas-clara">Lire le cas de Clara</a></p>
-        </div>
-        <div class="phones phones--proof">
-          <figure>
-            <img src="images/cas-clara/avant-600.webp" srcset="images/cas-clara/avant-300.webp 300w, images/cas-clara/avant-400.webp 400w, images/cas-clara/avant-600.webp 600w, images/cas-clara/avant.webp 1175w" sizes="(min-width: 48em) 17.5rem, 42vw" width="1175" height="2478" loading="lazy" alt="Ancien portfolio de Clara sur téléphone : sous son nom, un message demande de le consulter sur ordinateur et de zoomer avec Ctrl + molette.">
-            <figcaption>Avant. Capture sur téléphone Android (Honor), le 16 octobre 2026.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/cas-clara/apres-600.webp" srcset="images/cas-clara/apres-300.webp 300w, images/cas-clara/apres-400.webp 400w, images/cas-clara/apres-600.webp 600w, images/cas-clara/apres.webp 1175w" sizes="(min-width: 48em) 17.5rem, 42vw" width="1175" height="2478" loading="lazy" alt="Nouveau portfolio de Clara sur téléphone : sa photo, son nom, game designer, et la période de stage recherchée, du 20 juin au 31 août 2027.">
-            <figcaption>Après. Capture sur téléphone Android (Honor), le 16 octobre 2026.</figcaption>
-          </figure>
-        </div>
+      <div class="container">
+        <h2 id="preuve">Même téléphone. Même contenu. Deux résultats.</h2>
+        <p><strong>Avant</strong>&nbsp;: le site demande lui-même d’être consulté sur ordinateur.</p>
+        <p><strong>Après</strong>&nbsp;: on comprend en un regard qui elle est, ce qu’elle cherche, et où trouver son CV et ses projets.</p>
+        <p class="small muted">Captures sur un téléphone Android (Honor), le 16 octobre 2026. Environ une visite sur deux se fait sur mobile (Statcounter, 2026).</p>
       </div>
     </section>
 
@@ -145,22 +132,82 @@
       <div class="container">
         <h2 id="choix">Un site se construit avec des choix.</h2>
         <p>Pour Clara, j’ai fait cinq choix. Voici lesquels, et pourquoi.</p>
-        <ol class="list-spaced">
+        <ol class="steps" role="list">
           <li><strong>Le CV, le contact et LinkedIn dans le site</strong>&nbsp;: un recruteur qui arrive par un e-mail trouve tout sans quitter la page.</li>
           <li><strong>Les projets en jaquettes, dès l’accueil</strong>&nbsp;: c’est l’univers d’une game designer, et on peut les ouvrir tout de suite.</li>
           <li><strong>Des cartes ni trop pleines, ni trop vides</strong>&nbsp;: le type de projet, son rôle, des chiffres&nbsp;; le détail est sur la page du projet.</li>
           <li><strong>Les autres travaux rangés à part</strong>&nbsp;: pour qu’ils ne fassent pas concurrence aux projets.</li>
-          <li><strong>Plus de 180&nbsp;images triées et adaptées à chaque écran</strong>&nbsp;: un téléphone ne charge pas l’image d’un ordinateur.</li>
+          <li><strong>160&nbsp;images triées et adaptées à chaque écran</strong>&nbsp;: un téléphone ne charge pas l’image d’un ordinateur.</li>
         </ol>
         <p><a class="link-action" href="cas-clara#decisions">Lire les cinq décisions</a></p>
       </div>
     </section>
 
-    <!-- Bloc 5 : le tri (publié sans visuel ni nombre exact : « plus de 180 ») -->
+    <!-- Bloc 5 : le tri (reconstitution avec les vrais fichiers de Clara : 160 fichiers au départ, 126 images retenues) -->
     <section class="section section--flush-top" aria-labelledby="tri">
       <div class="container">
-        <h2 id="tri">Plus de 180&nbsp;images en vrac.</h2>
+        <h2 id="tri">160&nbsp;images en vrac. 126&nbsp;images choisies.</h2>
         <p>Des doublons de moins bonne qualité, des noms de fichiers illisibles, aucun ordre. Ce tri se fait à l’œil, image par image.</p>
+        <figure class="sort">
+          <div class="sort__panes" role="img" aria-label="Reconstitution&nbsp;: à gauche, des fichiers aux noms illisibles, sans ordre et avec des doublons&nbsp;; à droite, une sélection triée, aux noms clairs, rangée par projet.">
+            <div class="sort__pane">
+              <p class="sort__bar"><span class="sort__dots" aria-hidden="true"><i></i><i></i><i></i></span>Avant</p>
+              <ul class="sort__grid">
+              <li><img src="images/tri/tri-01.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">a31fb65a-1016-4773-a1c0-9553fc4a10cd.jpg</span></li>
+              <li><img src="images/tri/tri-02.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">maxresdefault-1.jpg</span></li>
+              <li><img src="images/tri/tri-03.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">mqdefault-1.jpg</span></li>
+              <li><img src="images/tri/tri-04.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">d0af8375-fa0c-42dd-adc3-dcdee4110919.png</span></li>
+              <li><img src="images/tri/tri-05.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">95c9c82c-c681-4705-97b2-abf9df6d6055.png</span></li>
+              <li><img src="images/tri/tri-06.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">788dc5ba-a855-462c-ad75-5dc6ba99e090-1.png</span></li>
+              <li><img src="images/tri/tri-07.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">788dc5ba-a855-462c-ad75-5dc6ba99e090.png</span></li>
+              <li><img src="images/tri/tri-08.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">accb3e93-7973-4808-9537-4aa33545e57e.png</span></li>
+              <li><img src="images/tri/tri-09.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">228853aa-9cae-4560-b060-400b74f1e620.png</span></li>
+              <li><img src="images/tri/tri-10.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">94cc06c2-b92b-4099-9ad2-49600d0718b6.png</span></li>
+              <li><img src="images/tri/tri-11.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">1bcce07c-9034-4d7f-b469-acd79c0bef2f.png</span></li>
+              <li><img src="images/tri/tri-12.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">d273b811-c232-45e1-a66b-e95c7b4f0672.png</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-13.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">b4436836-24ec-45f9-91ee-aafa98400c59.png</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-14.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">811db481-9028-4595-b148-a91a6222a7a2.png</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-15.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">maxresdefault-2.jpg</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-16.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">mqdefault-3.jpg</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-17.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">b31077b8-956b-4496-8c2b-1c50f11338d0.png</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-18.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">d99f1fc8-ec08-465c-bcac-badf9375c907.png</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-19.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">c42e474e-6d8a-42d1-8427-4cb574107791.jpg</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-20.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">aa41c4b5-741c-4fd9-9f14-b97ef20fbc3b.png</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-21.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">6a482bd0-6f5e-434e-829f-d401b1ff2821.jpg</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-22.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">a15f3229-fe85-4cea-a5a8-7c37c4a0cb70.png</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-23.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">dcd9248b-4831-4a61-8293-4fc5526db0f9.png</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-24.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">f571957f-3f82-491f-aff9-e8eec08163dc.png</span></li>
+              </ul>
+              <p class="sort__foot">160&nbsp;fichiers</p>
+            </div>
+            <div class="sort__pane sort__pane--after">
+              <p class="sort__bar"><span class="sort__dots" aria-hidden="true"><i></i><i></i><i></i></span>Après</p>
+              <ul class="sort__grid">
+              <li class="sort__item--wide"><img src="images/tri/tri-19.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">slide-05<wbr>.jpg</span><span class="sort__dir">analyse-deconstruction-jetpack-joyride/</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-21.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">slide-15<wbr>.jpg</span><span class="sort__dir">analyse-deconstruction-jetpack-joyride/</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-22.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">assets-04<wbr>.png</span><span class="sort__dir">beez-adventures/</span></li>
+              <li><img src="images/tri/tri-04.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">assets-06<wbr>.png</span><span class="sort__dir">beez-adventures/</span></li>
+              <li><img src="images/tri/tri-11.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">assets-08<wbr>.png</span><span class="sort__dir">beez-adventures/</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-18.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">concept-11<wbr>.png</span><span class="sort__dir">beez-adventures/</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-15.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">cover<wbr>.jpg</span><span class="sort__dir">beez-adventures/</span></li>
+              <li><img src="images/tri/tri-05.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">overview-01<wbr>.png</span><span class="sort__dir">beez-adventures/</span></li>
+              <li><img src="images/tri/tri-08.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">observation-aquarelle<wbr>.png</span><span class="sort__dir">gallery/</span></li>
+              <li><img src="images/tri/tri-12.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">personnage<wbr>.webp</span><span class="sort__dir">gallery/</span></li>
+              <li><img src="images/tri/tri-01.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">board-03<wbr>.webp</span><span class="sort__dir">glory-of-gods/</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-13.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">character-card-03<wbr>.webp</span><span class="sort__dir">glory-of-gods/</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-14.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">character-card-06<wbr>.webp</span><span class="sort__dir">glory-of-gods/</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-17.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">character-card-07<wbr>.webp</span><span class="sort__dir">glory-of-gods/</span></li>
+              <li><img src="images/tri/tri-06.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">jaquette<wbr>.jpeg</span><span class="sort__dir">glory-of-gods/</span></li>
+              <li><img src="images/tri/tri-10.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">rulebook-07<wbr>.png</span><span class="sort__dir">glory-of-gods/</span></li>
+              <li><img src="images/tri/tri-09.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">concept-03<wbr>.png</span><span class="sort__dir">mecha-crisis/</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-24.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">concept-05<wbr>.png</span><span class="sort__dir">mecha-crisis/</span></li>
+              <li class="sort__item--wide"><img src="images/tri/tri-23.webp" alt="" width="240" height="180" loading="lazy"><span class="sort__name">overview-03<wbr>.png</span><span class="sort__dir">mecha-crisis/</span></li>
+              </ul>
+              <p class="sort__foot">126&nbsp;images</p>
+            </div>
+          </div>
+          <figcaption>Extrait de <span class="only-wide">24</span><span class="only-narrow">12</span>&nbsp;fichiers sur 160. Reconstitution de l’interface, avec les vrais fichiers de Clara.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -235,7 +282,7 @@
     <section class="section" aria-labelledby="etapes">
       <div class="container">
         <h2 id="etapes">Cinq étapes, de la demande à la remise du code.</h2>
-        <ol class="list-spaced">
+        <ol class="steps" role="list">
           <li><strong>Vous me contactez, je vous réponds sous 2&nbsp;jours ouvrés.</strong> Nous nous mettons d’accord sur le forfait, le prix, l’acompte et le délai. Vous confirmez par écrit.</li>
           <li><strong>Vous versez l’acompte et vous m’envoyez vos contenus</strong>&nbsp;: images, textes, liens.</li>
           <li><strong>Je construis votre site</strong> en 10&nbsp;jours ouvrés (15 pour une refonte), à partir du dossier complet et de l’acompte.</li>
@@ -249,7 +296,13 @@
     <section class="section section--flush-top" aria-labelledby="engagements">
       <div class="container">
         <h2 id="engagements">Mes engagements.</h2>
-        <p>Je m’engage sur ce que je livre&nbsp;: un site qui vous appartient, une vidéo de votre site avant le solde, un acompte remboursé si je n’ai pas commencé. Je m’engage sur votre portfolio, pas sur la décision de celui qui le regarde.</p>
+        <p>Je m’engage sur ce que je livre&nbsp;:</p>
+        <ul class="pledges">
+          <li><svg class="icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#key"/></svg><p>Un site qui vous appartient.</p></li>
+          <li><svg class="icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#video"/></svg><p>Une vidéo de votre site avant le solde.</p></li>
+          <li><svg class="icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#undo"/></svg><p>Un acompte remboursé si je n’ai pas commencé.</p></li>
+        </ul>
+        <p>Je m’engage sur votre portfolio, pas sur la décision de celui qui le regarde.</p>
       </div>
     </section>
 
@@ -258,6 +311,12 @@
       <div class="container">
         <h2 id="personne">Une personne, pas une plateforme.</h2>
         <p>Je suis FGAMER768 et je fais des portfolios pour des créatifs. Clairfolio est né du portfolio de Clara&nbsp;: ses projets étaient très intéressants, mais son site ne la servait pas. Je l’ai refait avec elle, et j’ai voulu le faire pour d’autres.</p>
+        <figure class="quote">
+          <blockquote>
+            <p>«&nbsp;FGAMER768 est quelqu’un de très disponible, à l’écoute et investi dans ce qu’il fait.&nbsp;»</p>
+          </blockquote>
+          <figcaption>Clara, game designer, octobre 2026. <a href="cas-clara#retour">Lire son retour en entier</a></figcaption>
+        </figure>
         <p>Vous m’écrivez, je vous réponds&nbsp;: contact@clairfolio.me, ou sur Instagram&nbsp;: @clairfolioweb.</p>
         <div class="actions">
           <a class="btn btn--secondary btn--block-mobile" href="mailto:contact@clairfolio.me">M’écrire par e-mail</a>

@@ -28,6 +28,7 @@ site/                   Seul dossier publié
   icons/                Symbole (couleur, marine, ivoire) et sprite.svg
   images/cas-clara/     Captures de téléphone (avant, après) en 300, 400, 600 et 1175 px de large
   images/cas-clara/rapports/   Les 4 rapports PageSpeed (WebP)
+  images/tri/           24 vignettes WebP (240 x 180) du bloc « tri » de l'accueil, tirées des vrais fichiers de Clara
   images/og/clairfolio.jpg     Image de partage, 1200 x 630
   js/nav.js             Menu sur téléphone (icône trois traits / croix), retour d'appui des boutons-liens
   js/commencer.js       Formulaire : pré-remplissage, validation, envoi
@@ -61,6 +62,10 @@ Chargées dans cet ordre sur toutes les pages : `tokens`, `fonts`, `base`, `butt
 ### Questions fréquentes
 
 Accueil et Tarifs : un `<details>` par question, la question est un `h3` dans le `<summary>` (styles dans `sections.css`). Fonctionne sans JavaScript. Le déroulé animé utilise `::details-content` et `interpolate-size` (navigateurs récents) ; ailleurs, ou avec « réduire les animations », la réponse apparaît d'un coup. Pour ajouter une question, copier un bloc `<details>`.
+
+### Étapes, coches, icônes
+
+`.steps` (sur un `<ol role="list">`) : numéros en pastilles reliées par un trait, compteur CSS (`sections.css`). `.checklist` et la coche seule dans les tableaux : le mot « Inclus » reste dans le HTML en `.visually-hidden`. `.pledges` : engagements de l'accueil. Les icônes sont dans `icons/sprite.svg` (`<svg class="icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#check"/></svg>`), trait de 2 px, règles dans la direction artistique §3.6. Le cas Clara replie son texte secondaire avec le même composant que la FAQ ; `js/nav.js` ouvre le volet visé par une ancre.
 
 ### Formulaire « Commencer »
 
