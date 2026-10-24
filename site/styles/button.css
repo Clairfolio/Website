@@ -124,3 +124,14 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* Dans un bouton, la flèche est séparée du texte par l'écart du bouton ET par le vide de son propre dessin (7 sur 24) : on rapproche d'un quart de rem */
+.btn .ext-icon {
+  margin-left: calc(var(--space-1) * -1);
+}
+
+/* Icône d'un bouton (e-mail, Instagram) : à la taille du texte, décorative, elle suit la couleur du bouton */
+.btn .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}

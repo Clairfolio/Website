@@ -137,11 +137,11 @@
   color: var(--link);
 }
 
-/* Engagements : trois petits blocs, une icône et une phrase chacun */
+/* Engagements : trois cartes de même hauteur (comme les forfaits), une icône et une phrase chacune */
 .pledges {
   display: grid;
-  gap: var(--space-4);
-  margin: var(--space-4) 0;
+  gap: var(--space-3);
+  margin: var(--space-4) 0 var(--space-5);
   padding: 0;
   list-style: none;
 }
@@ -152,6 +152,10 @@
   gap: var(--space-4);
   max-width: none;
   margin: 0;
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-m);
 }
 
 .pledges .icon {
@@ -168,26 +172,32 @@
 @media (min-width: 48em) {
   .pledges {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-6);
+    gap: var(--space-4);
   }
 
   .pledges li {
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-3);
+    gap: var(--space-4);
+    padding: var(--space-5);
   }
 }
 
-/* Citation d'une personne (retour de Clara) : texte exact entre « », filet à gauche, puis qui parle et quand.
-   Guillemets français : l'ouvrant ouvre chaque paragraphe, le fermant n'est qu'à la fin. Aucune étoile, aucune note. */
+/* Témoignage : la phrase de Clara, un trait bleu à gauche, sa signature dessous */
 .quote {
   margin: var(--space-5) 0;
+  padding: 0 0 0 var(--space-4);
+  border-left: 4px solid var(--link);
 }
 
 .quote blockquote {
   margin: 0;
-  padding-left: var(--space-4);
-  border-left: 4px solid var(--link);   /* bleu sur fond clair, vert sur fond sombre */
+  padding: 0;
+}
+
+.quote blockquote p {
+  max-width: none;
+  margin: 0 0 var(--space-3);
 }
 
 .quote blockquote p:last-child {
@@ -196,8 +206,6 @@
 
 .quote figcaption {
   margin-top: var(--space-3);
-  padding-left: calc(var(--space-4) + 4px);
-  font-weight: var(--weight-strong);
 }
 
 .link-list {

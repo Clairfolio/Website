@@ -57,6 +57,7 @@
   overflow-wrap: anywhere;   /* une adresse e-mail longue se coupe plutôt que de déborder */
   display: inline-flex;
   align-items: center;
+  gap: var(--space-2);
   min-height: var(--target);
   color: var(--text);
 }
@@ -78,4 +79,16 @@
   border-top: 1px solid var(--border-subtle);
   font-size: var(--step-small);
   line-height: var(--leading-small);
+}
+
+/* Petite icône devant l'e-mail et Instagram : on repère le moyen de contact d'un coup d'œil (vert sur fond sombre) */
+.site-footer__list .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--link);
+}
+
+/* Même rapprochement pour la flèche des liens externes du pied de page */
+.site-footer__list .ext-icon {
+  margin-left: calc(var(--space-1) * -1);
 }

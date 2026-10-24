@@ -65,7 +65,7 @@ Accueil et Tarifs : un `<details>` par question, la question est un `h3` dans le
 
 ### Étapes, coches, icônes
 
-`.steps` (sur un `<ol role="list">`) : numéros en pastilles reliées par un trait, compteur CSS (`sections.css`). `.checklist` et la coche seule dans les tableaux : le mot « Inclus » reste dans le HTML en `.visually-hidden`. `.pledges` : engagements de l'accueil. Les icônes sont dans `icons/sprite.svg` (`<svg class="icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#check"/></svg>`), trait de 2 px, règles dans la direction artistique §3.6. Le cas Clara replie son texte secondaire avec le même composant que la FAQ ; `js/nav.js` ouvre le volet visé par une ancre.
+`.steps` (sur un `<ol role="list">`) : numéros en pastilles reliées par un trait, compteur CSS (`sections.css`). `.checklist` et la coche seule dans les tableaux : le mot « Inclus » reste dans le HTML en `.visually-hidden`. `.pledges` : engagements de l'accueil. Les icônes sont dans `icons/sprite.svg` (`<svg class="icon" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#check"/></svg>`), trait de 2 px, règles dans la direction artistique §3.6. Contact : `#mail` et `#instagram` devant les boutons de contact (`.btn .icon`, `button.css`) et dans le pied de page (`.site-footer__list .icon`, vert sur fond sombre). Le cas Clara replie son texte secondaire avec le même composant que la FAQ ; `js/nav.js` ouvre le volet visé par une ancre.
 
 ### Formulaire « Commencer »
 
